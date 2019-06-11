@@ -1,0 +1,72 @@
+[alias]
+    co=checkout
+    ci=commit -s
+    st=!git -p status
+    pop=reset HEAD~1
+    unstash=stash apply
+    amend=commit -s --amend
+    squash=commit -s --amend -C HEAD
+    p=!git push origin HEAD
+    stage=add
+    unstage=reset HEAD --
+    track=add -N
+    untrack=rm --cached
+    tempo=commit -a -m tempo
+    undo=reset HEAD~1
+    vomit=commit
+    mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+
+[core]
+    editor=nano
+	excludesfile = /Users/karimheraud/.gitignore_global
+    preloadindex=true
+	precomposeunicode = true
+
+[user]
+	name = Karim Heraud
+	email = kheraud@gmail.com
+
+[color]
+    ui     = auto
+    diff   = auto
+    branch = auto
+    status = auto
+    pager  = true
+    interactive = auto
+
+[color "diff"]
+    meta = green
+    frag = yellow
+    old = magenta
+    new = bold cyan
+	message = bold
+
+[color "status"]
+    header = bold blue
+    added  = green
+    changed = bold red
+    untracked = bold yellow
+[merge]
+    verbosity = 1
+	tool = opendiff
+[clean]
+    requireForce = false
+[pack]
+    threads = 0
+[status]
+    submodulesummary = 1
+[push]
+	default = simple
+[difftool "sourcetree"]
+	tool = opendiff
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/kheraud/.stCommitMsg
+[difftool]
+	prompt = false
+[diff]
+	tool = opendiff
