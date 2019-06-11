@@ -1,8 +1,18 @@
+- defaults:
+    link:
+      relink: true
 - clean: ['~']
-
 - link:
-    ~/.gitconfig: gitconfig
-    ~/.tmux.conf: tmux.conf
-    ~/.zshrc: zshrc
-
-
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore: git/gitignore
+    ~/.tmux:
+      path: tmux/tmux
+      if: git submodule update --init tmux/tmux/plugins/tpm
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux.conf.local: tmux/tmux.conf.local
+    ~/.zshrc: zsh/zshrc
+    ~/.oh-my-zsh:
+      path: zsh/oh-my-zsh
+      if: git submodule update --init zsh/oh-my-zsh
+- shell:
+  - [git submodule update --init dotbot, Retrieving dotbot repository]
