@@ -1,7 +1,7 @@
+- clean: ['~']
 - defaults:
     link:
       relink: true
-- clean: ['~']
 - link:
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
