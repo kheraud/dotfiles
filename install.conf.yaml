@@ -9,7 +9,6 @@
       path: tmux/tmux
       if: git submodule update --init tmux/tmux/plugins/tpm
     ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmux.conf.local: tmux/tmux.conf.local
     ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh:
       path: zsh/oh-my-zsh

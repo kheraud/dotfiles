@@ -1,2 +1,2 @@
 # Let tmux plugin manager handle download of plugins
-tmux/tmux/plugins/*
+tmux/tmux/*
