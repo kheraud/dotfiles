@@ -1,72 +1,37 @@
+[init]
+  templatedir = ~/.git_template
+[push]
+  default = current
+[color]
+  ui = auto
 [alias]
-    co=checkout
-    ci=commit -s
-    st=!git -p status
-    pop=reset HEAD~1
-    unstash=stash apply
-    amend=commit -s --amend
-    squash=commit -s --amend -C HEAD
-    p=!git push origin HEAD
-    stage=add
-    unstage=reset HEAD --
-    track=add -N
-    untrack=rm --cached
-    tempo=commit -a -m tempo
-    undo=reset HEAD~1
-    vomit=commit
-    mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
-
+  aa = add --all
+  ap = add --patch
+  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+  ci = commit -v
+  co = checkout
+  pf = push --force-with-lease
+  squash = commit -s --amend -C HEAD
+  st = status
 [core]
-    editor=nano
-	excludesfile = /Users/karimheraud/.gitignore_global
-    preloadindex=true
-	precomposeunicode = true
-
+  excludesfile = ~/.gitignore
+  autocrlf = input
+  editor = vim
+  precomposeunicode = true
+[merge]
+  ff = only
+[commit]
+  template = ~/.gitmessage
+[fetch]
+  prune = true
+[rebase]
+  autosquash = true
+[include]
+  path = ~/.gitconfig.local
+[diff]
+  colorMoved = zebra
 [user]
 	name = Karim Heraud
 	email = kheraud@gmail.com
-
-[color]
-    ui     = auto
-    diff   = auto
-    branch = auto
-    status = auto
-    pager  = true
-    interactive = auto
-
-[color "diff"]
-    meta = green
-    frag = yellow
-    old = magenta
-    new = bold cyan
-	message = bold
-
-[color "status"]
-    header = bold blue
-    added  = green
-    changed = bold red
-    untracked = bold yellow
-[merge]
-    verbosity = 1
-	tool = opendiff
-[clean]
-    requireForce = false
-[pack]
-    threads = 0
 [status]
     submodulesummary = 1
-[push]
-	default = simple
-[difftool "sourcetree"]
-	tool = opendiff
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/kheraud/.stCommitMsg
-[difftool]
-	prompt = false
-[diff]
-	tool = opendiff
