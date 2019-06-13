@@ -13,5 +13,6 @@
     ~/.oh-my-zsh:
       path: zsh/oh-my-zsh
       if: git submodule update --init zsh/oh-my-zsh
+    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
 - shell:
   - [git submodule update --init dotbot, Retrieving dotbot repository]
