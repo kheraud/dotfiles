@@ -1,5 +1,3 @@
-[init]
-  templatedir = ~/.git_template
 [push]
   default = current
 [color]
@@ -20,8 +18,6 @@
   precomposeunicode = true
 [merge]
   ff = only
-[commit]
-  template = ~/.gitmessage
 [fetch]
   prune = true
 [rebase]
@@ -35,5 +31,3 @@
 	email = kheraud@gmail.com
 [status]
     submodulesummary = 1
-[include]
-    path = ~/.gitconfig_local
