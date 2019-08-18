@@ -9,6 +9,7 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux: tmux/tmux
     ~/.zshrc:
       path: zsh/zshrc
       force: true
