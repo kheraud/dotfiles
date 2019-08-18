@@ -14,6 +14,9 @@
       path: zsh/zshrc
       force: true
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
+    ~/.config/i3/config: i3/config
+    ~/.config/rofi/config: rofi/config
+    ~/.config/polybar: polybar
     ~/.config/nvim/init.vim:
       path: nvim/init.vim
       if: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
