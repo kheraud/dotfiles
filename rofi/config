@@ -1,1 +1,4 @@
 rofi.theme: /usr/share/rofi/themes/gruvbox-dark-soft.rasi
+rofi.font: Roboto Mono Light 20
+rofi.show-icons: true
+rofi.terminal: alacritty
