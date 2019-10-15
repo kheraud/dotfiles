@@ -7,6 +7,6 @@
 [submodule "tmux/tmux/plugins/tpm"]
 	path = tmux/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "zsh/spaceship-prompt"]
-	path = zsh/spaceship-prompt
-	url = https://github.com/denysdovhan/spaceship-prompt.git
+[submodule "zsh/lambda-gitster"]
+	path = zsh/lambda-gitster
+	url = https://github.com/ergenekonyigit/lambda-gitster.git
