@@ -13,6 +13,7 @@
     ~/.zshrc:
       path: zsh/zshrc
       force: true
+    ~/.oh-my-zsh/themes/spaceship.zsh-theme: zsh/spaceship-prompt/spaceship.zsh-theme
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     ~/.config/i3: i3
     ~/.config/rofi: rofi
