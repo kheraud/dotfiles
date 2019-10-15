@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+### Options ###
+pause="Suspendre l'activité\0icon\x1fsystem-lock-screen-symbolic"
+poweroff="Eteindre\0icon\x1fsystem-shutdown-symbolic"
+reboot="Redémarrer\0icon\x1fsystem-reboot-symbolic"
+
+# Variable passed to rofi
+options="$pause\n$poweroff\n$reboot"
+
+chosen="$(echo -e "$options" | rofi -p "Eteindre ?" -dmenu -lines 3 -m -4 -width 350 -i)"
+
+sleep 0.2
+case $chosen in
+    $pause)
+	~/.config/i3/lock-script
+	systemctl suspend;
+	;;
+    $poweroff)
+	systemctl poweroff
+        ;;
+    $reboot)
+	systemctl reboot
+        ;;
+esac
+
+
+

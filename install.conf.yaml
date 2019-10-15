@@ -15,7 +15,7 @@
       force: true
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     ~/.config/i3/config: i3/config
-    ~/.config/rofi/config: rofi/config
+    ~/.config/rofi: rofi
     ~/.config/polybar: polybar
     ~/.config/nvim/init.vim:
       path: nvim/init.vim
