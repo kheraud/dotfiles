@@ -14,7 +14,7 @@
       path: zsh/zshrc
       force: true
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
-    ~/.config/i3/config: i3/config
+    ~/.config/i3: i3
     ~/.config/rofi: rofi
     ~/.config/polybar: polybar
     ~/.config/nvim/init.vim:
