@@ -1,0 +1,31 @@
+{
+    "config": {
+        "name": "Capture d'écran",
+        "window_mode": 4,
+        "lines": 3,
+        "width": 400
+    },
+    "content": [
+      {
+          "title": "Tout l'écran",
+          "icon": "cs-screen",
+          "commands": [
+            "scrot -e 'mv $f ~/Desktop/;feh ~/Desktop/$n' -p"
+          ]
+      },
+      {
+          "title": "Une zone de l'écran",
+          "icon": "com.github.peteruithoven.resizer",
+          "commands": [
+            "scrot -e 'mv $f ~/Desktop/;feh ~/Desktop/$n' -s"
+          ]
+      },
+      {
+          "title": "Fenètre active",
+          "icon": "preferences-system-windows",
+          "commands": [
+            "scrot -e 'mv $f ~/Desktop/;feh ~/Desktop/$n' -p -u"
+          ]
+      }
+    ]
+}

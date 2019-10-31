@@ -1,0 +1,71 @@
+#!/usr/bin/env python3
+import json, shlex, subprocess, argparse, time
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument(
+    'file',
+    help='Json input file',
+    type=argparse.FileType('r'))
+
+args = parser.parse_args()
+
+json_input = json.load(args.file)
+
+if ('content' not in json_input or
+    not isinstance(json_input['content'], list)):
+    raise SystemError("Property 'content' is missing in supplied json")
+
+rofi_options = []
+command_choices = {}
+
+for item in json_input['content']:
+    if 'title' not in item:
+        print(f"Skipping option with no 'title' entry: {item}")
+        continue
+    if ('commands' not in item or
+        not isinstance(item['commands'], list)):
+        print(f"Skipping option with no 'commands' list entry: {item}")
+        continue
+    icon = ""
+    if ('icon' in item and
+        isinstance(item['icon'], str)):
+        icon = f"\0icon\x1f{item['icon']}"
+    rofi_options.append(f"{item['title']}{icon}")
+    command_choices[item['title']] = item['commands']
+
+if not rofi_options:
+    raise SystemError("Missing valid options")
+
+rofi_default_configurations = {
+    "-p": ('name', None, lambda name: "\"" + name.replace("\"", "\\\"") + "\""),
+    "-dmenu": (None, '', None),
+    "-m": ('window_mode', '4', lambda mode: f"-{mode}"),
+    "-lines": ('lines', '3', None),
+    "-width": ('width', None, None),
+    "-i": (None, '', None),
+}
+
+rofi_configurations = []
+
+for (key, (entry, default, process)) in rofi_default_configurations.items():
+    raw_configuration = json_input['config'][entry] if entry is not None and entry in json_input['config'] else default
+    processed_configuration = process(raw_configuration) if process is not None and raw_configuration is not None else raw_configuration
+    if processed_configuration is not None:
+        rofi_configurations.append(f"{key} {processed_configuration}")
+
+rofi_subprocess = subprocess.run(shlex.split(f"""rofi {" ".join(rofi_configurations)}"""),
+                                 input = "\n".join(rofi_options),
+                                 stdout = subprocess.PIPE,
+                                 check = False,
+                                 universal_newlines = True)
+
+selected_option = rofi_subprocess.stdout.strip()
+
+if selected_option not in command_choices:
+    raise SystemError("No command matching the selected entry")
+
+time.sleep(0.5)
+
+for command in command_choices[selected_option]:
+    subprocess.run(shlex.split(command))

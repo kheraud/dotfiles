@@ -60,8 +60,8 @@ bindsym $mod+Shift+q kill
 # installed.
 bindsym $mod+d exec --no-startup-id "rofi -modi drun,window -show drun"
 bindsym $mod+c exec --no-startup-id "rofi -modi \\"clipboard:greenclip print\\" -show clipboard -run-command '{cmd}'"
-bindsym Print exec --no-startup-id ~/.config/rofi/scripts/rofi-screenshot
-bindsym $mod+p exec --no-startup-id ~/.config/rofi/scripts/rofi-powermenu
+bindsym Print exec --no-startup-id ~/.config/rofi/scripts/rofi-menu ~/.config/rofi/scripts/screenshot.json
+bindsym $mod+p exec --no-startup-id ~/.config/rofi/scripts/rofi-menu ~/.config/rofi/scripts/power.json
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
