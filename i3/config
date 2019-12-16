@@ -27,28 +27,32 @@ font pango:Droid Sans 10
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
 # lock and suspend
-bindsym $mod+Shift+x exec --no-startup-id "~/.config/i3/lock-script ; systemctl suspend;"
-bindsym $mod+Shift+p exec --no-startup-id "systemctl poweroff"
-bindsym $mod+Shift+b exec --no-startup-id "systemctl reboot"
+exec --no-startup-id xset dpms 600
+exec --no-startup-id xautolock -time 5 -locker ~/.config/i3/lock-script
+bindsym $mod+Shift+x exec --no-startup-id "clipdel -d '.*' && ~/.config/i3/lock-script ; systemctl suspend;"
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 # No need we use dex to launch all these applets
 #exec --no-startup-id nm-applet
 
-exec --no-startup-id compton
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpaper/*
+exec --no-startup-id autorandr -c && compton
+exec_always --no-startup-id (sleep 1 && $HOME/.config/polybar/launch.sh)
+exec_always --no-startup-id (sleep 1 && feh --bg-fill --randomize ~/Pictures/wallpaper/*)
 
 exec --no-startup-id (sleep 2 && dex -a -e i3)
+exec --no-startup-id "clipmenud"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec alacritty -e tmux new-session -A -t "workspace-$(i3-msg -t get_workspaces | jq '.[] | select(.visible == true) | .num')"
+
+# start a browser
+bindsym $mod+b exec firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -59,9 +63,9 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 bindsym $mod+d exec --no-startup-id "rofi -modi drun,window -show drun"
-bindsym $mod+c exec --no-startup-id "rofi -modi \\"clipboard:greenclip print\\" -show clipboard -run-command '{cmd}'"
 bindsym Print exec --no-startup-id ~/.config/rofi/scripts/rofi-menu ~/.config/rofi/scripts/screenshot.json
 bindsym $mod+p exec --no-startup-id ~/.config/rofi/scripts/rofi-menu ~/.config/rofi/scripts/power.json
+bindsym $mod+c exec --no-startup-id "CM_LAUNCHER=rofi clipmenu"
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%

@@ -205,7 +205,7 @@ format-charging-prefix = " "
 format-charging-prefix-foreground = ${colors.fg-alt}
 
 format-discharging-prefix = " "
-format-discharging-prefix-foreground = ${colors.fg-alt}
+format-discharging-prefix-foreground = ${colors.primary}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.fg-alt}
@@ -234,9 +234,9 @@ content = "    "
 content-background = ${colors.primary}
 content-foreground = ${colors.fg}
 
-click-left = ~/.config/rofi/scripts/rofi-powermenu
-click-middle = ~/.config/rofi/scripts/rofi-powermenu
-click-right = ~/.config/rofi/scripts/rofi-powermenu
+click-left = ~/.config/rofi/scripts/rofi-menu ~/.config/rofi/scripts/power.json
+click-middle = ~/.config/rofi/scripts/rofi-menu ~/.config/rofi/scripts/power.json
+click-right = ~/.config/rofi/scripts/rofi-menu ~/.config/rofi/scripts/power.json
 
 [module/powermenu]
 type = custom/menu

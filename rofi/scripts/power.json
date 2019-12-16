@@ -9,24 +9,17 @@
         {
             "title": "Suspendre l'activité",
             "icon": "system-hibernate",
-            "commands": [
-              "/home/kheraud/.config/i3/lock-script",
-              "systemctl suspend"
-            ]
+            "command": "clipdel -d \".*\" && ~/.config/i3/lock-script && systemctl suspend"
         },
         {
             "title": "Eteindre",
             "icon": "system-shutdown",
-            "commands": [
-              "systemctl poweroff"
-            ]
+            "command": "clipdel -d \".*\" && systemctl poweroff"
         },
         {
             "title": "Redémarrer",
             "icon": "system-reboot",
-            "commands": [
-              "systemctl reboot"
-            ]
+            "command": "clipdel -d \".*\" && systemctl reboot"
         }
     ]
 }

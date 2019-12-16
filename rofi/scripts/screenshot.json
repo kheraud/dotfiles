@@ -1,31 +1,30 @@
 {
     "config": {
-        "name": "Capture d'écran",
+        "name": "Capture d'\u00e9cran",
         "window_mode": 4,
-        "lines": 3,
+        "lines": 4,
         "width": 400
     },
     "content": [
-      {
-          "title": "Tout l'écran",
-          "icon": "cs-screen",
-          "commands": [
-            "scrot -e 'mv $f ~/Desktop/;feh ~/Desktop/$n' -p"
-          ]
-      },
-      {
-          "title": "Une zone de l'écran",
-          "icon": "com.github.peteruithoven.resizer",
-          "commands": [
-            "scrot -e 'mv $f ~/Desktop/;feh ~/Desktop/$n' -s"
-          ]
-      },
-      {
-          "title": "Fenètre active",
-          "icon": "preferences-system-windows",
-          "commands": [
-            "scrot -e 'mv $f ~/Desktop/;feh ~/Desktop/$n' -p -u"
-          ]
-      }
+        {
+            "title": "Tout l'\u00e9cran",
+            "icon": "cs-screen",
+            "command": "export LAST_SCREENSHOT=~/Desktop/Capture-$(date +%s).jpg && maim $LAST_SCREENSHOT && feh $LAST_SCREENSHOT"
+        },
+        {
+            "title": "Une zone de l'\u00e9cran",
+            "icon": "com.github.peteruithoven.resizer",
+            "command": "export LAST_SCREENSHOT=~/Desktop/Capture-$(date +%s).jpg && maim -s $LAST_SCREENSHOT && feh $LAST_SCREENSHOT"
+        },
+        {
+            "title": "Fen\u00e8tre active",
+            "icon": "preferences-system-windows",
+            "command": "export LAST_SCREENSHOT=~/Desktop/Capture-$(date +%s).png && maim -i $(xdotool getactivewindow) $LAST_SCREENSHOT && feh $LAST_SCREENSHOT"
+        },
+        {
+            "title": "Prendre un Gif",
+            "icon": "preferences-system-windows",
+            "command": "peek"
+        }
     ]
 }
