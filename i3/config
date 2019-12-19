@@ -48,8 +48,7 @@ exec --no-startup-id "clipmenud"
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
-bindsym $mod+Shift+Return exec alacritty -e tmux new-session -A -s "workspace-$(xdotool get_desktop)"
+bindsym $mod+Return exec alacritty -e tmux new-session -A -s "workspace-$(xdotool get_desktop)"
 
 # start a browser
 bindsym $mod+b exec firefox
