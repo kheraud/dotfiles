@@ -5,6 +5,9 @@ sleep-inactive-ac-timeout=3600
 sleep-inactive-ac-type='suspend'
 sleep-inactive-battery-timeout=1200
 
+[org/gnome/settings-daemon/plugins/color]
+night-light-enabled=true
+
 [org/gnome/settings-daemon/plugins/media-keys]
 screenreader=''
 magnifier-zoom-out=''
@@ -16,13 +19,18 @@ www='<Super>e'
 magnifier-zoom-in=''
 search=''
 screensaver='<Shift><Super>x'
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
 magnifier=''
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Super>Return'
 command='/home/kheraud/.config/alacritty/launch-with-tmux'
 name='Launch tmux'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>d'
+command='rofi -modi drun,window -show drun'
+name='Launch rofi'
 
 [org/gnome/settings-daemon/plugins/xsettings]
 hinting='slight'
@@ -32,13 +40,14 @@ numlock-state='on'
 
 [org/gnome/shell]
 app-picker-view=uint32 1
-enabled-extensions=['ubuntu-appindicators@ubuntu.com', 'ubuntu-dock@ubuntu.com']
+enabled-extensions=['ubuntu-appindicators@ubuntu.com']
 favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'com.alacritty.Alacritty.desktop']
 enable-hot-corners=false
+had-bluetooth-devices-setup=true
 
 [org/gnome/shell/extensions/dash-to-dock]
 hot-keys=false
-dash-max-icon-size=24
+dash-max-icon-size=22
 
 [org/gnome/shell/keybindings]
 toggle-message-tray=@as []
@@ -91,6 +100,12 @@ window-ratio=(1.0084033613445378, 0.71258907363420432)
 network-monitor-gio-name=''
 migrated=true
 
+[org/gnome/calendar]
+window-position=(981, 27)
+active-view='week'
+window-maximized=false
+window-size=(939, 1006)
+
 [org/gnome/deja-dup]
 backend='goa'
 prompt-check='2019-12-03T17:02:41.925833Z'
@@ -113,6 +128,7 @@ clock-show-date=true
 
 [org/gnome/desktop/notifications]
 application-children=['org-gnome-software', 'update-manager', 'vlc-vlc', 'org-gnome-nautilus', 'firefox', 'org-gnome-tweaks', 'gnome-control-center', 'ulauncher']
+show-in-lock-screen=true
 
 [org/gnome/desktop/notifications/application/org-gnome-tweaks]
 application-id='org.gnome.tweaks.desktop'
@@ -162,8 +178,9 @@ name='suse-yast.directory'
 picture-uri='file:///usr/share/images/desktop-base/joy-inksplat-wallpaper_1920x1080.svg'
 color-shading-type='horizontal'
 primary-color='#0099cc'
+lock-delay=uint32 300
 picture-options='zoom'
-lock-enabled=false
+lock-enabled=true
 secondary-color='#006699'
 
 [org/gnome/desktop/peripherals/touchpad]
@@ -239,13 +256,17 @@ switch-windows=['<Alt>Tab']
 switch-input-source-backward=@as []
 
 [org/gnome/desktop/session]
-idle-delay=uint32 0
+idle-delay=uint32 900
 
 [org/gnome/desktop/a11y/magnifier]
 mag-factor=7.0
 
+[org/gnome/desktop/sound]
+theme-name='__custom'
+event-sounds=true
+
 [org/gnome/desktop/datetime]
-automatic-timezone=true
+automatic-timezone=false
 
 [org/gnome/desktop/background]
 picture-uri='file:///usr/share/images/desktop-base/lines-lockscreen.xml'
@@ -267,7 +288,7 @@ last-panel='keyboard'
 schema-version=uint32 3
 
 [org/gnome/software]
-check-timestamp=int64 1576743695
+check-timestamp=int64 1577434821
 
 [org/gnome/mutter]
 dynamic-workspaces=false
@@ -292,8 +313,8 @@ location-mode='path-bar'
 
 [apps/update-manager]
 first-run=false
-launch-time=int64 1576441586
-launch-count=6
+launch-time=int64 1577388211
+launch-count=7
 
 [com/ubuntu/update-notifier]
 release-check-time=uint32 1576660910
