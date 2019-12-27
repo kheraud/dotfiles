@@ -87,6 +87,9 @@ sidebar-width=235
 geometry='890x538+369+137'
 maximized=true
 
+[org/gnome/nautilus/desktop]
+trash-icon-visible=true
+
 [org/gnome/nautilus/list-view]
 default-visible-columns=['name', 'size', 'permissions', 'mime_type', 'date_modified']
 default-zoom-level='small'
