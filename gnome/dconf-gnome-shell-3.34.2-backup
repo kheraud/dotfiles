@@ -2,6 +2,9 @@
 first-run=false
 launch-count=7
 launch-time=int64 1577388211
+show-details=true
+window-height=400
+window-width=645
 
 [ca/desrt/dconf-editor]
 saved-pathbar-path='/org/freedesktop/folks/'
@@ -15,11 +18,15 @@ window-width=540
 allow-amplified-volume=true
 
 [com/ubuntu/update-notifier]
-release-check-time=uint32 1576660910
+release-check-time=uint32 1577982187
 
 [com/uploadedlobster/peek]
 persist-save-folder='/home/kheraud/Desktop'
 persist-window-geometry=(2854, 368, 906, 472)
+
+[desktop/ibus/general]
+preload-engines=['xkb:us::eng']
+version='1.5.21'
 
 [org/blueman/general]
 plugin-list=['RecentConns']
@@ -45,7 +52,7 @@ window-position=(981, 27)
 window-size=(939, 1006)
 
 [org/gnome/control-center]
-last-panel='info-overview'
+last-panel='keyboard'
 
 [org/gnome/deja-dup]
 backend='goa'
@@ -90,8 +97,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
-primary-color='#3465a4'
+picture-uri='file:///usr/share/backgrounds/greybird.svg'
+primary-color='#000000'
 secondary-color='#000000'
 show-desktop-icons=false
 
@@ -110,13 +117,13 @@ xkb-options=@as []
 clock-show-date=true
 clock-show-seconds=false
 clock-show-weekday=true
-cursor-theme='Adwaita'
+cursor-theme='DMZ-Black'
 enable-animations=false
 enable-hot-corners=false
 font-name='Cantarell 11'
 gtk-im-module='gtk-im-context-simple'
 gtk-theme='Adwaita'
-icon-theme='gnome'
+icon-theme='Adwaita'
 show-battery-percentage=true
 
 [org/gnome/desktop/notifications]
@@ -160,6 +167,7 @@ tap-to-click=true
 two-finger-scrolling-enabled=true
 
 [org/gnome/desktop/privacy]
+disable-microphone=false
 old-files-age=uint32 7
 remember-recent-files=false
 remove-old-temp-files=true
@@ -170,8 +178,8 @@ color-shading-type='solid'
 lock-delay=uint32 300
 lock-enabled=true
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
-primary-color='#3465a4'
+picture-uri='file:///usr/share/backgrounds/greybird.svg'
+primary-color='#000000'
 secondary-color='#000000'
 
 [org/gnome/desktop/search-providers]
@@ -208,9 +216,9 @@ move-to-workspace-1=['<Shift><Super>1']
 move-to-workspace-2=['<Shift><Super>2']
 move-to-workspace-3=['<Shift><Super>3']
 move-to-workspace-4=['<Shift><Super>4']
-move-to-workspace-down=@as []
+move-to-workspace-down=['<Shift><Super>Down']
 move-to-workspace-last=@as []
-move-to-workspace-up=@as []
+move-to-workspace-up=['<Shift><Super>Up']
 panel-main-menu=@as []
 panel-run-dialog=@as []
 show-desktop=@as []
@@ -238,6 +246,7 @@ unmaximize=@as []
 [org/gnome/desktop/wm/preferences]
 action-middle-click-titlebar='none'
 button-layout=':close'
+focus-mode='click'
 mouse-button-modifier='disabled'
 num-workspaces=4
 titlebar-font='Cantarell Bold 11'
@@ -249,6 +258,18 @@ window-ratio=(1.0084033613445378, 0.71258907363420432)
 [org/gnome/evolution-data-server]
 migrated=true
 network-monitor-gio-name=''
+
+[org/gnome/file-roller/listing]
+list-mode='as-folder'
+name-column-width=250
+show-path=false
+sort-method='name'
+sort-type='ascending'
+
+[org/gnome/file-roller/ui]
+sidebar-width=200
+window-height=480
+window-width=600
 
 [org/gnome/gedit/plugins]
 active-plugins=['time', 'docinfo', 'spell', 'filebrowser', 'modelines']
@@ -296,6 +317,7 @@ use-experimental-views=false
 
 [org/gnome/nautilus/window-state]
 geometry='890x538+369+137'
+initial-size=(890, 550)
 maximized=true
 sidebar-width=235
 
@@ -356,7 +378,9 @@ magnifier-zoom-in=['']
 magnifier-zoom-out=['']
 screenreader=['']
 screensaver=['<Shift><Super>x']
-terminal=''
+terminal=@as []
+volume-down=['<Super>Down']
+volume-up=['<Super>Up']
 www=['<Super>e']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
@@ -371,7 +395,7 @@ name='Launch tmux'
 
 [org/gnome/settings-daemon/plugins/power]
 idle-dim=true
-power-button-action='nothing'
+power-button-action='suspend'
 sleep-inactive-ac-timeout=3600
 sleep-inactive-ac-type='suspend'
 sleep-inactive-battery-timeout=1200
@@ -379,6 +403,7 @@ sleep-inactive-battery-timeout=1200
 [org/gnome/settings-daemon/plugins/xsettings]
 antialiasing='grayscale'
 hinting='slight'
+overrides={'Gtk/ShellShowsAppMenu': <1>}
 
 [org/gnome/shell]
 app-picker-view=uint32 1
@@ -428,5 +453,10 @@ sort-column='name'
 sort-directories-first=true
 sort-order='ascending'
 type-format='category'
-window-position=(25, 27)
+window-position=(345, 204)
 window-size=(1231, 646)
+
+[org/yorba/shotwell/preferences/window]
+direct-height=768
+direct-maximize=false
+direct-width=1024
