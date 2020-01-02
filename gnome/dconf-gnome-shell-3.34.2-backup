@@ -219,7 +219,7 @@ move-to-workspace-4=['<Shift><Super>4']
 move-to-workspace-down=['<Shift><Super>Down']
 move-to-workspace-last=@as []
 move-to-workspace-up=['<Shift><Super>Up']
-panel-main-menu=@as []
+panel-main-menu=['<Shift><Super>d']
 panel-run-dialog=@as []
 show-desktop=@as []
 switch-applications=['<Super>Tab']
@@ -372,7 +372,7 @@ numlock-state='on'
 night-light-enabled=true
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
 magnifier=['']
 magnifier-zoom-in=['']
 magnifier-zoom-out=['']
@@ -382,11 +382,6 @@ terminal=@as []
 volume-down=['<Super>Down']
 volume-up=['<Super>Up']
 www=['<Super>e']
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
-binding='<Super>d'
-command='rofi -modi drun,window -show drun'
-name='Launch rofi'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Super>Return'
@@ -429,7 +424,7 @@ switch-to-application-6=@as []
 switch-to-application-7=@as []
 switch-to-application-8=@as []
 switch-to-application-9=@as []
-toggle-application-view=@as []
+toggle-application-view=['<Super>d']
 toggle-message-tray=@as []
 toggle-overview=@as []
 
