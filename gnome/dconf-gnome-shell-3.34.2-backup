@@ -1,7 +1,7 @@
 [apps/update-manager]
 first-run=false
-launch-count=7
-launch-time=int64 1577388211
+launch-count=8
+launch-time=int64 1578003474
 show-details=true
 window-height=400
 window-width=645
@@ -404,13 +404,36 @@ overrides={'Gtk/ShellShowsAppMenu': <1>}
 app-picker-view=uint32 1
 development-tools=false
 enable-hot-corners=false
-enabled-extensions=['ubuntu-appindicators@ubuntu.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['ubuntu-appindicators@ubuntu.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'unite@hardpixel.eu', 'sound-output-device-chooser@kgshank.net', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com']
 favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'alacritty.desktop']
 had-bluetooth-devices-setup=true
+
+[org/gnome/shell/extensions/caffeine]
+user-enabled=false
 
 [org/gnome/shell/extensions/dash-to-dock]
 dash-max-icon-size=22
 hot-keys=false
+
+[org/gnome/shell/extensions/unite]
+autofocus-windows=false
+extend-left-box=false
+greyscale-tray-icons=false
+hide-activities-button='always'
+hide-aggregate-menu-arrow=false
+hide-app-menu-arrow=true
+hide-app-menu-icon=false
+hide-dropdown-arrows=true
+hide-window-titlebars='always'
+notifications-position='center'
+reduce-panel-spacing=false
+restrict-to-primary-screen=false
+show-desktop-name=true
+show-legacy-tray=true
+show-window-buttons='never'
+show-window-title='always'
+use-system-fonts=true
+window-buttons-theme='vimix'
 
 [org/gnome/shell/keybindings]
 focus-active-notification=@as []
