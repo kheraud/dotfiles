@@ -117,24 +117,36 @@ xkb-options=@as []
 clock-show-date=true
 clock-show-seconds=false
 clock-show-weekday=true
-cursor-theme='DMZ-Black'
+cursor-theme='Adwaita'
 enable-animations=false
 enable-hot-corners=false
 font-name='Cantarell 11'
 gtk-im-module='gtk-im-context-simple'
 gtk-theme='Adwaita'
-icon-theme='Adwaita'
+icon-theme='gnome'
 show-battery-percentage=true
 
 [org/gnome/desktop/notifications]
-application-children=['org-gnome-software', 'update-manager', 'vlc-vlc', 'org-gnome-nautilus', 'firefox', 'org-gnome-tweaks', 'gnome-control-center', 'ulauncher', 'org-gnome-baobab']
+application-children=['org-gnome-software', 'update-manager', 'vlc-vlc', 'org-gnome-nautilus', 'firefox', 'org-gnome-tweaks', 'gnome-control-center', 'ulauncher', 'org-gnome-baobab', 'gnome-shell-extension-prefs']
 show-in-lock-screen=false
+
+[org/gnome/desktop/notifications/application/alacritty]
+application-id='alacritty.desktop'
+
+[org/gnome/desktop/notifications/application/blueman-manager]
+application-id='blueman-manager.desktop'
 
 [org/gnome/desktop/notifications/application/firefox]
 application-id='firefox.desktop'
 
 [org/gnome/desktop/notifications/application/gnome-control-center]
 application-id='gnome-control-center.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-shell-extension-prefs]
+application-id='gnome-shell-extension-prefs.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-baobab]
 application-id='org.gnome.baobab.desktop'
@@ -404,7 +416,7 @@ overrides={'Gtk/ShellShowsAppMenu': <1>}
 app-picker-view=uint32 1
 development-tools=false
 enable-hot-corners=false
-enabled-extensions=['ubuntu-appindicators@ubuntu.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'unite@hardpixel.eu', 'sound-output-device-chooser@kgshank.net', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['ubuntu-appindicators@ubuntu.com', 'unite@hardpixel.eu', 'sound-output-device-chooser@kgshank.net', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com']
 favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'alacritty.desktop']
 had-bluetooth-devices-setup=true
 
@@ -414,6 +426,14 @@ user-enabled=false
 [org/gnome/shell/extensions/dash-to-dock]
 dash-max-icon-size=22
 hot-keys=false
+
+[org/gnome/shell/extensions/sound-output-device-chooser]
+hide-menu-icons=false
+hide-on-single-device=true
+icon-theme='monochrome'
+
+[org/gnome/shell/extensions/tweaks-system-menu]
+merge-with-settings=false
 
 [org/gnome/shell/extensions/unite]
 autofocus-windows=false
