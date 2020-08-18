@@ -18,6 +18,7 @@
       path: zsh/zshrc
       force: true
     ~/.oh-my-zsh/themes/lambda-gitster.zsh-theme: zsh/lambda-gitster/lambda-gitster.zsh-theme
+    ~/urxvt/.Xresources: urxvt/.Xresources
     ~/.config/alacritty: alacritty
     ~/.config/i3: i3
     ~/.config/rofi: rofi

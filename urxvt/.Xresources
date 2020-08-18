@@ -1,0 +1,62 @@
+!! Colorscheme
+
+! special
+*.foreground: #ffffff
+*.background: #0A0E14
+*.cursorColor: #afbfbf
+
+! black
+*.color0: #01060E
+*.color8: #686868
+
+! red
+*.color1: #EA6C73
+*.color9: #F07178
+
+! green
+*.color2: #91B362
+*.color10: #C2D94C
+
+! yellow
+*.color3: #F9AF4F
+*.color11: #FFB454
+
+! blue
+*.color4: #53BDFA
+*.color12: #59C2FF
+
+! magenta
+*.color5: #FAE994
+*.color13: #FFEE99
+
+! cyan
+*.color6: #90E1C6
+*.color14: #95E6CB
+
+! white
+*.color7: #C7C7C7
+*.color15: #FFFFFF
+
+!! URxvt Appearance
+URxvt.font: xft:Roboto Mono Light for Powerline:size=16:style=regular
+URxvt.boldFont: xft:Roboto Mono for Powerline:size=16:style=Bold
+URxvt.italicFont: xft:Roboto Mono for Powerline:size=16:style=Italic
+URxvt.boldItalicfont: xft:Roboto Mono for Powerline:size=16:style=Bold Italic
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxvt.internalBorder: 5
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 0
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+URxvt.iso14755: false
+
+!! Copy Paste & Other Extensions
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
+URxvt.matcher.button: 3
