@@ -1,10 +1,6 @@
 - clean: ['~']
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - 
-    command: type dconf > /dev/null && dconf load / < gnome/dconf-full-backup
-    description: Configuring gnome desktop via dconf
-    stdin: true
 - defaults:
     link:
       create: true
