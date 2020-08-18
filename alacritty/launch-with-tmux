@@ -1,14 +1,3 @@
 #!/usr/bin/env bash
-if [ -x "$(command -v nvidia-smi )" ]	|| ! [ nvidia-smi ]
-then
-	nvidia-smi > /dev/null
-	if [ $? -eq 0 ]
-	then
-		alacritty -e tmux new-session -A -s "workspace-$(xdotool get_desktop)"
-	else
-		urxvt -e sh -c 'tmux new-session -A -s "workspace-$(xdotool get_desktop)"'
-	fi
-else
-	alacritty -e tmux new-session -A -s "workspace-$(xdotool get_desktop)"
-fi
+alacritty -e tmux new-session -A -s "workspace-$(xdotool get_desktop)"
 
