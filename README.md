@@ -2,7 +2,7 @@
 
 ## Introduction
 
-> Here for personal use, use at your own risk
+> Here for personal usage, use at your own risk
 
 ## Installation
 
@@ -10,5 +10,6 @@
 $ git clone https://github.com/kheraud/dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles
 $ git submodule update --init --recursive
-$ stow 
+$ stow alacritty dunst git i3 nvim polybar rofi tmux urxvt zsh
 ```
+
