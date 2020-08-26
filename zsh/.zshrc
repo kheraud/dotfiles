@@ -105,3 +105,7 @@ if [ -f ~/.zshrc_local ]; then
 fi
 
 autoload -U +X bashcompinit && bashcompinit
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[[ -s "/home/kheraud/.gvm/scripts/gvm" ]] && source "/home/kheraud/.gvm/scripts/gvm"
