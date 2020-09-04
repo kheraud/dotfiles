@@ -1,0 +1,4 @@
+---
+# Default plugins
+oh_my_zsh_plugins:
+  - git

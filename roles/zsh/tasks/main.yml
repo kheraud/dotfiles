@@ -1,0 +1,36 @@
+---
+- name: Install Zsh
+  apt:
+    name: zsh
+    state: present
+  become_method: sudo
+
+- name: Set current shell to Zsh
+  become: yes
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh
+
+- name: Clone oh-my-zsh for users
+  git:
+    dest: '~/.oh-my-zsh'
+    repo: 'https://github.com/robbyrussell/oh-my-zsh.git'
+    depth: 1
+
+- name: Set permissions of oh-my-zsh
+  file:
+    path: ~/.oh-my-zsh
+    mode: 'go-w'
+    recurse: yes
+
+- name: Copy .zshrc for users
+  template:
+    src: zshrc.j2
+    dest: ~/.zshrc
+    backup: yes
+    mode: 'u=rw,go=r'
+
+- name: Import lambda-gister theme
+  get_url: 
+    url: 'https://raw.githubusercontent.com/ergenekonyigit/lambda-gitster/main/lambda-gitster.zsh-theme'
+    dest: ~/.oh-my-zsh/themes/lambda-gitster.zsh-theme
