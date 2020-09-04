@@ -1,0 +1,24 @@
+[push]
+  default = current
+[color]
+  ui = auto
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+  editor = nvim
+  precomposeunicode = true
+[merge]
+  ff = only
+[fetch]
+  prune = true
+[rebase]
+  autosquash = true
+[include]
+  path = ~/.gitconfig.local
+[diff]
+  colorMoved = zebra
+[user]
+	name = {{ git_username }}
+	email = {{ git_email }}
+[status]
+    submodulesummary = 1

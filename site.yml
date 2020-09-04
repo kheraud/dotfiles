@@ -1,0 +1,18 @@
+---
+- hosts: all
+  gather_facts: yes
+  pre_tasks:
+    - name: Limit to Debian like distributions
+      fail:
+        msg: "{{ ansible_distribution }} is not supported with this tag."
+      when: (ansible_distribution != "Ubuntu") and
+            (ansible_distribution != "Debian")
+
+- name: "Install basic_networking"
+  gather_facts: false
+  hosts: basic_networking
+  roles:
+    - role: curl
+      tag: curl
+    - role: git
+      tag: git

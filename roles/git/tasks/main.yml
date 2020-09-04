@@ -1,0 +1,16 @@
+---
+- name: Install Git
+  apt:
+    name: git
+    state: present
+  become_method: sudo
+
+- name: Copy gitignore configuration
+  copy:
+    src: gitignore
+    dest: ~/.gitignore
+
+- name: Apply gitconfig configuration
+  template:
+    src: gitconfig.j2
+    dest: ~/.gitconfig

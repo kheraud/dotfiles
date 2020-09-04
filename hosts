@@ -1,0 +1,23 @@
+all:
+  hosts:
+    localhost:
+      ansible_connection: local
+  children:
+    basic_networking:
+      hosts:
+        localhost:
+    shell:
+      hosts:
+        localhost:
+    common_tools:
+      hosts:
+        localhost:
+    extended_tools:
+      hosts:
+        localhost:
+    gnome_config:
+      hosts:
+        localhost:
+    desktop_applications:
+      hosts:
+        localhost:
