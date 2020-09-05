@@ -1,0 +1,33 @@
+---
+- name: Install Tmux
+  apt:
+    name: tmux
+    state: present
+  become_method: sudo
+
+- name: Copy Tmux configuration
+  copy:
+    src: tmux.conf
+    dest: '~/.tmux.conf'
+
+- name: Install Tmux Plugin Manager
+  git:
+    dest: '~/.tmux/plugins/tpm'
+    repo: 'https://github.com/tmux-plugins/tpm.git'
+    depth: 1
+
+- name: Install Tmux fonts
+  git:
+    dest: '~/.tmux/fonts'
+    repo: 'https://github.com/powerline/fonts.git'
+    depth: 1
+
+- name: Source Tmux configuration
+  command:
+    chdir: '~'
+    cmd: 'tmux source ~/.tmux.conf'
+
+- name: Update TPM configuration
+  command:
+    chdir: '~'
+    cmd: '~/.tmux/plugins/tpm/bin/install_plugins'

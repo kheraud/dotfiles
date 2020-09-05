@@ -13,13 +13,27 @@
   hosts: basic_networking
   roles:
     - role: curl
-      tags: curl
+      tags:
+        - basic_networking
+        - curl
     - role: git
-      tags: git
+      tags:
+        - basic_networking
+        - git
 
 - name: "Install shell"
   gather_facts: true
   hosts: shell
   roles:
+    - role: common_shell
+      tags:
+        - shell
+        - common_shell
     - role: zsh
-      tags: zsh
+      tags:
+        - shell
+        - zsh
+    - role: tmux
+      tags:
+        - shell
+        - tmux

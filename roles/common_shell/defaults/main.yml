@@ -1,0 +1,4 @@
+---
+# Default locales
+config_system_locale: en_US.UTF-8
+config_language_locale: fr_FR.UTF-8

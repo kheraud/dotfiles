@@ -1,0 +1,17 @@
+---
+- include_tasks: locales.yml
+  tags:
+    - common_shell
+    - locale
+
+- name: Check if Powerline font is installed on environment
+  shell: 'fc-list | grep -i powerline'
+  ignore_errors: yes
+  register: fonts
+  changed_when: false
+
+- include_tasks: fonts.yml
+  tags:
+    - common_shell
+    - fonts
+  when: (fonts is not defined) or (fonts|length == 0)
