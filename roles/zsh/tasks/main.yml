@@ -3,7 +3,7 @@
   apt:
     name: zsh
     state: present
-  become_method: sudo
+  become: yes
 
 - name: Set current shell to Zsh
   become: yes

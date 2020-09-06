@@ -1,29 +1,30 @@
 ---
-- name: Ensure system locale is available
-  locale_gen:
-    name: "{{ config_system_locale }}"
+- name: Ensure locale package is available
+  apt:
+    name: locales
     state: present
+  become: yes
 
-- name: Ensure language locale is available
+- name: Ensure locales are available
   locale_gen:
-    name: "{{ config_language_locale }}"
+    name: "{{ item }}"
     state: present
+  loop: '{{ common_shell_locale_settings
+    | dict2items
+    | selectattr("value", "search", ".UTF-8")
+    | map(attribute="value")
+    | list
+    | unique }}'
 
-- name: Get current locale and language configuration
-  command: localectl status
-  register: locale_status
-  changed_when: false
-
-- name: Parse 'LANG' from current locale and language configuration
-  set_fact:
-    locale_lang: "{{ locale_status.stdout | regex_search('LANG=([^\n]+)', '\\1') | first }}"
-
-- name: Parse 'LANGUAGE' from current locale and language configuration
-  set_fact:
-    locale_language: "{{ locale_status.stdout | regex_search('LANGUAGE=([^\n]+)', '\\1') | default([locale_lang], true) | first }}"
-
-- name: Configure locales
-  command: update-locale LANG={{ config_system_locale }} LANGUAGE={{ config_language_locale }}
-  changed_when: locale_lang != config_system_locale or locale_language != config_language_locale
-  become_method: sudo
-
+- name: Ensure required locales are defined as expected
+  ini_file:
+    path: /etc/default/locale
+    section: null
+    no_extra_spaces: yes
+    option: "{{ item.key }}"
+    value: "{{ item.value }}"
+    mode: 'u=rw,g=r,o=r'
+    state: present
+    backup: no
+  loop: "{{ common_shell_locale_settings|dict2items }}"
+  become: yes
