@@ -1,6 +1,6 @@
 ---
-- name: Install curl
+- name: Install fzf
   apt:
-    name: curl
+    name: fzf
     state: present
   become: yes

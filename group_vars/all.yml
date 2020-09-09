@@ -6,3 +6,4 @@ oh_my_zsh_plugins:
   - git
   - tmux
   - fzf
+  - zsh-aliases-exa

@@ -15,13 +15,17 @@
   git:
     dest: '~/.oh-my-zsh'
     repo: 'https://github.com/robbyrussell/oh-my-zsh.git'
-    depth: 1
+    update: true
+    accept_hostkey: true
+    version: "master"
+  register: "omz_clone"
 
 - name: Set permissions of oh-my-zsh
   file:
     path: ~/.oh-my-zsh
     mode: 'go-w'
     recurse: yes
+  when: "omz_clone is changed"
 
 - name: Copy .zshrc for users
   template:

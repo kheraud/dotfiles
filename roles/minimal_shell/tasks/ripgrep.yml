@@ -1,6 +1,6 @@
 ---
-- name: Install curl
+- name: Install ripgrep
   apt:
-    name: curl
+    name: ripgrep
     state: present
   become: yes

@@ -37,3 +37,11 @@
       tags:
         - shell
         - tmux
+
+- name: "Install common tools"
+  hosts: common_tools
+  roles:
+    - role: minimal_shell
+      tags:
+        - common_tools
+        - minimal_shell

@@ -1,0 +1,19 @@
+---
+- name: Install bat package
+  apt:
+    name: bat
+    state: present
+  become: yes
+
+- name: Stat for batcat bin
+  stat:
+    path: '/usr/bin/batcat'
+  register: batcat_bin
+
+- name: Add alias for batcat
+  lineinfile:
+    path: '~/.zshrc_local'
+    regexp: '^alias bat='
+    line: 'alias bat="/usr/bin/batcat"'
+  when: batcat_bin.stat.exists == true
+

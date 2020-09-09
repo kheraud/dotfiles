@@ -1,5 +1,5 @@
 ---
-- include_tasks: locales.yml
+- import_tasks: locales.yml
   tags:
     - common_shell
     - locale
@@ -10,7 +10,7 @@
   changed_when: false
   register: fonts
 
-- include_tasks: fonts.yml
+- import_tasks: fonts.yml
   tags:
     - common_shell
     - fonts
