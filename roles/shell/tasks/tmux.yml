@@ -15,6 +15,7 @@
     dest: '~/.tmux/plugins/tpm'
     repo: 'https://github.com/tmux-plugins/tpm.git'
     depth: 1
+  register: "tmux_clone"
 
 - name: Install Tmux fonts
   git:
@@ -26,8 +27,10 @@
   command:
     chdir: '~'
     cmd: 'tmux source ~/.tmux.conf'
+  when: "tmux_clone is changed"
 
 - name: Update TPM configuration
   command:
     chdir: '~'
     cmd: '~/.tmux/plugins/tpm/bin/install_plugins'
+  when: "tmux_clone is changed"

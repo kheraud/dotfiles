@@ -1,7 +1,7 @@
 ---
 - name: Unarchive exa binary
   unarchive:
-    src: https://github.com/ogham/exa/releases/download/v{{ minimal_shell_exa_version }}/exa-linux-x86_64-{{ minimal_shell_exa_version }}.zip
+    src: https://github.com/ogham/exa/releases/download/v{{ shell_exa_version }}/exa-linux-x86_64-{{ shell_exa_version }}.zip
     dest: /usr/local/bin
     remote_src: yes
     creates: /usr/local/bin/exa
@@ -19,7 +19,7 @@
     dest: /usr/share/man/man1/exa.1
   become: yes
 
-- name: Fetch oh-my-zsh aliases
+- name: Fetch zsh-aliases-exa alias for oh-my-zsh aliases
   git:
     repo: 'https://github.com/DarrinTisdale/zsh-aliases-exa.git'
     dest: '~/.oh-my-zsh/custom/plugins/zsh-aliases-exa'

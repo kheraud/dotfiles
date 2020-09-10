@@ -1,0 +1,10 @@
+---
+- import_tasks: curl.yml
+  tags:
+    - tools
+    - curl
+
+- import_tasks: git.yml
+  tags:
+    - tools
+    - git

@@ -8,40 +8,18 @@
       when: (ansible_distribution != "Ubuntu") and
             (ansible_distribution != "Debian")
 
-- name: "Install basic_networking"
+- name: "Install tools"
   gather_facts: false
-  hosts: basic_networking
+  hosts: tools
   roles:
-    - role: curl
+    - role: tools
       tags:
-        - basic_networking
-        - curl
-    - role: git
-      tags:
-        - basic_networking
-        - git
+        - tools
 
 - name: "Install shell"
   gather_facts: true
   hosts: shell
   roles:
-    - role: common_shell
+    - role: shell
       tags:
         - shell
-        - common_shell
-    - role: zsh
-      tags:
-        - shell
-        - zsh
-    - role: tmux
-      tags:
-        - shell
-        - tmux
-
-- name: "Install common tools"
-  hosts: common_tools
-  roles:
-    - role: minimal_shell
-      tags:
-        - common_tools
-        - minimal_shell

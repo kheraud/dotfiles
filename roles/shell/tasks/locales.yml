@@ -9,7 +9,7 @@
   locale_gen:
     name: "{{ item }}"
     state: present
-  loop: '{{ common_shell_locale_settings
+  loop: '{{ shell_locales
     | dict2items
     | selectattr("value", "search", ".UTF-8")
     | map(attribute="value")
@@ -26,5 +26,5 @@
     mode: 'u=rw,g=r,o=r'
     state: present
     backup: no
-  loop: "{{ common_shell_locale_settings|dict2items }}"
+  loop: "{{ shell_locales|dict2items }}"
   become: yes

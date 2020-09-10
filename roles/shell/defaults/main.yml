@@ -1,6 +1,6 @@
 ---
-# Default locales
-common_shell_locale_settings:
+# Default plugins
+shell_locales:
   LANG: fr_FR.UTF-8
   LC_NUMERIC: fr_FR.UTF-8
   LC_TIME: fr_FR.UTF-8
@@ -13,3 +13,6 @@ common_shell_locale_settings:
   LC_IDENTIFICATION: fr_FR.UTF-8
   LANGUAGE: en
   LC_COLLATE: C
+shell_exa_version: 0.9.0
+shell_oh_my_zsh_plugins:
+  - git
