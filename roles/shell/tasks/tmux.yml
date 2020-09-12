@@ -1,7 +1,9 @@
 ---
 - name: Install Tmux
   apt:
-    name: tmux
+    name:
+      - tmux
+      - xsel
     state: present
   become: yes
 
