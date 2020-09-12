@@ -12,8 +12,9 @@
   ignore_errors: true
 
 - name: Add alias for fdfind
-  lineinfile:
-    path: '~/.zshrc_local'
-    regexp: '^alias fd='
-    line: 'alias fd="{{ fdfind_path.stdout }}"'
+  blockinfile:
+    path: ~/.zshrc_local
+    marker: "# {mark} ANSIBLE MANAGED FDFIND BLOCK -->"
+    block: |
+      alias fd="{{ fdfind_path.stdout }}"
   when: fdfind_path is succeeded

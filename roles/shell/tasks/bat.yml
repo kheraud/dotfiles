@@ -11,9 +11,10 @@
   register: batcat_bin
 
 - name: Add alias for batcat
-  lineinfile:
-    path: '~/.zshrc_local'
-    regexp: '^alias bat='
-    line: 'alias bat="/usr/bin/batcat"'
+  blockinfile:
+    path: ~/.zshrc_local
+    marker: "# {mark} ANSIBLE MANAGED BAT BLOCK -->"
+    block: |
+      alias bat="/usr/bin/batcat"
   when: batcat_bin.stat.exists == true
 
