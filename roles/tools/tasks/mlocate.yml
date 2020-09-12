@@ -1,0 +1,6 @@
+---
+- name: Install mlocate
+  apt:
+    name: mlocate
+    state: present
+  become: yes

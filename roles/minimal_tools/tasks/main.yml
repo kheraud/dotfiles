@@ -8,3 +8,8 @@
   tags:
     - minimal_tools
     - git
+
+- import_tasks: htop.yml
+  tags:
+    - minimal_tools
+    - htop

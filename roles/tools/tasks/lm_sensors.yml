@@ -1,0 +1,6 @@
+---
+- name: Install lm-sensors
+  apt:
+    name: lm-sensors
+    state: present
+  become: yes
