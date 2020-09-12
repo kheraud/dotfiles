@@ -1,6 +1,5 @@
 ---
 - hosts: all
-  gather_facts: yes
   pre_tasks:
     - name: Limit to Debian like distributions
       fail:
@@ -8,18 +7,23 @@
       when: (ansible_distribution != "Ubuntu") and
             (ansible_distribution != "Debian")
 
-- name: "Install tools"
-  gather_facts: false
-  hosts: tools
+- name: "Install minimal tools"
+  hosts: all
   roles:
-    - role: tools
+    - role: minimal_tools
       tags:
-        - tools
+        - minimal_tools
 
 - name: "Install shell"
-  gather_facts: true
   hosts: shell
   roles:
     - role: shell
       tags:
         - shell
+
+- name: "Install tools"
+  hosts: all
+  roles:
+    - role: tools
+      tags:
+        - tools

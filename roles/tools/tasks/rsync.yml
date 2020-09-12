@@ -1,0 +1,6 @@
+---
+- name: Install RSync
+  apt:
+    name: rsync
+    state: present
+  become: yes

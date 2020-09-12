@@ -1,0 +1,17 @@
+---
+- name: Fetch nvm install script
+  get_url:
+    url: https://raw.githubusercontent.com/nvm-sh/nvm/{{ tools_nvm_version }}/install.sh
+    dest: /tmp/nvm-installer
+    mode: 'u=rwx,g=rx,o=rx'
+
+- name: Launch nvm installer
+  shell: bash /tmp/nvm-installer
+
+- name: Add nvm source in zshrc_local
+  blockinfile:
+    path: ~/.zshrc_local
+    marker: "# {mark} ANSIBLE MANAGED NVM BLOCK -->"
+    block: |
+      export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

@@ -1,0 +1,27 @@
+---
+- name: Install gvm dependencies
+  apt:
+    name:
+      - mercurial
+      - make
+      - binutils
+      - bison
+      - gcc
+      - build-essential
+    state: present
+  become: yes
+
+- name: Fetch gvm install script
+  get_url:
+    url: https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer
+    dest: /tmp/gvm-installer
+    mode: 'u=rwx,g=rx,o=rx'
+
+- name: Launch gvm installer
+  shell: bash /tmp/gvm-installer
+
+- name: Add gvm source in zshrc_local
+  lineinfile:
+    path: '~/.zshrc_local'
+    regexp: '^source /home/kheraud/\.gvm/scripts/gvm$'
+    line: 'source /home/kheraud/\.gvm/scripts/gvm'

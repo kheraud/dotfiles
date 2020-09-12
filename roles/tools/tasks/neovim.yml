@@ -1,0 +1,27 @@
+---
+- name: Install Neovim
+  apt:
+    name: neovim
+    state: present
+  become: yes
+
+- name: Check neovim config directory exists
+  file:
+    path: ~/.config/nvim/autoload
+    state: directory
+
+- name: Fetch Vim plug
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: ~/.config/nvim/autoload/plug.vim
+
+- name: Copy Neovim configuration
+  copy:
+    src: init.vim
+    dest: ~/.config/nvim/init.vim
+
+- name: Run NeoVim Pluginstall
+  shell: >
+    nvim +PlugInstall +qall
+  args:
+    creates: ~/.config/nvim/plugged

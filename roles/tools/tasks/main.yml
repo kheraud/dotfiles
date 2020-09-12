@@ -1,10 +1,41 @@
 ---
-- import_tasks: curl.yml
+- import_tasks: python.yml
   tags:
     - tools
-    - curl
+    - python
 
-- import_tasks: git.yml
+- stat:
+    path: ~/.gvm
+  register: gvm_installed
   tags:
     - tools
-    - git
+    - gvm
+
+- import_tasks: gvm.yml
+  tags:
+    - tools
+    - gvm
+  when: not gvm_installed.stat.exists
+
+- stat:
+    path: ~/.nvm/nvm.sh
+  register: nvm_installed
+  tags:
+    - tools
+    - nvm
+
+- import_tasks: nvm.yml
+  tags:
+    - tools
+    - nvm
+  when: not nvm_installed.stat.exists
+
+- import_tasks: rsync.yml
+  tags:
+    - tools
+    - rsync
+
+- import_tasks: neovim.yml
+  tags:
+    - tools
+    - neovim
