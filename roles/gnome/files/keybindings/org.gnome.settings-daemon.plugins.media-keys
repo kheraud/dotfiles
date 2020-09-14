@@ -1,0 +1,25 @@
+[/]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+eject=@as []
+magnifier=@as []
+magnifier-zoom-in=@as []
+magnifier-zoom-out=@as []
+media=@as []
+mic-mute=@as []
+next=@as []
+pause=@as []
+play=@as []
+previous=@as []
+screenreader=@as []
+screensaver=['<Shift><Super>x']
+stop=@as []
+terminal=@as []
+volume-down=['<Super>Page_Down']
+volume-mute=@as []
+volume-up=['<Super>Page_Up']
+www=['<Primary><Shift>BackSpace']
+
+[custom-keybindings/custom0]
+binding='<Super>Return'
+command='/home/kheraud/.dotfile/urxvt/.urxvt/launch-with-tmux'
+name='Launch tmux terminal'

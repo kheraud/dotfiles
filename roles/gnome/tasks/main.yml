@@ -1,0 +1,34 @@
+---
+- name: "Install dconf"
+  apt:
+    name:
+      - dconf-cli
+      - dconf-editor
+    state: present
+  become: yes
+  tags:
+    - gnome
+    - dconf
+
+- name: "Load keybindings into gnome"
+  vars:
+    gnome_keys_path: '/{{ item.path | replace(".", "/") }}/'
+    keybinding_name: '{{ item.path }}'
+    keybinding_path: '{{ item.src }}'
+  include_tasks: dconf_keybinding.yml
+  loop: "{{ lookup('filetree', 'files/keybindings') | selectattr('state', 'eq', 'file') | list }}"
+  when: item.state == 'file'
+  tags:
+    - gnome
+    - dconf
+
+- name: "Install gnome tweaks"
+  apt:
+    name: gnome-tweaks
+    state: present
+  become: yes
+  register: curl_installed
+  tags:
+    - gnome
+    - tweaks
+

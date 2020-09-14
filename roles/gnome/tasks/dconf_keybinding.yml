@@ -1,0 +1,27 @@
+---
+- name: "Extract {{ gnome_keys_path }} currently applied"
+  shell: >
+    dconf dump {{ gnome_keys_path }} > /tmp/org_{{ keybinding_name }}
+  changed_when: false
+
+- name: "Calculate current {{ gnome_keys_path }} checksum"
+  stat:
+    path : "/tmp/org_{{ keybinding_name }}"
+  register: original_keybinding
+
+- name: "Calculate new {{ gnome_keys_path }} checksum"
+  stat:
+    path : "{{ keybinding_path }}"
+  delegate_to: localhost
+  register: new_keybinding
+
+- name: "Copy keybinding {{ keybinding_name }} to host"
+  copy:
+    src: '{{ keybinding_path }}'
+    dest: /tmp/{{ keybinding_name }}
+  when: original_keybinding.stat.checksum != new_keybinding.stat.checksum
+
+- name: "Apply keybinding {{ gnome_keys_path }} to host"
+  shell: >
+    dconf load {{ gnome_keys_path }} < /tmp/{{ keybinding_name }}
+  when: original_keybinding.stat.checksum != new_keybinding.stat.checksum

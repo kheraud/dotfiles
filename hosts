@@ -3,9 +3,6 @@ all:
     localhost:
       ansible_connection: local
   children:
-    tools:
-      hosts:
-        localhost:
-    shell:
+    gnome:
       hosts:
         localhost:

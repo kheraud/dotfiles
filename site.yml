@@ -11,19 +11,22 @@
   hosts: all
   roles:
     - role: minimal_tools
-      tags:
-        - minimal_tools
+      tags: minimal_tools
 
 - name: "Install shell"
-  hosts: shell
+  hosts: all
   roles:
     - role: shell
-      tags:
-        - shell
+      tags: shell
 
 - name: "Install tools"
   hosts: all
   roles:
     - role: tools
-      tags:
-        - tools
+      tags: tools
+
+- name: "Install gnome config"
+  hosts: gnome
+  roles:
+    - role: gnome
+      tags: gnome
