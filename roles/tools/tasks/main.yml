@@ -44,3 +44,7 @@
 - import_tasks: lm_sensors.yml
   tags:
     - lmsensors
+
+- import_tasks: ffmpeg.yaml
+  tags:
+    - ffmpeg
