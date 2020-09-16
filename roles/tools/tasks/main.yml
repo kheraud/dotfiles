@@ -1,24 +1,20 @@
 ---
 - import_tasks: python.yml
   tags:
-    - tools
     - python
 
 - import_tasks: make.yml
   tags:
-    - tools
     - make
 
 - stat:
     path: ~/.gvm
   register: gvm_installed
   tags:
-    - tools
     - gvm
 
 - import_tasks: gvm.yml
   tags:
-    - tools
     - gvm
   when: not gvm_installed.stat.exists
 
@@ -26,31 +22,25 @@
     path: ~/.nvm/nvm.sh
   register: nvm_installed
   tags:
-    - tools
     - nvm
 
 - import_tasks: nvm.yml
   tags:
-    - tools
     - nvm
   when: not nvm_installed.stat.exists
 
 - import_tasks: rsync.yml
   tags:
-    - tools
     - rsync
 
 - import_tasks: neovim.yml
   tags:
-    - tools
     - neovim
 
 - import_tasks: mlocate.yml
   tags:
-    - tools
     - mlocate
 
 - import_tasks: lm_sensors.yml
   tags:
-    - tools
     - lmsensors

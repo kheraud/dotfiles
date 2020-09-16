@@ -1,15 +1,12 @@
 ---
 - import_tasks: curl.yml
   tags:
-    - minimal_tools
     - curl
 
 - import_tasks: git.yml
   tags:
-    - minimal_tools
     - git
 
 - import_tasks: htop.yml
   tags:
-    - minimal_tools
     - htop

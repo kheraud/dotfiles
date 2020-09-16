@@ -23,30 +23,24 @@
 
 - import_tasks: tmux.yml
   tags:
-    - shell
     - tmux
 
 - import_tasks: fd.yml
   tags:
-    - shell
     - fd
 
 - import_tasks: fzf.yml
   tags:
-    - shell
     - fzf
 
 - import_tasks: bat.yml
   tags:
-    - shell
     - bat
 
 - import_tasks: exa.yml
   tags:
-    - shell
     - exa
 
 - import_tasks: ripgrep.yml
   tags:
-    - shell
     - ripgrep
