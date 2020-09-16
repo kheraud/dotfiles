@@ -27,7 +27,6 @@
     name: gnome-tweaks
     state: present
   become: yes
-  register: curl_installed
   tags:
     - gnome
     - tweaks
