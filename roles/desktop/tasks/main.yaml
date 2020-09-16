@@ -1,0 +1,25 @@
+---
+- import_tasks: fonts.yaml
+  tags:
+    - desktop
+    - mscorefont
+
+- import_tasks: urxvt.yaml
+  tags:
+    - desktop
+    - urxvt
+
+- import_tasks: firefox.yaml
+  tags:
+    - desktop
+    - firefox
+
+- import_tasks: vlc.yaml
+  tags:
+    - desktop
+    - vlc
+
+- import_tasks: vscode.yaml
+  tags:
+    - desktop
+    - vscode

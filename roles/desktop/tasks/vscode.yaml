@@ -1,0 +1,39 @@
+---
+- name: "Install GPG"
+  apt:
+    name: gpg
+    state: present
+  become: true
+
+- name: "Download ASC file"
+  apt_key:
+    url: "{{ vscode_microsoft_asc_url }}"
+    state: present
+  become: true
+
+- name: "Copy repo list"
+  copy:
+    src: vscode.list
+    dest: /etc/apt/sources.list.d/vscode.list
+  become: true
+
+- name: "Update software cache for apt-get"
+  apt:
+    update_cache: yes
+  become: true
+  changed_when: false
+
+- name: "Install Visual Studio Code"
+  apt:
+    name: code
+    state: present
+  become: true
+
+- name: "Export installed VSCode extensions"
+  command: code --list-extensions
+  register: vscode_installed_extensions
+  changed_when: false
+
+- name: "Install missing VSCode extensions"
+  command: code --install-extension {{ item }} 
+  loop: "{{ desktop_vscode_extensions | difference(vscode_installed_extensions.stdout_lines) }}"

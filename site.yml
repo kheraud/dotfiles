@@ -7,21 +7,13 @@
       when: (ansible_distribution != "Ubuntu") and
             (ansible_distribution != "Debian")
 
-- name: "Install minimal tools"
+- name: "Install tools"
   hosts: all
   roles:
     - role: minimal_tools
       tags: minimal_tools
-
-- name: "Install shell"
-  hosts: all
-  roles:
     - role: shell
       tags: shell
-
-- name: "Install tools"
-  hosts: all
-  roles:
     - role: tools
       tags: tools
 
@@ -30,3 +22,9 @@
   roles:
     - role: gnome
       tags: gnome
+
+- name: "Install desktop tools"
+  hosts: desktop
+  roles:
+    - role: desktop
+      tags: desktop

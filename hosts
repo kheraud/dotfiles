@@ -6,3 +6,6 @@ all:
     gnome:
       hosts:
         localhost:
+    desktop:
+      hosts:
+        localhost:
