@@ -28,3 +28,9 @@
   roles:
     - role: desktop
       tags: desktop
+
+- name: "Install desktop extended tools"
+  hosts: desktop
+  roles:
+    - role: extended_desktop
+      tags: extended_desktop
