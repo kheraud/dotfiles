@@ -1,7 +1,7 @@
 ---
 - name: Fetch nvm install script
   get_url:
-    url: https://raw.githubusercontent.com/nvm-sh/nvm/{{ tools_nvm_version }}/install.sh
+    url: https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_version }}/install.sh
     dest: /tmp/nvm-installer
     mode: 'u=rwx,g=rx,o=rx'
 

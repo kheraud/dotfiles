@@ -1,6 +1,6 @@
 ---
 - name: "Install Dropbox"
   apt:
-    deb: "https://www.dropbox.com/download?dl=packages/{{ ansible_distribution | lower }}/dropbox_{{ extended_desktop_dropbox_version }}_amd64.deb"
+    deb: "https://www.dropbox.com/download?dl=packages/{{ ansible_distribution | lower }}/dropbox_{{ dropbox_version }}_amd64.deb"
     state: present
   become: yes

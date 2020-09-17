@@ -9,7 +9,7 @@
 
 - name: "Install Boostnote"
   apt:
-    deb: "https://github.com/BoostIO/boost-releases/releases/download/v{{ extended_desktop_boostnote_version }}/boostnote_{{ extended_desktop_boostnote_version }}_amd64.deb"
+    deb: "https://github.com/BoostIO/boost-releases/releases/download/v{{ boostnote_version }}/boostnote_{{ boostnote_version }}_amd64.deb"
     state: present
   become: yes
   tags:
