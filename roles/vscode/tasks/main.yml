@@ -36,4 +36,4 @@
 
 - name: "Install missing VSCode extensions"
   command: code --install-extension {{ item }} 
-  loop: "{{ desktop_vscode_extensions | difference(vscode_installed_extensions.stdout_lines) }}"
+  loop: "{{ vscode_extensions | difference(vscode_installed_extensions.stdout_lines) }}"

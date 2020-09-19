@@ -2,7 +2,7 @@
 git_username: kheraud
 git_email: kheraud@fastmail.com
 
-shell_oh_my_zsh_plugins:
+oh_my_zsh_plugins:
   - git
   - tmux
   - fzf

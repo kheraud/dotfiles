@@ -1,7 +1,7 @@
 ---
 - name: Unarchive exa binary
   unarchive:
-    src: https://github.com/ogham/exa/releases/download/v{{ shell_exa_version }}/exa-linux-x86_64-{{ shell_exa_version }}.zip
+    src: https://github.com/ogham/exa/releases/download/v{{ exa_version }}/exa-linux-x86_64-{{ exa_version }}.zip
     dest: /usr/local/bin
     remote_src: yes
     creates: /usr/local/bin/exa

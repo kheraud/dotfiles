@@ -13,4 +13,4 @@
     url: "{{ item }}"
     dest: /usr/share/fonts/
   become: yes
-  loop: "{{ desktop_google_fonts }}"
+  loop: "{{ google_fonts }}"
