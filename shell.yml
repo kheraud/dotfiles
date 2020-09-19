@@ -1,0 +1,59 @@
+---
+- hosts: all
+  tasks:
+  - name: "Limit to Debian like distributions"
+    import_role:
+      name: utils
+      tasks_from: filter_distribution
+
+  - name: "Install zsh"
+    include_role:
+      name: zsh
+    tags: zsh
+  
+  - name: "Install Locales"
+    include_role:
+      name: locales
+    tags: locales
+  
+  - name: Check if Powerline font is installed on environment
+    shell: 'fc-list | grep -i powerline'
+    ignore_errors: yes
+    changed_when: false
+    register: fonts
+  
+  - name: "Install fonts"
+    include_role:
+      name: fonts
+    tags: fonts
+    when: (fonts is not defined) or (fonts|length == 0)
+  
+  - name: "Install tmux"
+    include_role:
+      name: tmux
+    tags: tmux
+  
+  - name: "Install fd"
+    include_role:
+      name: fd
+    tags: fd
+  
+  - name: "Install fzf"
+    include_role:
+      name: fzf
+    tags: fzf
+  
+  - name: "Install bat"
+    include_role:
+      name: bat
+    tags: bat
+  
+  - name: "Install exa"
+    include_role:
+      name: exa
+    tags: exa
+  
+  - name: "Install ripgrep"
+    include_role:
+      name: ripgrep
+    tags: ripgrep

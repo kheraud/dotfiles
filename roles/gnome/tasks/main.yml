@@ -6,8 +6,6 @@
       - dconf-editor
     state: present
   become: yes
-  tags:
-    - dconf
 
 - name: "Load keybindings into gnome"
   vars:
@@ -16,14 +14,9 @@
     keybinding_path: '{{ item.src }}'
   include_tasks: dconf_keybinding.yml
   loop: "{{ lookup('filetree', 'files/keybindings') | selectattr('state', 'eq', 'file') | list }}"
-  tags:
-    - dconf
 
 - name: "Install gnome tweaks"
   apt:
     name: gnome-tweaks
     state: present
   become: yes
-  tags:
-    - tweaks
-

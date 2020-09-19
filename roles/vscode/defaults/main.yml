@@ -1,0 +1,4 @@
+---
+desktop_vscode_extensions:
+  - fabiospampinato.vscode-diff
+  - vscoss.vscode-ansible

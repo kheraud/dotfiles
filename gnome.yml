@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+  - name: "Limit to Debian like distributions"
+    import_role:
+      name: utils
+      tasks_from: filter_distribution
+
+  - name: "Install gnome config"
+    include_role:
+      name: gnome
+    tags: gnome

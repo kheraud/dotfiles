@@ -1,0 +1,6 @@
+---
+- name: "Install GParted"
+  apt:
+    name: gparted
+    state: present
+  become: yes

@@ -1,0 +1,42 @@
+---
+- hosts: all
+  tasks:
+  - name: "Limit to Debian like distributions"
+    import_role:
+      name: utils
+      tasks_from: filter_distribution
+
+  - name: "Install Libreoffice"
+    include_role:
+      name: libreoffice
+    tags: libreoffice
+
+  - name: "Install Gimp"
+    include_role:
+      name: gimp
+    tags: gimp
+
+  - name: "Install GParted"
+    include_role:
+      name: gparted
+    tags: gparted
+
+  - name: "Install Thunderbird"
+    include_role:
+      name: thunderbird
+    tags: thunderbird
+
+  - name: "Install Transmission"
+    include_role:
+      name: transmission
+    tags: transmission
+
+  - name: "Install Boostnote"
+    include_role:
+      name: boostnote
+    tags: boostnote
+
+  - name: "Install Dropbox"
+    include_role:
+      name: dropbox
+    tags: dropbox

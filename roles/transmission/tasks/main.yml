@@ -1,0 +1,6 @@
+---
+- name: "Install Transmission"
+  apt:
+    name: transmission
+    state: present
+  become: yes

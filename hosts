@@ -2,10 +2,3 @@ all:
   hosts:
     localhost:
       ansible_connection: local
-  children:
-    gnome:
-      hosts:
-        localhost:
-    desktop:
-      hosts:
-        localhost:

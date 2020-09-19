@@ -1,0 +1,71 @@
+---
+- hosts: all
+  tasks:
+  - name: "Limit to Debian like distributions"
+    import_role:
+      name: utils
+      tasks_from: filter_distribution
+
+  - name: "Install python"
+    include_role:
+      name: python
+    tags: python
+
+  - name: "Install make"
+    include_role:
+      name: make
+    tags: make
+
+  - stat:
+      path: ~/.gvm
+    register: gvm_installed
+    tags:
+      - gvm
+
+  - name: "Install gvm"
+    include_role:
+      name: gvm
+    tags: gvm
+    when: not gvm_installed.stat.exists
+
+  - stat:
+      path: ~/.nvm/nvm.sh
+    register: nvm_installed
+    tags:
+      - nvm
+
+  - name: "Install nvm"
+    include_role:
+      name: nvm
+    tags: nvm
+    when: not nvm_installed.stat.exists
+
+  - name: "Install rsync"
+    include_role:
+      name: rsync
+    tags: rsync
+
+  - name: "Install neovim"
+    include_role:
+      name: neovim
+    tags: neovim
+
+  - name: "Install mlocate"
+    include_role:
+      name: mlocate
+    tags: mlocate
+
+  - name: "Install lm_sensors"
+    include_role:
+      name: lm_sensors
+    tags: lm_sensors
+
+  - name: "Install ffmpeg"
+    include_role:
+      name: ffmpeg
+    tags: ffmpeg
+
+  - name: "Install gpg"
+    include_role:
+      name: gpg
+    tags: gpg

@@ -1,0 +1,6 @@
+---
+- name: "Limit to Debian like distributions"
+  fail:
+    msg: "{{ ansible_distribution }} is not supported with this tag."
+  when: (ansible_distribution != "Ubuntu") and
+        (ansible_distribution != "Debian")

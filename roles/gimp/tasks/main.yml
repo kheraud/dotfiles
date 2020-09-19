@@ -1,0 +1,6 @@
+---
+- name: "Install Gimp"
+  apt:
+    name: gimp
+    state: present
+  become: yes

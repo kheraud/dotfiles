@@ -1,0 +1,25 @@
+---
+- hosts: all
+  tasks:
+  - name: "Limit to Debian like distributions"
+    import_role:
+      name: utils
+      tasks_from: filter_distribution
+
+- name: "Install minimal tools"
+  import_playbook: minimal_tools.yml
+
+- name: "Install shell"
+  import_playbook: shell.yml
+
+- name: "Install tools"
+  import_playbook: tools.yml
+
+- name: "Install gnome config"
+  import_playbook: gnome.yml
+
+- name: "Install desktop applications"
+  import_playbook: desktop.yml
+
+- name: "Install extended desktop applications"
+  import_playbook: extended_desktop.yml
