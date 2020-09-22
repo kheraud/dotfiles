@@ -1,0 +1,32 @@
+---
+- name: "Install GPG an apt-transport-https"
+  apt:
+    name:
+      - gnupg2
+      - apt-transport-https
+    state: present
+  become: true
+
+- name: "Download ASC file"
+  apt_key:
+    url: "{{ kube_apt_key_url }}"
+    state: present
+  become: true
+
+- name: "Copy repo list"
+  copy:
+    src: kubernetes.list
+    dest: /etc/apt/sources.list.d/kubernetes.list
+  become: true
+
+- name: "Update software cache for apt-get"
+  apt:
+    update_cache: yes
+  become: true
+  changed_when: false
+
+- name: "Install kubectl"
+  apt:
+    name: kubectl
+    state: present
+  become: true

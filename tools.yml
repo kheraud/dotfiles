@@ -69,3 +69,8 @@
     include_role:
       name: gpg
     tags: gpg
+
+  - name: "Install kube"
+    include_role:
+      name: kube
+    tags: kube

@@ -1,0 +1,6 @@
+---
+- name: "Launch Kubernetes installation"
+  import_tasks: kubernetes.yml
+
+- name: "Launch Helm installation"
+  import_tasks: helm.yml

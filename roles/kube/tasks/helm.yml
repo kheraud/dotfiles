@@ -1,0 +1,32 @@
+---
+- name: "Install GPG an apt-transport-https"
+  apt:
+    name:
+      - gnupg2
+      - apt-transport-https
+    state: present
+  become: true
+
+- name: "Download ASC file"
+  apt_key:
+    url: "{{ helm_apt_key_url }}"
+    state: present
+  become: true
+
+- name: "Copy repo list"
+  copy:
+    src: helm.list
+    dest: /etc/apt/sources.list.d/helm.list
+  become: true
+
+- name: "Update software cache for apt-get"
+  apt:
+    update_cache: yes
+  become: true
+  changed_when: false
+
+- name: "Install helm"
+  apt:
+    name: helm
+    state: present
+  become: true
