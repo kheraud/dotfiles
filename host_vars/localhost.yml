@@ -7,3 +7,5 @@ oh_my_zsh_plugins:
   - tmux
   - fzf
   - zsh-aliases-exa
+  - kubectl
+  - helm

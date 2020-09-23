@@ -4,3 +4,6 @@
 
 - name: "Launch Helm installation"
   import_tasks: helm.yml
+
+- name: "Launch Minikube installation"
+  import_tasks: minikube.yml
