@@ -1,0 +1,9 @@
+---
+- name: "Install docker ce"
+  import_tasks: docker.yml
+
+- name: "Add user to docker group"
+  import_tasks: docker-user.yml
+
+- name: "Install docker-compose"
+  import_tasks: docker-compose.yml

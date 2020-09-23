@@ -70,6 +70,11 @@
       name: gpg
     tags: gpg
 
+  - name: "Install docker"
+    include_role:
+      name: docker
+    tags: docker
+
   - name: "Install kube"
     include_role:
       name: kube
