@@ -1,5 +1,0 @@
-rofi.font: Droid Sans 12
-rofi.show-icons: true
-rofi.terminal: alacritty
-rofi.m: -4
-rofi.theme: /usr/share/rofi/themes/Monokai.rasi

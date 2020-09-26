@@ -1,9 +1,0 @@
-[submodule "tmux/tmux/fonts"]
-	path = tmux/.tmux/fonts
-	url = https://github.com/powerline/fonts.git
-[submodule "zsh/lambda-gitster"]
-	path = zsh/.oh-my-zsh/themes
-	url = https://github.com/ergenekonyigit/lambda-gitster.git
-[submodule "tmux/.tmux/plugins/tpm"]
-	path = tmux/.tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm

@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-urxvt -e sh -c 'tmux new-session -A -s "workspace-$(xdotool get_desktop)"'
-
