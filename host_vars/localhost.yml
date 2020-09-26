@@ -9,3 +9,5 @@ oh_my_zsh_plugins:
   - zsh-aliases-exa
   - kubectl
   - helm
+  - kubectl
+  - helm
