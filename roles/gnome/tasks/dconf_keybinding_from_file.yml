@@ -1,0 +1,32 @@
+---
+- 
+  vars:
+    keybinding_path: '{{ role_path }}/files/{{ keybinding_file }}'
+    gnome_keys_path: '/{{ keybinding_file | replace(".", "/") }}/'
+  block:
+    - name: "Extract {{ gnome_keys_path }} currently applied"
+      shell: >
+        dconf dump {{ gnome_keys_path }} > /tmp/org_{{ keybinding_file }}
+      changed_when: false
+
+    - name: "Calculate current {{ gnome_keys_path }} checksum"
+      stat:
+        path : "/tmp/org_{{ keybinding_file }}"
+      register: original_keybinding
+
+    - name: "Calculate new {{ gnome_keys_path }} checksum"
+      stat:
+        path : "{{ keybinding_path }}"
+      delegate_to: localhost
+      register: new_keybinding
+
+    - name: "Copy keybinding {{ keybinding_file }} to host"
+      copy:
+        src: '{{ keybinding_file }}'
+        dest: /tmp/{{ keybinding_file }}
+      when: original_keybinding.stat.checksum != new_keybinding.stat.checksum
+
+    - name: "Apply keybinding {{ gnome_keys_path }} to host"
+      shell: >
+        dconf load {{ gnome_keys_path }} < /tmp/{{ keybinding_file }}
+      when: original_keybinding.stat.checksum != new_keybinding.stat.checksum

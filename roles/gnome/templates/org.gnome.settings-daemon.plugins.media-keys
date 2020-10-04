@@ -21,5 +21,5 @@ www=['<Primary><Shift>BackSpace']
 
 [custom-keybindings/custom0]
 binding='<Super>Return'
-command='/home/kheraud/.dotfile/urxvt/.urxvt/launch-with-tmux'
+command='{{ ansible_user_dir }}/.urxvt/launch-in-workspace.sh'
 name='Launch tmux terminal'

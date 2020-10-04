@@ -7,13 +7,20 @@
     state: present
   become: yes
 
-- name: "Load keybindings into gnome"
+- name: "Load gnome wm keybindings into gnome"
   vars:
-    gnome_keys_path: '/{{ item.path | replace(".", "/") }}/'
-    keybinding_name: '{{ item.path }}'
-    keybinding_path: '{{ item.src }}'
-  include_tasks: dconf_keybinding.yml
-  loop: "{{ lookup('filetree', 'files/keybindings') | selectattr('state', 'eq', 'file') | list }}"
+    keybinding_file: 'org.gnome.desktop.wm.keybindings'
+  include_tasks: dconf_keybinding_from_file.yml
+
+- name: "Load gnome shell keybindings into gnome"
+  vars:
+    keybinding_file: 'org.gnome.shell.keybindings'
+  include_tasks: dconf_keybinding_from_file.yml
+
+- name: "Load gnome media-keys into gnome"
+  vars:
+    keybinding_template: 'org.gnome.settings-daemon.plugins.media-keys'
+  include_tasks: dconf_keybinding_from_template.yml
 
 - name: "Install gnome tweaks"
   apt:
