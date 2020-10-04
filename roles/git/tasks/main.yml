@@ -12,5 +12,5 @@
 
 - name: Apply gitconfig configuration
   template:
-    src: gitconfig.j2
+    src: gitconfig
     dest: ~/.gitconfig

@@ -29,7 +29,7 @@
 
 - name: Copy .zshrc for users
   template:
-    src: zshrc.j2
+    src: zshrc
     dest: ~/.zshrc
     mode: 'u=rw,go=r'
 
