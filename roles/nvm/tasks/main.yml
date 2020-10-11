@@ -8,10 +8,16 @@
 - name: Launch nvm installer
   shell: bash /tmp/nvm-installer
 
-- name: Add nvm source in zshrc_local
+- name: Add zsh-nvm plugin
+  git:
+    repo: 'https://github.com/lukechilds/zsh-nvm'
+    dest: '~/.oh-my-zsh/custom/plugins/zsh-nvm'
+
+- name: Add zsh-nvm local settings
   blockinfile:
-    path: ~/.zshrc_local
+    path: ~/.zshrc_pre_local
+    create: true
     marker: "# {mark} ANSIBLE MANAGED NVM BLOCK -->"
     block: |
-      export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-      alias load_nvm="[ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\""
+      export NVM_LAZY_LOAD=true
+      export NVM_COMPLETION=true

@@ -4,10 +4,10 @@ git_email: kheraud@fastmail.com
 
 oh_my_zsh_plugins:
   - git
-  - tmux
+  - zsh-autosuggestions
+  - zsh-nvm
   - fzf
   - zsh-aliases-exa
-  - kubectl
-  - helm
-  - kubectl
-  - helm
+  - tmux
+#  - kubectl // Slow loading : https://github.com/ohmyzsh/ohmyzsh/issues/6843
+#  - helm // Not usefull if kubectl not here

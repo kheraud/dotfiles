@@ -63,6 +63,10 @@ ZSH_THEME="lambda-gitster"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+if [ -f ~/.zshrc_pre_local ]; then
+    source ~/.zshrc_pre_local
+fi
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/

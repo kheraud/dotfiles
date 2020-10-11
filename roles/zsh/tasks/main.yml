@@ -37,3 +37,8 @@
   get_url: 
     url: 'https://raw.githubusercontent.com/ergenekonyigit/lambda-gitster/main/lambda-gitster.zsh-theme'
     dest: ~/.oh-my-zsh/themes/lambda-gitster.zsh-theme
+
+- name: Add zsh-autosuggestions
+  git:
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions'
+    dest: '~/.oh-my-zsh/custom/plugins/zsh-autosuggestions'
