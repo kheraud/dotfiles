@@ -17,4 +17,5 @@
     marker: "# {mark} ANSIBLE MANAGED FDFIND BLOCK -->"
     block: |
       alias fd="{{ fdfind_path.stdout }}"
+    create: true
   when: fdfind_path is succeeded

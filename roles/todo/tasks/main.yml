@@ -24,4 +24,4 @@
       alias {{todo_elt.alias}}="topydo -c {{todo_path}}/{{todo_elt.name}}-topydo.conf -d {{todo_path}}/{{todo_elt.name}}-done.txt -t {{todo_path}}/{{todo_elt.name}}.txt columns -l {{todo_path}}/{{todo_elt.name}}-topydo_columns.conf"
       alias {{todo_elt.alias}}_cli="topydo -c {{todo_path}}/{{todo_elt.name}}-topydo.conf -d {{todo_path}}/{{todo_elt.name}}-done.txt -t {{todo_path}}/{{todo_elt.name}}.txt"
       {% endfor %}
-
+    create: true

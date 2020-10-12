@@ -21,7 +21,9 @@
   shell: bash /tmp/gvm-installer
 
 - name: Add gvm source in zshrc_local
-  lineinfile:
-    path: '~/.zshrc_local'
-    regexp: '^source /home/kheraud/\.gvm/scripts/gvm$'
-    line: 'source /home/kheraud/\.gvm/scripts/gvm'
+  blockinfile:
+    path: ~/.zshrc_local
+    marker: "# {mark} ANSIBLE MANAGED GVM BLOCK -->"
+    block: |
+      source /home/kheraud/\.gvm/scripts/gvm
+    create: true

@@ -16,5 +16,6 @@
     marker: "# {mark} ANSIBLE MANAGED BAT BLOCK -->"
     block: |
       alias bat="/usr/bin/batcat"
+    create: true
   when: batcat_bin.stat.exists == true
 
