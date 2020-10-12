@@ -10,3 +10,8 @@
     deb: "https://github.com/BoostIO/boost-releases/releases/download/v{{ boostnote_version }}/boostnote_{{ boostnote_version }}_amd64.deb"
     state: present
   become: yes
+
+- name: "Deploy Boostnote configuration"
+  copy:
+    src: 'boostnoterc'
+    dest: '~/.boostnoterc'
