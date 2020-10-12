@@ -1,0 +1,6 @@
+---
+todo_path: '~/todo'
+
+todo_context:
+  - name: perso
+    alias: todo

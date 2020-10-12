@@ -11,3 +11,10 @@ oh_my_zsh_plugins:
   - tmux
 #  - kubectl // Slow loading : https://github.com/ohmyzsh/ohmyzsh/issues/6843
 #  - helm // Not usefull if kubectl not here
+
+todo_path: '~/Dropbox/Applications/Simpletask'
+todo_context:
+  - name: perso
+    alias: todo
+  - name: pro
+    alias: todop

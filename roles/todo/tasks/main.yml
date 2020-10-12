@@ -1,0 +1,27 @@
+---
+- name: Install pip
+  apt:
+    name:
+      - python3-pip
+      - python3-virtualenv
+      - python3-setuptools
+    state: present
+  become: yes
+
+- name: Install Topydo
+  pip:
+    name:
+      - topydo
+      - topydo[columns]
+      - topydo[prompt]
+
+- name: Add aliases to todos
+  blockinfile:
+    path: ~/.zshrc_local
+    marker: "# {mark} ANSIBLE MANAGED TOPYDO BLOCK -->"
+    block: |
+      {% for todo_elt in todo_context %}
+      alias {{todo_elt.alias}}="topydo -c {{todo_path}}/{{todo_elt.name}}-topydo.conf -d {{todo_path}}/{{todo_elt.name}}-done.txt -t {{todo_path}}/{{todo_elt.name}}.txt columns -l {{todo_path}}/{{todo_elt.name}}-topydo_columns.conf"
+      alias {{todo_elt.alias}}_cli="topydo -c {{todo_path}}/{{todo_elt.name}}-topydo.conf -d {{todo_path}}/{{todo_elt.name}}-done.txt -t {{todo_path}}/{{todo_elt.name}}.txt"
+      {% endfor %}
+

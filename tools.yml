@@ -79,3 +79,8 @@
     include_role:
       name: kube
     tags: kube
+
+  - name: "Install Todo cli"
+    include_role:
+      name: todo
+    tags: todo
