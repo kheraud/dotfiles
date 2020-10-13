@@ -24,7 +24,7 @@
   
   - name: "Install fonts"
     include_role:
-      name: fonts
+      name: powerline_fonts
     tags: fonts
     when: (fonts is not defined) or (fonts|length == 0)
   
