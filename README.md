@@ -1,6 +1,6 @@
 # Personal dotfiles and applications
 
-The dotfiles and applications added here are provisioned with Ansible. Due to a lack of time, these playbooks **only apply to `Debian` based distributions**.
+The dotfiles and applications added here are provisioned with Ansible. Due to a lack of time, these playbooks **only apply to `Ubuntu` >= 20.04 distribution**.
 
 ## Installation
 
