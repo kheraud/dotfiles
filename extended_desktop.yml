@@ -21,10 +21,10 @@
       name: gparted
     tags: gparted
 
-  - name: "Install Thunderbird"
-    include_role:
-      name: thunderbird
-    tags: thunderbird
+  # - name: "Install Thunderbird"
+  #   include_role:
+  #     name: thunderbird
+  #   tags: thunderbird
 
   - name: "Install Transmission"
     include_role:
