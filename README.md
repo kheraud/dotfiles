@@ -71,3 +71,4 @@ The global `site.yml` playbook imports all the other playbooks :
     - [Transmission](https://transmissionbt.com/)
     - [Boostnote](https://github.com/BoostIO/Boostnote)
     - [Dropbox](https://www.dropbox.com)
+    - [Slack](https://slack.com)
