@@ -40,3 +40,8 @@
     include_role:
       name: dropbox
     tags: dropbox
+
+  - name: "Install Slack"
+    include_role:
+      name: slack
+    tags: slack
