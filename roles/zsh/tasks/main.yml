@@ -42,3 +42,8 @@
   git:
     repo: 'https://github.com/zsh-users/zsh-autosuggestions'
     dest: '~/.oh-my-zsh/custom/plugins/zsh-autosuggestions'
+
+- name: Install autojump
+  apt:
+    name: autojump
+    state: present
