@@ -13,6 +13,12 @@
     creates: /usr/local/bin/exa
   become: yes
 
+# - name: Fetch exa man page
+#   get_url:
+#     url: https://raw.githubusercontent.com/ogham/exa/master/contrib/man/exa.1
+#     dest: /usr/share/man/man1/exa.1
+#   become: yes
+
 - name: Fetch zsh-aliases-exa alias for oh-my-zsh aliases
   git:
     repo: 'https://github.com/DarrinTisdale/zsh-aliases-exa.git'
