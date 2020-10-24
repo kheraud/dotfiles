@@ -41,4 +41,5 @@ vscode_extensions:
   - redhat.vscode-yaml
   - techer.open-in-browser
   - vscode-icons-team.vscode-icons
+  - vscode-snippet.snippet
   - xabikos.JavaScriptSnippets

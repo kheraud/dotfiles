@@ -1,0 +1,13 @@
+---
+- name: Install cheat.sh requirements
+  apt:
+    name: rlwrap
+    state: present
+  become: yes
+
+- name: Install cheat.sh
+  get_url:
+    url: https://cht.sh/:cht.sh
+    dest: /usr/local/bin/cht.sh
+    mode: u=rwx,g=rx,o=rx
+  become: yes

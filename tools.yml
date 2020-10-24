@@ -84,3 +84,8 @@
     include_role:
       name: todo
     tags: todo
+
+  - name: "Install cheat.sh"
+    include_role:
+      name: cheat.sh
+    tags: cheat.sh
