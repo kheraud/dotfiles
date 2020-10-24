@@ -37,6 +37,7 @@ vscode_extensions:
   - ms-vsliveshare.vsliveshare
   - msjsdiag.debugger-for-chrome
   - octref.vetur
+  - PKief.material-icon-theme
   - redhat.vscode-yaml
   - techer.open-in-browser
   - vscode-icons-team.vscode-icons
