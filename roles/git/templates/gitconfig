@@ -2,13 +2,6 @@
   default = current
 [color]
   ui = auto
-[alias]
-  aa = add --all
-  ap = add --patch
-  co = checkout
-  pf = push --force-with-lease
-  squash = commit --amend -C HEAD
-  st = status
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
@@ -20,8 +13,6 @@
   prune = true
 [rebase]
   autosquash = true
-[include]
-  path = ~/.gitconfig.local
 [diff]
   colorMoved = zebra
 [user]
