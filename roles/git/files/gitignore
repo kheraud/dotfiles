@@ -1,18 +1,84 @@
-!tags/
-*.pyc
-*.sw[nop]
-.DS_Store
-.bundle
-.byebug_history
-.env
-.git/
-/bower_components/
-/log
-/node_modules/
-/tmp
-/vendor
-db/*.sqlite3
-log/*.log
-rerun.txt
+## Ignores mostly inspired by https://github.com/github/gitignore
+
+## Linux ignores
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+## Tags ignores
+# Ignore tags created by etags, ctags, gtags (GNU global) and cscope
+TAGS
+.TAGS
+!TAGS/
 tags
-tmp/**/*
+.tags
+!tags/
+gtags.files
+GTAGS
+GRTAGS
+GPATH
+GSYMS
+cscope.files
+cscope.out
+cscope.in.out
+cscope.po.out
+
+## Vim ignores 
+# Swap
+[._]*.s[a-v][a-z]
+!*.svg  # comment out if you don't need vector files
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Session
+Session.vim
+Sessionx.vim
+
+# Temporary
+.netrwhist
+*~
+# Auto-generated tag files
+tags
+# Persistent undo
+[._]*.un~
+
+## Virtualenv ignores
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+.venv
+pip-selfcheck.json
+
+## Ansible ignores
+*.retry
+
+## Diff ignores
+*.patch
+*.diff
+
+## Dropbox ignores
+# Dropbox settings and caches
+.dropbox
+.dropbox.attr
+.dropbox.cache
+
+## LibreOffice locks
+.~lock.*#
