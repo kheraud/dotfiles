@@ -14,9 +14,3 @@
   template:
     src: gitconfig
     dest: ~/.gitconfig
-
-- name: Add git-extra
-  apt:
-    name: git-extras
-    state: present
-  become: yes
