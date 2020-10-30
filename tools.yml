@@ -45,11 +45,6 @@
       name: rsync
     tags: rsync
 
-  - name: "Install neovim"
-    include_role:
-      name: neovim
-    tags: neovim
-
   - name: "Install mlocate"
     include_role:
       name: mlocate

@@ -1,31 +1,39 @@
+[user]
+	name = {{ git_username }}
+	email = {{ git_email }}
 [push]
   default = current
-[color]
-  ui = auto
 [alias]
-  aa = add --all
-  ap = add --patch
-  co = checkout
-  pf = push --force-with-lease
-  squash = commit --amend -C HEAD
   st = status
+  co = checkout
+  squash = commit --amend -C HEAD
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
   editor = nvim
-  precomposeunicode = true
-[merge]
-  ff = only
+  pager = less
 [fetch]
   prune = true
 [rebase]
   autosquash = true
-[include]
-  path = ~/.gitconfig.local
 [diff]
-  colorMoved = zebra
-[user]
-	name = {{ git_username }}
-	email = {{ git_email }}
-[status]
-    submodulesummary = 1
+  tool = nvimdiff
+  guitool = vscode
+[difftool]
+  prompt = false
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[difftool "nvimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE
+[merge]
+  tool = nvimdiff
+  guitool = vscode
+[mergetool]
+  keepBackup = false
+  prompt = false
+[mergetool "vscode"]
+  keepBackup = false
+  cmd = code --wait $MERGED
+[mergetool "nvimdiff"]
+  keepBackup = false
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED

@@ -13,6 +13,11 @@
     tags: curl
     become: yes
 
+  - name: "Install neovim"
+    include_role:
+      name: neovim
+    tags: neovim
+
   - name: "Install git"
     include_role:
       name: git
