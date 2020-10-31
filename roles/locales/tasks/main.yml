@@ -9,22 +9,25 @@
   locale_gen:
     name: "{{ item }}"
     state: present
-  loop: '{{ shell_locales
+  loop: '{{ shell_user_locales
     | dict2items
     | selectattr("value", "search", ".UTF-8")
     | map(attribute="value")
     | list
-    | unique }}'
+    | unique }} + {{ shell_extra_locales }}'
 
-- name: Ensure required locales are defined as expected
-  ini_file:
-    path: /etc/default/locale
-    section: null
-    no_extra_spaces: yes
-    option: "{{ item.key }}"
-    value: "{{ item.value }}"
-    mode: 'u=rw,g=r,o=r'
-    state: present
-    backup: no
-  loop: "{{ shell_locales|dict2items }}"
-  become: yes
+- name: Define locales for current user
+  template:
+    src: locales.j2
+    dest: ~/.locales
+    mode: '0644'
+
+- name: Add locales to zshrc config
+  blockinfile:
+    path: ~/.zshrc_pre_local
+    create: true
+    marker: "# {mark} ANSIBLE MANAGED locales BLOCK -->"
+    block: |
+      if [ -f ~/.locales ]; then
+        source ~/.locales
+      fi
