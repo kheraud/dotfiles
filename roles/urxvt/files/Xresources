@@ -56,7 +56,7 @@ URxvt.depth: 24
 URxvt.iso14755: false
 
 !! Copy Paste & Other Extensions
-URxvt.perl-ext-common: default,matcher,resize-font
+URxvt.perl-ext-common: default,matcher,font-size
 URxvt.urlLauncher: firefox
 URxvt.underlineURLs: true
 URxvt.matcher.button: 3
