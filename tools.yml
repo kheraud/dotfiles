@@ -6,6 +6,11 @@
       name: utils
       tasks_from: filter_distribution
 
+  - name: "Install htop"
+    include_role:
+      name: htop
+    tags: htop
+
   - name: "Install python"
     include_role:
       name: python

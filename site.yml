@@ -6,9 +6,6 @@
       name: utils
       tasks_from: filter_distribution
 
-- name: "Install minimal tools"
-  import_playbook: minimal_tools.yml
-
 - name: "Install shell"
   import_playbook: shell.yml
 
