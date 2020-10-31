@@ -24,7 +24,7 @@
 
 - name: Add locales to zshrc config
   blockinfile:
-    path: ~/.zshrc_pre_local
+    path: ~/.zshrc_pre
     create: true
     marker: "# {mark} ANSIBLE MANAGED locales BLOCK -->"
     block: |

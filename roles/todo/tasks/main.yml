@@ -17,7 +17,7 @@
 
 - name: Add aliases to todos
   blockinfile:
-    path: ~/.zshrc_local
+    path: ~/.zshrc_post
     marker: "# {mark} ANSIBLE MANAGED TOPYDO BLOCK -->"
     block: |
       {% for todo_elt in todo_context %}

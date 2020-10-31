@@ -5,17 +5,18 @@
     state: present
   become: yes
 
-- name: Stat for batcat bin
-  stat:
-    path: '/usr/bin/batcat'
-  register: batcat_bin
+
+- name: Get batcat path
+  shell: which batcat
+  register: batcat_path
+  changed_when: false
+  ignore_errors: true
 
 - name: Add alias for batcat
   blockinfile:
-    path: ~/.zshrc_local
-    marker: "# {mark} ANSIBLE MANAGED BAT BLOCK -->"
+    path: ~/.zshrc_post
+    marker: "# {mark} ANSIBLE MANAGED bat BLOCK -->"
     block: |
-      alias bat="/usr/bin/batcat"
+      alias bat="{{ batcat_path.stdout }}"
     create: true
-  when: batcat_bin.stat.exists == true
-
+  when: batcat_path is succeeded

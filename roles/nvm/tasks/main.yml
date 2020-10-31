@@ -11,11 +11,11 @@
 - name: Add zsh-nvm plugin
   git:
     repo: 'https://github.com/lukechilds/zsh-nvm'
-    dest: '~/.oh-my-zsh/custom/plugins/zsh-nvm'
+    dest: '~/.oh-my-custom/plugins/zsh-nvm'
 
 - name: Add zsh-nvm local settings
   blockinfile:
-    path: ~/.zshrc_pre_local
+    path: ~/.zshrc_pre
     create: true
     marker: "# {mark} ANSIBLE MANAGED NVM BLOCK -->"
     block: |

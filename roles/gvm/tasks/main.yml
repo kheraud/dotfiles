@@ -20,9 +20,9 @@
 - name: Launch gvm installer
   shell: bash /tmp/gvm-installer
 
-- name: Add gvm source in zshrc_local
+- name: Add gvm source in ~/.zshrc_post
   blockinfile:
-    path: ~/.zshrc_local
+    path: ~/.zshrc_post
     marker: "# {mark} ANSIBLE MANAGED GVM BLOCK -->"
     block: |
       source /home/kheraud/\.gvm/scripts/gvm

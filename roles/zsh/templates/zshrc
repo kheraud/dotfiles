@@ -39,7 +39,7 @@ ZSH_THEME="lambda-gitster"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -61,10 +61,10 @@ ZSH_THEME="lambda-gitster"
  HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=~/.oh-my-custom
 
-if [ -f ~/.zshrc_pre_local ]; then
-    source ~/.zshrc_pre_local
+if [ -f ~/.zshrc_pre ]; then
+    source ~/.zshrc_pre
 fi
 
 # Which plugins would you like to load?
@@ -103,6 +103,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if [ -f ~/.zshrc_local ]; then
-    source ~/.zshrc_local
+if [ -f ~/.zshrc_post ]; then
+    source ~/.zshrc_post
 fi

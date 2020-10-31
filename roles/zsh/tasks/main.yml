@@ -38,7 +38,13 @@
     url: 'https://raw.githubusercontent.com/ergenekonyigit/lambda-gitster/main/lambda-gitster.zsh-theme'
     dest: ~/.oh-my-zsh/themes/lambda-gitster.zsh-theme
 
-- name: Add zsh-autosuggestions
+- name: Create custom plugin directory
+  file:
+    path: ~/.oh-my-custom/plugins
+    state: directory
+
+- name: Add extra plugins
   git:
-    repo: 'https://github.com/zsh-users/zsh-autosuggestions'
-    dest: '~/.oh-my-zsh/custom/plugins/zsh-autosuggestions'
+    repo: "{{ item.value }}"
+    dest: "~/.oh-my-custom/plugins/{{ item.key}}"
+  loop: "{{ oh_my_sh_extra_plugins | dict2items }}"

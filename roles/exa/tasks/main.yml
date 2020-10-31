@@ -22,4 +22,4 @@
 - name: Fetch zsh-aliases-exa alias for oh-my-zsh aliases
   git:
     repo: 'https://github.com/DarrinTisdale/zsh-aliases-exa.git'
-    dest: '~/.oh-my-zsh/custom/plugins/zsh-aliases-exa'
+    dest: '~/.oh-my-custom/plugins/zsh-aliases-exa'

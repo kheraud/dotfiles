@@ -13,8 +13,8 @@
 
 - name: Add alias for fdfind
   blockinfile:
-    path: ~/.zshrc_local
-    marker: "# {mark} ANSIBLE MANAGED FDFIND BLOCK -->"
+    path: ~/.zshrc_post
+    marker: "# {mark} ANSIBLE MANAGED fd BLOCK -->"
     block: |
       alias fd="{{ fdfind_path.stdout }}"
     create: true
