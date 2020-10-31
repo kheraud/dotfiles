@@ -9,8 +9,8 @@ The default `hosts` file targets `localhost`. If you want to target other hosts,
 Then edit `host_vars/*.yml` with custom settings (`host_vars/localhost.yml` is a good start)
 
 ```shell
-$ sudo apt install ansible
-$ ansible-playbook -K -i hosts site.yml
+sudo apt install ansible
+ansible-playbook -K -i hosts site.yml
 ```
 
 ## Content of the playbooks
@@ -39,12 +39,12 @@ The global `site.yml` playbook imports all the other playbooks :
   - [Python](https://www.python.org)
   - [Cheat.sh](https://github.com/chubin/cheat.sh)
 - `tools.yml`
-  - [htop](https://github.com/htop-dev/htop)
-  - [rsync](https://rsync.samba.org)
   - [mlocate](https://linux.die.net/man/5/mlocate.db)
   - [lm sensors](https://github.com/lm-sensors/lm-sensors)
-  - [FFmpeg](https://ffmpeg.org/ffmpeg.html)
+  - [htop](https://github.com/htop-dev/htop)
+  - [rsync](https://rsync.samba.org)
   - [GPG](https://gnupg.org/gph/en/manual.html)
+  - [FFmpeg](https://ffmpeg.org/ffmpeg.html)
   - [Docker](https://www.docker.com/)
   - [kubectl](https://kubernetes.io/docs/reference/kubectl)
   - [VirtualBox](https://www.virtualbox.org)
