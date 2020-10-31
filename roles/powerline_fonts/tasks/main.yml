@@ -1,18 +1,25 @@
 ---
+- name: Check Powerline fonts on host
+  shell: 'fc-list | grep -i powerline'
+  ignore_errors: yes
+  changed_when: false
+  register: fonts
+
 - name: Retrieve Powerline fonts
   git:
     dest: '/tmp/powerline-fonts'
     repo: 'https://github.com/powerline/fonts.git'
     depth: 1
+  when: (fonts is not defined) or (fonts|length == 0)
 
 - name: Install Powerline fonts
   command:
     chdir: '/tmp/powerline-fonts'
     cmd: './install.sh'
+  when: (fonts is not defined) or (fonts|length == 0)
 
 - name: Clean artifact path
   file:
     state: absent
     path: '/tmp/powerline-fonts'
-
-
+  when: (fonts is not defined) or (fonts|length == 0)
