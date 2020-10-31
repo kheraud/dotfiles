@@ -11,14 +11,21 @@
     state: present
   become: yes
 
+- name: Check gvm installation
+  stat:
+    path: ~/.gvm
+  register: gvm_installed
+
 - name: Fetch gvm install script
   get_url:
     url: https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer
     dest: /tmp/gvm-installer
     mode: 'u=rwx,g=rx,o=rx'
+  when: not gvm_installed.stat.exists
 
 - name: Launch gvm installer
   shell: bash /tmp/gvm-installer
+  when: not gvm_installed.stat.exists
 
 - name: Add gvm source in ~/.zshrc_post
   blockinfile:

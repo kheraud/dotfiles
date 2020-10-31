@@ -9,6 +9,9 @@
 - name: "Install shell"
   import_playbook: shell.yml
 
+- name: "Install programmation tools"
+  import_playbook: prog.yml
+
 - name: "Install tools"
   import_playbook: tools.yml
 

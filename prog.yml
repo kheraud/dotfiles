@@ -1,0 +1,32 @@
+---
+- hosts: all
+  tasks:
+  - name: "Limit to Ubuntu distributions"
+    import_role:
+      name: utils
+      tasks_from: filter_distribution
+
+  - name: "Install gcc / g++ / make"
+    include_role:
+      name: build_essential
+    tags: build_essential
+
+  - name: "Install gvm"
+    include_role:
+      name: gvm
+    tags: gvm
+
+  - name: "Install nvm"
+    include_role:
+      name: nvm
+    tags: nvm
+
+  - name: "Install python"
+    include_role:
+      name: python
+    tags: python
+
+  - name: "Install cheat.sh"
+    include_role:
+      name: cheat.sh
+    tags: cheat.sh

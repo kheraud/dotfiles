@@ -19,7 +19,7 @@ The global `site.yml` playbook imports all the other playbooks :
 
 - `shell.yml`
   - [cURL](https://linux.die.net/man/1/curl)
-  - set appropriate [locales](https://linux.die.net/man/1/locale)
+  - personal [locales](https://linux.die.net/man/1/locale)
   - [Neovim](https://github.com/neovim/neovim)
   - [Git](https://git-scm.com/)
   - [Zsh](https://www.zsh.org)
@@ -31,12 +31,15 @@ The global `site.yml` playbook imports all the other playbooks :
   - [bat](https://github.com/sharkdp/bat)
   - [exa](https://github.com/ogham/exa)
   - [ripgrep](https://github.com/BurntSushi/ripgrep)
-- `tools.yml`
-  - [htop](https://github.com/htop-dev/htop)
-  - [Python](https://www.python.org)
+- `prog.yml`
+  - [GCC / G++](https://gcc.gnu.org/)
   - [Make](https://linux.die.net/man/1/make)
   - [gvm](https://github.com/moovweb/gvm)
   - [nvm](https://github.com/nvm-sh/nvm)
+  - [Python](https://www.python.org)
+  - [Cheat.sh](https://github.com/chubin/cheat.sh)
+- `tools.yml`
+  - [htop](https://github.com/htop-dev/htop)
   - [rsync](https://rsync.samba.org)
   - [mlocate](https://linux.die.net/man/5/mlocate.db)
   - [lm sensors](https://github.com/lm-sensors/lm-sensors)

@@ -11,40 +11,6 @@
       name: htop
     tags: htop
 
-  - name: "Install python"
-    include_role:
-      name: python
-    tags: python
-
-  - name: "Install make"
-    include_role:
-      name: make
-    tags: make
-
-  - stat:
-      path: ~/.gvm
-    register: gvm_installed
-    tags:
-      - gvm
-
-  - name: "Install gvm"
-    include_role:
-      name: gvm
-    tags: gvm
-    when: not gvm_installed.stat.exists
-
-  - stat:
-      path: ~/.nvm/nvm.sh
-    register: nvm_installed
-    tags:
-      - nvm
-
-  - name: "Install nvm"
-    include_role:
-      name: nvm
-    tags: nvm
-    when: not nvm_installed.stat.exists
-
   - name: "Install rsync"
     include_role:
       name: rsync
@@ -84,8 +50,3 @@
     include_role:
       name: todo
     tags: todo
-
-  - name: "Install cheat.sh"
-    include_role:
-      name: cheat.sh
-    tags: cheat.sh
