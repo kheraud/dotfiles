@@ -14,16 +14,16 @@
     become: yes
 
   - name: "Install neovim"
-    include_role:
+    import_role:
       name: neovim
     tags: neovim
 
   - name: "Install git"
-    include_role:
+    import_role:
       name: git
     tags: git
 
   - name: "Install htop"
-    include_role:
+    import_role:
       name: htop
     tags: htop

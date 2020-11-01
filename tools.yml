@@ -7,46 +7,46 @@
       tasks_from: filter_distribution
 
   - name: "Install mlocate"
-    include_role:
+    import_role:
       name: mlocate
     tags: mlocate
 
   - name: "Install lm_sensors"
-    include_role:
+    import_role:
       name: lm_sensors
     tags: lm_sensors
 
   - name: "Install htop"
-    include_role:
+    import_role:
       name: htop
     tags: htop
 
   - name: "Install rsync"
-    include_role:
+    import_role:
       name: rsync
     tags: rsync
 
   - name: "Install gpg"
-    include_role:
+    import_role:
       name: gpg
     tags: gpg
 
   - name: "Install ffmpeg"
-    include_role:
+    import_role:
       name: ffmpeg
     tags: ffmpeg
 
   - name: "Install docker tools"
-    include_role:
+    import_role:
       name: docker
     tags: docker
 
   - name: "Install kube tools"
-    include_role:
+    import_role:
       name: kube
     tags: kube
 
   - name: "Install topydo cli"
-    include_role:
+    import_role:
       name: todo
     tags: todo

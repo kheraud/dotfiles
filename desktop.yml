@@ -7,26 +7,26 @@
       tasks_from: filter_distribution
 
   - name: "Install desktop fonts"
-    include_role:
+    import_role:
       name: desktop_fonts
     tags: desktop_fonts
 
   - name: "Install Urxvt"
-    include_role:
+    import_role:
       name: urxvt
     tags: urxvt
 
   - name: "Install Firefox"
-    include_role:
+    import_role:
       name: firefox
     tags: firefox
 
   - name: "Install VLC"
-    include_role:
+    import_role:
       name: vlc
     tags: vlc
 
   - name: "Install VSCode"
-    include_role:
+    import_role:
       name: vscode
     tags: vscode

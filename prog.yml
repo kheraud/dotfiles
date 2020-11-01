@@ -7,26 +7,26 @@
       tasks_from: filter_distribution
 
   - name: "Install gcc / g++ / make"
-    include_role:
+    import_role:
       name: build_essential
     tags: build_essential
 
   - name: "Install gvm"
-    include_role:
+    import_role:
       name: gvm
     tags: gvm
 
   - name: "Install nvm"
-    include_role:
+    import_role:
       name: nvm
     tags: nvm
 
   - name: "Install python"
-    include_role:
+    import_role:
       name: python
     tags: python
 
   - name: "Install cheat.sh"
-    include_role:
+    import_role:
       name: cheat.sh
     tags: cheat.sh

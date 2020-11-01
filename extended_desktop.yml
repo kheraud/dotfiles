@@ -7,41 +7,41 @@
       tasks_from: filter_distribution
 
   - name: "Install Libreoffice"
-    include_role:
+    import_role:
       name: libreoffice
     tags: libreoffice
 
   - name: "Install Gimp"
-    include_role:
+    import_role:
       name: gimp
     tags: gimp
 
   - name: "Install GParted"
-    include_role:
+    import_role:
       name: gparted
     tags: gparted
 
   # - name: "Install Thunderbird"
-  #   include_role:
+  #   import_role:
   #     name: thunderbird
   #   tags: thunderbird
 
   - name: "Install Transmission"
-    include_role:
+    import_role:
       name: transmission
     tags: transmission
 
   - name: "Install Boostnote"
-    include_role:
+    import_role:
       name: boostnote
     tags: boostnote
 
   - name: "Install Dropbox"
-    include_role:
+    import_role:
       name: dropbox
     tags: dropbox
 
   - name: "Install Slack"
-    include_role:
+    import_role:
       name: slack
     tags: slack

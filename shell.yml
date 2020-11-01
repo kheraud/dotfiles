@@ -14,57 +14,57 @@
     become: yes
 
   - name: "Install locales"
-    include_role:
+    import_role:
       name: locales
     tags: locales
 
   - name: "Install neovim"
-    include_role:
+    import_role:
       name: neovim
     tags: neovim
 
   - name: "Install git"
-    include_role:
+    import_role:
       name: git
     tags: git
 
   - name: "Install zsh"
-    include_role:
+    import_role:
       name: zsh
     tags: zsh
 
   - name: "Install Powerline fonts"
-    include_role:
+    import_role:
       name: powerline_fonts
     tags: powerline_fonts
 
   - name: "Install tmux"
-    include_role:
+    import_role:
       name: tmux
     tags: tmux
 
   - name: "Install fd"
-    include_role:
+    import_role:
       name: fd
     tags: fd
 
   - name: "Install fzf"
-    include_role:
+    import_role:
       name: fzf
     tags: fzf
 
   - name: "Install bat"
-    include_role:
+    import_role:
       name: bat
     tags: bat
 
   - name: "Install exa"
-    include_role:
+    import_role:
       name: exa
     tags: exa
 
   - name: "Install ripgrep"
-    include_role:
+    import_role:
       name: ripgrep
     tags: ripgrep
 
