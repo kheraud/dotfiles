@@ -1,0 +1,23 @@
+---
+- name: Unarchive kubectx binary
+  unarchive:
+    src: https://github.com/ahmetb/kubectx/releases/download/v{{ kubectx_version }}/kubectx_v{{ kubectx_version }}_linux_x86_64.tar.gz
+    dest: /usr/local/bin
+    remote_src: yes
+  become: yes
+
+- name: Unarchive kubens binary
+  unarchive:
+    src: https://github.com/ahmetb/kubectx/releases/download/v{{ kubectx_version }}/kubens_v{{ kubectx_version }}_linux_x86_64.tar.gz
+    dest: /usr/local/bin
+    remote_src: yes
+  become: yes
+
+- name: Add alias for kubectx / kubens
+  blockinfile:
+    path: ~/.zshrc_post
+    marker: "# {mark} ANSIBLE MANAGED kubectx / kubens BLOCK -->"
+    block: |
+      alias kctx="kubectx"
+      alias kns="kubens"
+    create: true

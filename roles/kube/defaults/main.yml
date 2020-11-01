@@ -1,2 +1,3 @@
 ---
 minikube_version: 1.13.1
+kubectx_version: 0.9.1

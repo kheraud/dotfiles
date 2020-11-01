@@ -47,6 +47,7 @@ The global `site.yml` playbook imports all the other playbooks :
   - [FFmpeg](https://ffmpeg.org/ffmpeg.html)
   - [Docker](https://www.docker.com/)
   - [kubectl](https://kubernetes.io/docs/reference/kubectl)
+  - [kubectx / kubens](https://github.com/ahmetb/kubectx#manual)
   - [VirtualBox](https://www.virtualbox.org)
   - [minikube](https://github.com/kubernetes/minikube)
   - [Helm](https://github.com/helm/helm)

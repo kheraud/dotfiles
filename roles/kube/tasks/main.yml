@@ -1,9 +1,12 @@
 ---
-- name: "Launch Kubernetes installation"
+- name: "Install kubectl"
   import_tasks: kubernetes.yml
 
-- name: "Launch Helm installation"
+- name: "Install kubectx / kubens"
+  import_tasks: kubectx.yml
+
+- name: "Install Helm"
   import_tasks: helm.yml
 
-- name: "Launch Minikube installation"
+- name: "Install Minikube"
   import_tasks: minikube.yml
