@@ -25,6 +25,7 @@ oh_my_zsh_plugins:
   - zsh-aliases-exa
   - tmux
   - zsh-nvm
+  - autojump
 #  - kubectl // Slow loading : https://github.com/ohmyzsh/ohmyzsh/issues/6843
 #  - helm // Not usefull if kubectl not here
 

@@ -43,6 +43,11 @@
       name: tmux
     tags: tmux
 
+  - name: "Install autojump"
+    import_role:
+      name: autojump
+    tags: autojump
+
   - name: "Install fd"
     import_role:
       name: fd

@@ -1,0 +1,5 @@
+---
+- name: Install autojump
+  apt:
+    name: autojump
+    state: present
