@@ -15,7 +15,7 @@
 
     - name: Apply {{ gnome_keys_path }} template temporarily
       template:
-        src: '{{ keybinding_template }}'
+        src: '{{ keybinding_template }}.j2'
         dest: '/tmp/new_{{ keybinding_template }}'
       changed_when: false
       

@@ -1,0 +1,16 @@
+---
+- name: "Install MS Core fonts"
+  apt:
+    name:
+      - ttf-mscorefonts-installer
+      - fonts-crosextra-carlito
+      - fonts-crosextra-caladea
+    state: present
+  become: yes
+
+- name: "Install Google fonts"
+  copy:
+    src: "{{ item }}"
+    dest: /usr/share/fonts/
+  become: yes
+  loop: "{{ query('fileglob', 'files/fonts/*.ttf') }}"

@@ -1,0 +1,57 @@
+---
+- name: "Limit to Ubuntu distributions"
+  import_role:
+    name: utils
+    tasks_from: filter_distribution
+
+- name: "Install cURL"
+  import_tasks: curl.yml
+  tags: curl
+
+- name: "Install locales"
+  import_tasks: locales.yml
+  tags: locales
+
+- name: "Install neovim"
+  import_tasks: neovim.yml
+  tags: neovim
+
+- name: "Install git"
+  import_tasks: git.yml
+  tags: git
+
+- name: "Install zsh"
+  import_tasks: zsh.yml
+  tags: zsh
+
+- name: "Install Powerline fonts"
+  import_tasks: powerline_fonts.yml
+  tags: powerline_fonts
+
+- name: "Install tmux"
+  import_tasks: tmux.yml
+  tags: tmux
+
+- name: "Install autojump"
+  import_tasks: autojump.yml
+  tags: autojump
+
+- name: "Install fd"
+  import_tasks: fd.yml
+  tags: fd
+
+- name: "Install fzf"
+  import_tasks: fzf.yml
+  tags: fzf
+
+- name: "Install bat"
+  import_tasks: bat.yml
+  tags: bat
+
+- name: "Install exa"
+  import_tasks: exa.yml
+  tags: exa
+
+- name: "Install ripgrep"
+  import_tasks: ripgrep.yml
+  tags: ripgrep

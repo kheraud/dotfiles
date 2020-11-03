@@ -1,0 +1,25 @@
+---
+- name: "Limit to Ubuntu distributions"
+  import_role:
+    name: utils
+    tasks_from: filter_distribution
+
+- name: "Install gcc / g++ / make"
+  import_tasks: build_essential.yml
+  tags: build_essential
+
+- name: "Install gvm"
+  import_tasks: gvm.yml
+  tags: gvm
+
+- name: "Install nvm"
+  import_tasks: nvm.yml
+  tags: nvm
+
+- name: "Install python"
+  import_tasks: python.yml
+  tags: python
+
+- name: "Install cheat.sh"
+  import_tasks: cheat_sh.yml
+  tags: cheat_sh

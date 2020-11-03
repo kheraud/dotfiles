@@ -1,7 +1,0 @@
----
-oh_my_zsh_plugins:
-  - git
-  - zsh-autosuggestions
-
-oh_my_sh_extra_plugins:
-  zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions

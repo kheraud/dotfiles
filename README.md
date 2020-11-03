@@ -15,9 +15,9 @@ ansible-playbook -K -i hosts site.yml
 
 ## Content of the playbooks
 
-The global `site.yml` playbook imports all the other playbooks :
+The global `site.yml` playbook plays the following roles :
 
-- `shell.yml`
+- `shell`
   - [cURL](https://linux.die.net/man/1/curl)
   - personal [locales](https://linux.die.net/man/1/locale)
   - [Neovim](https://github.com/neovim/neovim)
@@ -38,7 +38,7 @@ The global `site.yml` playbook imports all the other playbooks :
   - [nvm](https://github.com/nvm-sh/nvm)
   - [Python](https://www.python.org)
   - [Cheat.sh](https://github.com/chubin/cheat.sh)
-- `tools.yml`
+- `tools`
   - [mlocate](https://linux.die.net/man/5/mlocate.db)
   - [lm sensors](https://github.com/lm-sensors/lm-sensors)
   - [htop](https://github.com/htop-dev/htop)
@@ -52,11 +52,11 @@ The global `site.yml` playbook imports all the other playbooks :
   - [minikube](https://github.com/kubernetes/minikube)
   - [Helm](https://github.com/helm/helm)
   - [topydo](https://github.com/topydo/topydo)
-- `gnome.yml`
+- `gnome`
   - [dconf](https://wiki.gnome.org/Projects/dconf)
   - [My personal keybindings](roles/gnome/files)
   - [Tweaks](https://wiki.gnome.org/action/show/Apps/Tweaks?action=show&redirect=Apps%2FGnomeTweakTool)
-- `desktop.yml`
+- `desktop`
   - desktop fonts
     - ttf-mscorefonts
     - fonts-crosextra-carlito
@@ -66,7 +66,7 @@ The global `site.yml` playbook imports all the other playbooks :
   - [Firefox](https://www.mozilla.org/fr/firefox/new/)
   - [VLC](https://www.videolan.org/vlc/)
   - [VSCode](https://code.visualstudio.com/)
-- `extended_desktop.yml`
+- `extended_desktop`
   - [LibreOffice](https://www.libreoffice.org/)
   - [Gimp](https://www.gimp.org/)
   - [GParted](https://gparted.org/)

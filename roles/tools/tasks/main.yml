@@ -1,0 +1,33 @@
+---
+- name: "Limit to Ubuntu distributions"
+  import_role:
+    name: utils
+    tasks_from: filter_distribution
+
+- name: "Install mlocate"
+  import_tasks: mlocate.yml
+  tags: mlocate
+
+- name: "Install lm_sensors"
+  import_tasks: lm_sensors.yml
+  tags: lm_sensors
+
+- name: "Install htop"
+  import_tasks: htop.yml
+  tags: htop
+
+- name: "Install rsync"
+  import_tasks: rsync.yml
+  tags: rsync
+
+- name: "Install gpg"
+  import_tasks: gpg.yml
+  tags: gpg
+
+- name: "Install ffmpeg"
+  import_tasks: ffmpeg.yml
+  tags: ffmpeg
+
+- name: "Install topydo cli"
+  import_tasks: todo.yml
+  tags: todo
