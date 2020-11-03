@@ -61,7 +61,7 @@ The global `site.yml` playbook imports all the other playbooks :
     - ttf-mscorefonts
     - fonts-crosextra-carlito
     - fonts-crosextra-caladea
-    - [Extra google fonts](roles/desktop_fonts/defaults/main.yml)
+    - [Extra google fonts](roles/desktop_fonts/files)
   - [urxvt](https://linux.die.net/man/1/urxvt)
   - [Firefox](https://www.mozilla.org/fr/firefox/new/)
   - [VLC](https://www.videolan.org/vlc/)

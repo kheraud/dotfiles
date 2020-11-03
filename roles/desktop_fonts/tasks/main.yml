@@ -9,8 +9,8 @@
   become: yes
 
 - name: "Install Google fonts"
-  get_url:
-    url: "{{ item }}"
+  copy:
+    src: "{{ item }}"
     dest: /usr/share/fonts/
   become: yes
-  loop: "{{ google_fonts }}"
+  loop: "{{ query('fileglob', 'files/*.ttf') }}"
