@@ -15,6 +15,7 @@
     | map(attribute="value")
     | list
     | unique }} + {{ shell_extra_locales }}'
+  become: yes
 
 - name: Define locales for current user
   template:

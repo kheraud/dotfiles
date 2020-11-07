@@ -1,4 +1,10 @@
 ---
+- name: Install unzip
+  apt:
+    name: unzip
+    state: present
+  become: yes
+
 - name: Unarchive exa binary
   unarchive:
     src: https://github.com/ogham/exa/releases/download/v{{ exa_version }}/exa-linux-x86_64-{{ exa_version }}.zip

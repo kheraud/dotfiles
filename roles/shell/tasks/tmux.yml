@@ -26,9 +26,7 @@
     depth: 1
 
 - name: Source Tmux configuration
-  command:
-    chdir: '~'
-    cmd: 'tmux source ~/.tmux.conf'
+  shell: 'tmux start-server \; source ~/.tmux.conf' # Only solution to have a running tmux while sourcing configuration
   when: "tmux_clone is changed"
 
 - name: Update TPM configuration

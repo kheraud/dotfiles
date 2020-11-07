@@ -4,6 +4,11 @@
     name: utils
     tasks_from: filter_distribution
 
+- name: Update apt cache
+  apt:
+    update_cache: true
+  become: yes
+
 - name: "Install cURL"
   import_tasks: curl.yml
   tags: curl
