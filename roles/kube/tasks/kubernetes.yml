@@ -17,6 +17,7 @@
   copy:
     src: kubernetes.list
     dest: /etc/apt/sources.list.d/kubernetes.list
+    mode: 'u=rw,go=r'
   become: true
 
 - name: "Update software cache for apt-get"

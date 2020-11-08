@@ -15,3 +15,4 @@
   copy:
     src: 'boostnoterc'
     dest: '~/.boostnoterc'
+    mode: 'u=rw,g=r'

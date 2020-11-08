@@ -17,15 +17,16 @@
   file:
     path: ~/.urxvt
     state: directory
+    mode: 'u=rwx,g=rx'
 
 - name: "Copy launch Urxvt script"
   copy:
     src: launch-in-workspace.sh
     dest: ~/.urxvt/
-    mode: 'u=rwx,g=rx,o=rx'
+    mode: 'u=rwx,g=rx'
 
 - name: "Edit .Xresources"
   copy:
     src: Xresources
     dest: ~/.Xresources
-    mode: 'u=rwx,g=rx,o=rx'
+    mode: 'u=rwx,g=rx'

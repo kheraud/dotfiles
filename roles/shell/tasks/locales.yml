@@ -21,7 +21,7 @@
   template:
     src: locales.j2
     dest: ~/.locales
-    mode: '0644'
+    mode: 'u=rw,g=r'
 
 - name: Add locales to zshrc config
   blockinfile:
@@ -32,3 +32,4 @@
       if [ -f ~/.locales ]; then
         source ~/.locales
       fi
+    mode: 'u=rw,g=r'

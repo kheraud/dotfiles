@@ -8,7 +8,7 @@
   get_url:
     url: https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_version }}/install.sh
     dest: /tmp/nvm-installer
-    mode: 'u=rwx,g=rx,o=rx'
+    mode: 'u=rwx,g=rx'
   when: not nvm_installed.stat.exists
 
 - name: Launch nvm installer
@@ -28,3 +28,4 @@
     block: |
       export NVM_LAZY_LOAD=true
       export NVM_COMPLETION=true
+    mode: 'u=rw,g=r'

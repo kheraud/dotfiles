@@ -21,3 +21,4 @@
       alias kctx="kubectx"
       alias kns="kubens"
     create: true
+    mode: 'u=rw,g=r'

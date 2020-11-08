@@ -20,21 +20,14 @@
     version: "master"
   register: "omz_clone"
 
-- name: Set permissions of oh-my-zsh
-  file:
-    path: ~/.oh-my-zsh
-    mode: 'go-w'
-    recurse: yes
-  when: "omz_clone is changed"
-
 - name: Copy .zshrc for users
   template:
     src: zshrc.j2
     dest: ~/.zshrc
-    mode: 'u=rw,go=r'
+    mode: 'u=rw,g=r'
 
 - name: Import lambda-gister theme
-  get_url: 
+  get_url:
     url: 'https://raw.githubusercontent.com/ergenekonyigit/lambda-gitster/main/lambda-gitster.zsh-theme'
     dest: ~/.oh-my-zsh/themes/lambda-gitster.zsh-theme
 
@@ -42,6 +35,7 @@
   file:
     path: ~/.oh-my-custom/plugins
     state: directory
+    mode: 'u=rwx,g=rx'
 
 - name: Add extra plugins
   git:

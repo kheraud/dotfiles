@@ -20,7 +20,7 @@
   get_url:
     url: https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer
     dest: /tmp/gvm-installer
-    mode: 'u=rwx,g=rx,o=rx'
+    mode: 'u=rwx,g=rx'
   when: not gvm_installed.stat.exists
 
 - name: Launch gvm installer
@@ -34,3 +34,4 @@
     block: |
       source /home/kheraud/\.gvm/scripts/gvm
     create: true
+    mode: 'u=rw,g=r'

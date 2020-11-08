@@ -11,6 +11,7 @@
   copy:
     src: tmux.conf
     dest: '~/.tmux.conf'
+    mode: 'u=rw,g=r'
 
 - name: Install Tmux Plugin Manager
   git:

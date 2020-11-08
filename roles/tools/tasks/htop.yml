@@ -9,8 +9,10 @@
   file:
     path: ~/.config/htop
     state: directory
+    mode: 'u=rwx,g=rx'
 
 - name: Copy Htop configuration
   copy:
     src: htoprc
     dest: ~/.config/htop/htoprc
+    mode: 'u=rw,g=r'

@@ -18,4 +18,5 @@
     block: |
       alias fd="{{ fdfind_path.stdout }}"
     create: true
+    mode: 'u=rw,g=r'
   when: fdfind_path is succeeded

@@ -9,8 +9,10 @@
   copy:
     src: gitignore
     dest: ~/.gitignore
+    mode: 'u=rw'
 
 - name: Apply gitconfig configuration
   template:
     src: gitconfig.j2
     dest: ~/.gitconfig
+    mode: 'u=rw'

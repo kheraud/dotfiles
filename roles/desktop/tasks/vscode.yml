@@ -15,6 +15,7 @@
   copy:
     src: vscode.list
     dest: /etc/apt/sources.list.d/vscode.list
+    mode: 'u=rw,go=r'
   become: true
 
 - name: "Update software cache for apt-get"
