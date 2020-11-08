@@ -40,5 +40,6 @@
 - name: Add extra plugins
   git:
     repo: "{{ item.value }}"
-    dest: "~/.oh-my-custom/plugins/{{ item.key}}"
+    dest: "~/.oh-my-custom/plugins/{{ item.key }}"
+    version: 'master'
   loop: "{{ oh_my_sh_extra_plugins | dict2items }}"

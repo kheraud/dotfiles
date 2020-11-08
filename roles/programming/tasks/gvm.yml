@@ -24,7 +24,7 @@
   when: not gvm_installed.stat.exists
 
 - name: Launch gvm installer
-  shell: bash /tmp/gvm-installer
+  command: bash /tmp/gvm-installer
   when: not gvm_installed.stat.exists
 
 - name: Add gvm source in ~/.zshrc_post

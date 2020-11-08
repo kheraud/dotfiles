@@ -29,3 +29,4 @@
   git:
     repo: 'https://github.com/DarrinTisdale/zsh-aliases-exa.git'
     dest: '~/.oh-my-custom/plugins/zsh-aliases-exa'
+    version: 'master'

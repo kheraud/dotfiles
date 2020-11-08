@@ -8,7 +8,7 @@
 
 
 - name: Get batcat path
-  shell: which batcat
+  command: which batcat
   register: batcat_path
   changed_when: false
   ignore_errors: true
