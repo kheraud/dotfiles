@@ -6,7 +6,11 @@
   become: yes
 
 - name: Check Powerline fonts on host
-  shell: 'fc-list | grep -i powerline'
+  shell:  |
+    set -o pipefail
+    fc-list | grep -i powerline
+  args:
+    executable: /bin/bash
   register: fonts
   failed_when: "fonts.rc == 2"
   changed_when: false
