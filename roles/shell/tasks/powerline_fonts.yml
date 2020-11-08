@@ -1,4 +1,10 @@
 ---
+- name: Install fontconfig
+  apt:
+    name: fontconfig
+    state: present
+  become: yes
+
 - name: Check Powerline fonts on host
   shell: 'fc-list | grep -i powerline'
   register: fonts

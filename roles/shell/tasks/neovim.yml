@@ -1,10 +1,4 @@
 ---
-- name: Install fontconfig
-  apt:
-    name: fontconfig
-    state: present
-  become: yes
-
 - name: Install Neovim
   apt:
     name: neovim
