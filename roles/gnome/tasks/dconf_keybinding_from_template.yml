@@ -1,7 +1,5 @@
 ---
-- 
-  vars:
-    gnome_keys_path: '/{{ keybinding_template | replace(".", "/") }}/'
+- name: "Apply dconf keybinding for template"
   block:
     - name: "Extract {{ gnome_keys_path }} currently applied"
       shell: >
@@ -17,8 +15,9 @@
       template:
         src: '{{ keybinding_template }}.j2'
         dest: '/tmp/new_{{ keybinding_template }}'
+        mode: 'u=rw,g=r'
       changed_when: false
-      
+
     - name: "Calculate new {{ gnome_keys_path }} checksum"
       stat:
         path : "/tmp/new_{{ keybinding_template }}"
@@ -28,3 +27,5 @@
       shell: >
         dconf load {{ gnome_keys_path }} < /tmp/new_{{ keybinding_template }}
       when: original_keybinding.stat.checksum != new_keybinding.stat.checksum
+  vars:
+    gnome_keys_path: '/{{ keybinding_template | replace(".", "/") }}/'

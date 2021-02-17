@@ -6,7 +6,7 @@
   become: yes
 
 - name: Get fdfind path
-  shell: which fdfind
+  command: which fdfind
   register: fdfind_path
   changed_when: false
   ignore_errors: true
@@ -18,4 +18,5 @@
     block: |
       alias fd="{{ fdfind_path.stdout }}"
     create: true
+    mode: 'u=rw,g=r'
   when: fdfind_path is succeeded

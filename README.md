@@ -56,6 +56,8 @@ The global `site.yml` playbook plays the following roles :
   - [dconf](https://wiki.gnome.org/Projects/dconf)
   - [My personal keybindings](roles/gnome/files)
   - [Tweaks](https://wiki.gnome.org/action/show/Apps/Tweaks?action=show&redirect=Apps%2FGnomeTweakTool)
+  - This role could be replace with : <https://extensions.gnome.org/extension/1486/extensions-sync/>
+    but the plugin does not replace `switch-to-application-x` which mess with my bindings
 - `desktop`
   - desktop fonts
     - ttf-mscorefonts
@@ -70,8 +72,20 @@ The global `site.yml` playbook plays the following roles :
   - [LibreOffice](https://www.libreoffice.org/)
   - [Gimp](https://www.gimp.org/)
   - [GParted](https://gparted.org/)
-  - [Thunderbird](https://www.thunderbird.net)
   - [Transmission](https://transmissionbt.com/)
-  - [Boostnote](https://github.com/BoostIO/Boostnote)
   - [Dropbox](https://www.dropbox.com)
-  - [Slack](https://slack.com)
+
+## TODO
+
+- [ ] <https://github.com/ryanoasis/nerd-fonts>
+- [ ] <https://github.com/httpie/httpie>
+- [ ] <https://github.com/ggreer/the_silver_searcher>
+- [ ] <https://github.com/nicolargo/glances>
+- [ ] <https://github.com/tj/git-extras>
+- [ ] <https://github.com/jarun/nnn>
+- [ ] <https://github.com/antonmedv/fx>
+- [ ] <https://github.com/Xfennec/progress>
+- [ ] <https://github.com/joeyespo/grip>
+- [ ] <https://github.com/jarun/ddgr>
+- [ ] <https://github.com/b4b4r07/enhancd>
+- [ ] <https://github.com/traviscross/mtr>

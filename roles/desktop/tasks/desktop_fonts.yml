@@ -12,5 +12,6 @@
   copy:
     src: "{{ item }}"
     dest: /usr/share/fonts/
+    mode: 'u=rw,go=r'
   become: yes
   loop: "{{ query('fileglob', 'files/fonts/*.ttf') }}"

@@ -8,7 +8,7 @@
   import_tasks: docker.yml
 
 - name: "Add user to docker group"
-  import_tasks: docker-user.yml
+  import_tasks: docker_user.yml
 
 - name: "Install docker-compose"
-  import_tasks: docker-compose.yml
+  import_tasks: docker_compose.yml

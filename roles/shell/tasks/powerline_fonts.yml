@@ -1,13 +1,25 @@
 ---
+- name: Install fontconfig
+  apt:
+    name: fontconfig
+    state: present
+  become: yes
+
 - name: Check Powerline fonts on host
-  shell: 'fc-list | grep -i powerline | cat' # piped to cat in order to avoid grep exit on 1 if no match
-  changed_when: false
+  shell:  |
+    set -o pipefail
+    fc-list | grep -i powerline
+  args:
+    executable: /bin/bash
   register: fonts
+  failed_when: "fonts.rc == 2"
+  changed_when: false
 
 - name: Retrieve Powerline fonts
   git:
     dest: '/tmp/powerline-fonts'
     repo: 'https://github.com/powerline/fonts.git'
+    version: master
     depth: "1"
   when: (fonts is not defined) or (fonts.stdout | length == 0)
 

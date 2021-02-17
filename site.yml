@@ -25,6 +25,6 @@
 
     - role: desktop
       tags: desktop
-      
+
     - role: extended_desktop
       tags: extended_desktop

@@ -1,8 +1,5 @@
 ---
-- 
-  vars:
-    keybinding_path: '{{ role_path }}/files/{{ keybinding_file }}'
-    gnome_keys_path: '/{{ keybinding_file | replace(".", "/") }}/'
+- name: "Apply dconf keybinding for file"
   block:
     - name: "Extract {{ gnome_keys_path }} currently applied"
       shell: >
@@ -24,9 +21,13 @@
       copy:
         src: '{{ keybinding_file }}'
         dest: /tmp/{{ keybinding_file }}
+        mode: 'u=rw,g=r'
       when: original_keybinding.stat.checksum != new_keybinding.stat.checksum
 
     - name: "Apply keybinding {{ gnome_keys_path }} to host"
       shell: >
         dconf load {{ gnome_keys_path }} < /tmp/{{ keybinding_file }}
       when: original_keybinding.stat.checksum != new_keybinding.stat.checksum
+  vars:
+    keybinding_path: '{{ role_path }}/files/{{ keybinding_file }}'
+    gnome_keys_path: '/{{ keybinding_file | replace(".", "/") }}/'

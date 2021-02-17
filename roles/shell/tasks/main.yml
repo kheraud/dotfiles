@@ -8,6 +8,7 @@
   apt:
     update_cache: true
   become: yes
+  changed_when: false
 
 - name: "Install cURL"
   import_tasks: curl.yml

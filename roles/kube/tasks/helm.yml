@@ -17,6 +17,7 @@
   copy:
     src: helm.list
     dest: /etc/apt/sources.list.d/helm.list
+    mode: 'u=rw,go=r'
   become: true
 
 - name: "Update software cache for apt-get"

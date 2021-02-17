@@ -8,7 +8,7 @@
 
 
 - name: Get batcat path
-  shell: which batcat
+  command: which batcat
   register: batcat_path
   changed_when: false
   ignore_errors: true
@@ -20,4 +20,5 @@
     block: |
       alias bat="{{ batcat_path.stdout }}"
     create: true
+    mode: 'u=rw,g=r'
   when: batcat_path is succeeded

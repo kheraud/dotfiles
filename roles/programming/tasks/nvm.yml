@@ -8,17 +8,18 @@
   get_url:
     url: https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_version }}/install.sh
     dest: /tmp/nvm-installer
-    mode: 'u=rwx,g=rx,o=rx'
+    mode: 'u=rwx,g=rx'
   when: not nvm_installed.stat.exists
 
 - name: Launch nvm installer
-  shell: bash /tmp/nvm-installer
+  command: bash /tmp/nvm-installer
   when: not nvm_installed.stat.exists
 
 - name: Add zsh-nvm plugin
   git:
     repo: 'https://github.com/lukechilds/zsh-nvm'
     dest: '~/.oh-my-custom/plugins/zsh-nvm'
+    version: 'master'
 
 - name: Add zsh-nvm local settings
   blockinfile:
@@ -28,3 +29,4 @@
     block: |
       export NVM_LAZY_LOAD=true
       export NVM_COMPLETION=true
+    mode: 'u=rw,g=r'
