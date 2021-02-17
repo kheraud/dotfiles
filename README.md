@@ -70,8 +70,5 @@ The global `site.yml` playbook plays the following roles :
   - [LibreOffice](https://www.libreoffice.org/)
   - [Gimp](https://www.gimp.org/)
   - [GParted](https://gparted.org/)
-  - [Thunderbird](https://www.thunderbird.net)
   - [Transmission](https://transmissionbt.com/)
-  - [Boostnote](https://github.com/BoostIO/Boostnote)
   - [Dropbox](https://www.dropbox.com)
-  - [Slack](https://slack.com)
