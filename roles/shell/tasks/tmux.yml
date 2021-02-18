@@ -21,13 +21,6 @@
     version: 'master'
   register: "tmux_clone"
 
-- name: Install Tmux fonts
-  git:
-    dest: '~/.tmux/fonts'
-    repo: 'https://github.com/powerline/fonts.git'
-    depth: "1"
-    version: 'master'
-
 - name: Source Tmux and TPM configurations
   shell: 'tmux new "sleep 0.1 && tmux source ~/.tmux.conf && ~/.tmux/plugins/tpm/bin/install_plugins"'
   register: "tmux_content"

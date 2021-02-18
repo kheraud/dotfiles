@@ -24,7 +24,7 @@ The global `site.yml` playbook plays the following roles :
   - [Git](https://git-scm.com/)
   - [Zsh](https://www.zsh.org)
   - [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh)
-  - [Powerline fonts](https://github.com/powerline/fonts)
+  - [Roboto Mono Nerd fonts](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/RobotoMono)
   - [Tmux](https://leanpub.com/the-tao-of-tmux/read)
   - [fd](https://github.com/sharkdp/fd)
   - [fzf](https://github.com/junegunn/fzf)
@@ -77,7 +77,7 @@ The global `site.yml` playbook plays the following roles :
 
 ## TODO
 
-- [ ] <https://github.com/ryanoasis/nerd-fonts>
+- [x]] <https://github.com/ryanoasis/nerd-fonts>
 - [ ] <https://github.com/httpie/httpie>
 - [ ] <https://github.com/ggreer/the_silver_searcher>
 - [ ] <https://github.com/nicolargo/glances>

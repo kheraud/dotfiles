@@ -1,0 +1,20 @@
+---
+- name: Install fontconfig
+  apt:
+    name: fontconfig
+    state: present
+  become: yes
+
+- name: Install nerd shell fonts
+  get_url:
+    url: "{{ item }}"
+    dest: /usr/share/fonts
+    mode: "u=rwx,go=rx"
+  loop: "{{ shell_fonts }}"
+  become: yes
+  register: nerd_shell_fonts_added
+
+- name: Refresh font cache
+  ansible.builtin.command: "fc-cache -fv"
+  become: yes
+  when: nerd_shell_fonts_added.changed
