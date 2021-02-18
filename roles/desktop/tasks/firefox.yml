@@ -3,7 +3,7 @@
   apt:
     name: firefox
     state: present
-  become: yes
+  become: true
 
 - name: "Check if Gnome shell is installed"
   stat:
@@ -14,5 +14,5 @@
   apt:
     name: chrome-gnome-shell
     state: present
-  become: yes
+  become: true
   when: gnome_shell_path.stat.exists

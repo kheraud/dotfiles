@@ -3,4 +3,4 @@
   apt:
     name: autojump
     state: present
-  become: yes
+  become: true

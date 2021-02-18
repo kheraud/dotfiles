@@ -3,7 +3,7 @@
   apt:
     name: rxvt-unicode
     state: present
-  become: yes
+  become: true
 
 - name: "Install xdotool + xsel"
   apt:
@@ -11,7 +11,7 @@
       - xdotool
       - xsel
     state: present
-  become: yes
+  become: true
 
 - name: "Check urxvt config directory exists"
   file:

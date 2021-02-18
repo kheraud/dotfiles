@@ -3,4 +3,4 @@
   apt:
     name: gparted
     state: present
-  become: yes
+  become: true

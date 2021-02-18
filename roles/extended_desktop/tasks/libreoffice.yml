@@ -3,4 +3,4 @@
   apt:
     name: libreoffice
     state: present
-  become: yes
+  become: true

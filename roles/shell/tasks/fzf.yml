@@ -3,4 +3,4 @@
   apt:
     name: fzf
     state: present
-  become: yes
+  become: true

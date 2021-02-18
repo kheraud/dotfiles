@@ -7,7 +7,7 @@
 - name: Update apt cache
   apt:
     update_cache: true
-  become: yes
+  become: true
   changed_when: false
 
 - name: "Install cURL"

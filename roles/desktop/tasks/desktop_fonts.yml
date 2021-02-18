@@ -6,12 +6,12 @@
       - fonts-crosextra-carlito
       - fonts-crosextra-caladea
     state: present
-  become: yes
+  become: true
 
 - name: "Install Google fonts"
   copy:
     src: "{{ item }}"
     dest: /usr/share/fonts/
     mode: 'u=rw,go=r'
-  become: yes
+  become: true
   loop: "{{ query('fileglob', 'files/fonts/*.ttf') }}"

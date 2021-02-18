@@ -5,10 +5,12 @@ name = "pypi"
 
 [packages]
 ansible = "~=2.10.6"
-molecule = "~=3.2.3 "
-pytest-testinfra = "~=6.1.0"
 
 [dev-packages]
 
 [requires]
 python_version = "3.8"
+
+[packages.ansible-lint]
+extras = [ "yamllint", "community",]
+version = "~=5.0.1"

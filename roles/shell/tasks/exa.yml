@@ -3,27 +3,27 @@
   apt:
     name: unzip
     state: present
-  become: yes
+  become: true
 
 - name: Unarchive exa binary
   unarchive:
     src: https://github.com/ogham/exa/releases/download/v{{ exa_version }}/exa-linux-x86_64-{{ exa_version }}.zip
     dest: /usr/local/bin
-    remote_src: yes
+    remote_src: true
     creates: /usr/local/bin/exa
-  become: yes
+  become: true
 
 - name: Rename exa binary
   command:
     cmd: mv -f /usr/local/bin/exa-linux-x86_64 /usr/local/bin/exa
     creates: /usr/local/bin/exa
-  become: yes
+  become: true
 
 # - name: Fetch exa man page
 #   get_url:
 #     url: https://raw.githubusercontent.com/ogham/exa/master/contrib/man/exa.1
 #     dest: /usr/share/man/man1/exa.1
-#   become: yes
+#   become: true
 
 - name: Fetch zsh-aliases-exa alias for oh-my-zsh aliases
   git:

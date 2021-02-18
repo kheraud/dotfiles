@@ -20,7 +20,7 @@
 
 - name: "Update software cache for apt-get"
   apt:
-    update_cache: yes
+    update_cache: true
   become: true
   changed_when: false
 

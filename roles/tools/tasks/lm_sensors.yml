@@ -3,4 +3,4 @@
   apt:
     name: lm-sensors
     state: present
-  become: yes
+  become: true

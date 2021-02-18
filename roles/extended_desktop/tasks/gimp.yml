@@ -3,4 +3,4 @@
   apt:
     name: gimp
     state: present
-  become: yes
+  become: true

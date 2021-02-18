@@ -82,3 +82,6 @@ pip-selfcheck.json
 
 ## LibreOffice locks
 .~lock.*#
+
+## VSCode
+.vscode

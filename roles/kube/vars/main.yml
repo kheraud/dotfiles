@@ -1,3 +1,7 @@
 ---
 kube_apt_key_url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
 helm_apt_key_url: https://baltocdn.com/helm/signing.asc
+
+minikube_version: 1.17.1
+## @TODO Change version to a specific revision
+kubectx_version: 0.9.1

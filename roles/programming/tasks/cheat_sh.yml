@@ -3,11 +3,11 @@
   apt:
     name: rlwrap
     state: present
-  become: yes
+  become: true
 
 - name: Install cheat.sh
   get_url:
     url: https://cht.sh/:cht.sh
     dest: /usr/local/bin/cht.sh
     mode: 'u=rwx,go=rx'
-  become: yes
+  become: true

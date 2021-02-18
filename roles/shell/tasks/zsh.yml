@@ -3,10 +3,10 @@
   apt:
     name: zsh
     state: present
-  become: yes
+  become: true
 
 - name: Set current shell to Zsh
-  become: yes
+  become: true
   user:
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh

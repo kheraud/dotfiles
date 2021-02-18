@@ -6,7 +6,7 @@
       - python3-virtualenv
       - python3-setuptools
     state: present
-  become: yes
+  become: true
 
 - name: Install Topydo
   pip:

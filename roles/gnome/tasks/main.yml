@@ -10,7 +10,7 @@
       - dconf-cli
       - dconf-editor
     state: present
-  become: yes
+  become: true
 
 - name: "Load gnome wm keybindings into gnome"
   vars:
@@ -31,4 +31,4 @@
   apt:
     name: gnome-tweaks
     state: present
-  become: yes
+  become: true

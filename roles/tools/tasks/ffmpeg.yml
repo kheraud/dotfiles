@@ -3,4 +3,4 @@
   apt:
     name: ffmpeg
     state: present
-  become: yes
+  become: true

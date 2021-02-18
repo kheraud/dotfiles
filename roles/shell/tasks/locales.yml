@@ -3,7 +3,7 @@
   apt:
     name: locales
     state: present
-  become: yes
+  become: true
 
 - name: Ensure locales are available
   locale_gen:
@@ -15,7 +15,7 @@
     | map(attribute="value")
     | list
     | unique }} + {{ shell_extra_locales }}'
-  become: yes
+  become: true
 
 - name: Define locales for current user
   template:

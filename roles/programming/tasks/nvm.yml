@@ -4,6 +4,7 @@
     path: ~/.nvm/nvm.sh
   register: nvm_installed
 
+# @TODO nvm is not required in fact, zsh-nvm does the job
 - name: Fetch nvm install script
   get_url:
     url: https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_version }}/install.sh

@@ -9,10 +9,10 @@
   apt:
     name: xz-utils
     state: present
-  become: yes
+  become: true
 
 - name: "Install Minikube"
   apt:
     deb: "https://github.com/kubernetes/minikube/releases/download/v{{ minikube_version }}/minikube_{{ minikube_version }}-0_amd64.deb"
     state: present
-  become: yes
+  become: true

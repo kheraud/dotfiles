@@ -3,7 +3,7 @@
   apt:
     name: fd-find
     state: present
-  become: yes
+  become: true
 
 - name: Get fdfind path
   command: which fdfind

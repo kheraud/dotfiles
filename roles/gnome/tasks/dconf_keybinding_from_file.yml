@@ -8,12 +8,12 @@
 
     - name: "Calculate current {{ gnome_keys_path }} checksum"
       stat:
-        path : "/tmp/org_{{ keybinding_file }}"
+        path: "/tmp/org_{{ keybinding_file }}"
       register: original_keybinding
 
     - name: "Calculate new {{ gnome_keys_path }} checksum"
       stat:
-        path : "{{ keybinding_path }}"
+        path: "{{ keybinding_path }}"
       delegate_to: localhost
       register: new_keybinding
 

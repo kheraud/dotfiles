@@ -3,4 +3,4 @@
   apt:
     name: rsync
     state: present
-  become: yes
+  become: true

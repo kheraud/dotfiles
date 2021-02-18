@@ -3,4 +3,4 @@
   apt:
     name: vlc
     state: present
-  become: yes
+  become: true

@@ -9,7 +9,7 @@
       - gcc
       - build-essential
     state: present
-  become: yes
+  become: true
 
 - name: Check gvm installation
   stat:

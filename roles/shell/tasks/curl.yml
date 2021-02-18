@@ -4,4 +4,4 @@
     name: curl
     state: present
   tags: curl
-  become: yes
+  become: true

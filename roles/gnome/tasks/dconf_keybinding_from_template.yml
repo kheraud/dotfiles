@@ -8,7 +8,7 @@
 
     - name: "Calculate current {{ gnome_keys_path }} checksum"
       stat:
-        path : "/tmp/org_{{ keybinding_template }}"
+        path: "/tmp/org_{{ keybinding_template }}"
       register: original_keybinding
 
     - name: Apply {{ gnome_keys_path }} template temporarily
@@ -20,7 +20,7 @@
 
     - name: "Calculate new {{ gnome_keys_path }} checksum"
       stat:
-        path : "/tmp/new_{{ keybinding_template }}"
+        path: "/tmp/new_{{ keybinding_template }}"
       register: new_keybinding
 
     - name: "Apply keybinding {{ gnome_keys_path }} to host"

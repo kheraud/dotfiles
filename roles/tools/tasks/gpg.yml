@@ -3,4 +3,4 @@
   apt:
     name: gnupg2
     state: present
-  become: yes
+  become: true
