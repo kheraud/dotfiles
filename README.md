@@ -77,7 +77,7 @@ The global `site.yml` playbook plays the following roles :
 
 ## TODO
 
-- [x]] <https://github.com/ryanoasis/nerd-fonts>
+- [x] <https://github.com/ryanoasis/nerd-fonts>
 - [ ] <https://github.com/httpie/httpie>
 - [ ] <https://github.com/ggreer/the_silver_searcher>
 - [ ] <https://github.com/nicolargo/glances>
