@@ -41,3 +41,12 @@
   command: code --install-extension {{ item }}
   loop: "{{ missing_extensions }}"
   when: missing_extensions | length > 0
+
+- name: "Add alias to launch VSCode easily"
+  blockinfile:
+    path: ~/.zshrc_post
+    marker: "# {mark} ANSIBLE MANAGED vscode BLOCK -->"
+    block: |
+      alias c!="code ."
+    create: true
+    mode: 'u=rw,g=r'
