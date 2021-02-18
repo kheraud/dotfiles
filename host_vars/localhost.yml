@@ -37,6 +37,7 @@ todo_context:
     alias: todop
 
 vscode_extensions:
+  - 4ops.terraform
   - Arjun.swagger-viewer
   - DavidAnson.vscode-markdownlint
   - dbaeumer.vscode-eslint
@@ -46,17 +47,21 @@ vscode_extensions:
   - esbenp.prettier-vscode
   - fabiospampinato.vscode-diff
   - golang.go
+  - hilleer.yaml-plus-json
   - HookyQR.beautify
+  - jebbs.plantuml
   - mhutchie.git-graph
   - ms-azuretools.vscode-docker
   - ms-kubernetes-tools.vscode-kubernetes-tools
   - ms-python.python
+  - ms-toolsai.jupyter
+  - ms-vscode-remote.remote-containers
   - ms-vsliveshare.vsliveshare
-  - msjsdiag.debugger-for-chrome
   - octref.vetur
-  - PKief.material-icon-theme
   - redhat.vscode-yaml
   - techer.open-in-browser
   - vscode-icons-team.vscode-icons
   - vscode-snippet.snippet
   - xabikos.JavaScriptSnippets
+  - yzane.markdown-pdf
+  - yzhang.markdown-all-in-one
