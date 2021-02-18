@@ -9,7 +9,7 @@ The default `hosts` file targets `localhost`. If you want to target other hosts,
 Then edit `host_vars/*.yml` with custom settings (`host_vars/localhost.yml` is a good start)
 
 ```shell
-sudo apt install ansible
+pipenv install && pipenv shell
 ansible-playbook -K -i hosts site.yml
 ```
 
