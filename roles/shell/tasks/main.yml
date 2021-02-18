@@ -30,9 +30,9 @@
   import_tasks: zsh.yml
   tags: zsh
 
-- name: "Install Powerline fonts"
-  import_tasks: powerline_fonts.yml
-  tags: powerline_fonts
+- name: "Install shell fonts"
+  import_tasks: shell_fonts.yml
+  tags: shell_fonts
 
 - name: "Install tmux"
   import_tasks: tmux.yml

@@ -38,10 +38,10 @@
 *.color15: #FFFFFF
 
 !! URxvt Appearance
-URxvt.font: xft:Roboto Mono Light for Powerline:size=12:style=regular
-URxvt.boldFont: xft:Roboto Mono for Powerline:size=12:style=Bold
-URxvt.italicFont: xft:Roboto Mono for Powerline:size=12:style=Italic
-URxvt.boldItalicfont: xft:Roboto Mono for Powerline:size=12:style=Bold Italic
+URxvt.font: xft:RobotoMono Nerd Font Mono:size=12:style=Regular
+URxvt.boldFont: xft:RobotoMono Nerd Font Mono:size=12:style=Bold
+URxvt.italicFont: xft:RobotoMono Nerd Font Mono:size=12:style=Italic
+URxvt.boldItalicfont: xft:RobotoMono Nerd Font Mono:size=12:style=Bold Italic
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
