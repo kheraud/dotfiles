@@ -61,3 +61,15 @@
 - name: "Install ripgrep"
   import_tasks: ripgrep.yml
   tags: ripgrep
+
+- name: "Install httpie"
+  import_tasks: httpie.yml
+  tags: httpie
+
+- name: "Install Glances"
+  import_tasks: glances.yml
+  tags: glances
+
+- name: "Install nnn"
+  import_tasks: nnn.yml
+  tags: nnn

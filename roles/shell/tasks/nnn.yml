@@ -1,0 +1,6 @@
+---
+- name: Install nnn
+  apt:
+    deb: "https://github.com/jarun/nnn/releases/download/v{{ nnn_version }}/nnn_{{ nnn_version }}-1_ubuntu20.04.amd64.deb"
+    state: present
+  become: true
