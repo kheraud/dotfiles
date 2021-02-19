@@ -73,3 +73,7 @@
 - name: "Install nnn"
   import_tasks: nnn.yml
   tags: nnn
+
+- name: "Install git-extras"
+  import_tasks: git_extras.yml
+  tags: git_extras

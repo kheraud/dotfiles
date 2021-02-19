@@ -81,7 +81,7 @@ The global `site.yml` playbook plays the following roles :
 - [x] <https://github.com/httpie/httpie>
 - [ ] <https://github.com/ggreer/the_silver_searcher>
 - [x] <https://github.com/nicolargo/glances>
-- [ ] <https://github.com/tj/git-extras>
+- [x] <https://github.com/tj/git-extras>
 - [-] <https://github.com/jarun/nnn>
 - [ ] <https://github.com/antonmedv/fx>
 - [ ] <https://github.com/Xfennec/progress>
