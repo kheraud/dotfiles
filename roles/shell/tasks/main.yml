@@ -77,3 +77,7 @@
 - name: "Install git-extras"
   import_tasks: git_extras.yml
   tags: git_extras
+
+- name: "Install fx"
+  import_tasks: fx.yml
+  tags: fx

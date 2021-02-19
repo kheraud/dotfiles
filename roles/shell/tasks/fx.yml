@@ -1,0 +1,14 @@
+---
+- name: Unarchive fx binary
+  unarchive:
+    src: https://github.com/antonmedv/fx/releases/download/{{ fx_version }}/fx-linux.zip
+    dest: /usr/local/bin
+    remote_src: true
+  become: true
+
+- name: Add link to fx binary 
+  ansible.builtin.file:
+    src: /usr/local/bin/fx-linux
+    dest: /usr/local/bin/fx
+    state: link
+  become: true
