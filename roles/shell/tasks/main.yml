@@ -81,3 +81,7 @@
 - name: "Install fx"
   import_tasks: fx.yml
   tags: fx
+
+- name: "Install progress"
+  import_tasks: progress.yml
+  tags: progress

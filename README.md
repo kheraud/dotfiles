@@ -84,7 +84,7 @@ The global `site.yml` playbook plays the following roles :
 - [x] <https://github.com/tj/git-extras>
 - [-] <https://github.com/jarun/nnn>
 - [x] <https://github.com/antonmedv/fx>
-- [ ] <https://github.com/Xfennec/progress>
+- [x] <https://github.com/Xfennec/progress>
 - [ ] <https://github.com/joeyespo/grip>
 - [ ] <https://github.com/jarun/ddgr>
 - [ ] <https://github.com/b4b4r07/enhancd>
