@@ -1,7 +1,0 @@
----
-- name: Install git extras
-  apt:
-    name: git-extras
-    state: present
-    update_cache: true
-  become: true

@@ -1,26 +1,7 @@
 ---
-- name: "Limit to Ubuntu distributions"
-  import_role:
-    name: utils
-    tasks_from: filter_distribution
-
-- name: Update apt cache
-  apt:
-    update_cache: true
-  become: true
-  changed_when: false
-
-- name: "Install cURL"
-  import_tasks: curl.yml
-  tags: curl
-
 - name: "Install locales"
   import_tasks: locales.yml
   tags: locales
-
-- name: "Install neovim"
-  import_tasks: neovim.yml
-  tags: neovim
 
 - name: "Install git"
   import_tasks: git.yml
@@ -61,22 +42,6 @@
 - name: "Install ripgrep"
   import_tasks: ripgrep.yml
   tags: ripgrep
-
-- name: "Install httpie"
-  import_tasks: httpie.yml
-  tags: httpie
-
-- name: "Install Glances"
-  import_tasks: glances.yml
-  tags: glances
-
-- name: "Install nnn"
-  import_tasks: nnn.yml
-  tags: nnn
-
-- name: "Install git-extras"
-  import_tasks: git_extras.yml
-  tags: git_extras
 
 - name: "Install fx"
   import_tasks: fx.yml

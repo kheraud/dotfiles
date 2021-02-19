@@ -20,14 +20,9 @@
     mode: 'u=rw,go=r'
   become: true
 
-- name: "Update software cache for apt-get"
-  apt:
-    update_cache: true
-  become: true
-  changed_when: false
-
 - name: "Install kubectl"
   apt:
     name: kubectl
     state: present
+    update_cache: true
   become: true

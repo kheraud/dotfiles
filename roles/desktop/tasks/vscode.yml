@@ -18,16 +18,11 @@
     mode: 'u=rw,go=r'
   become: true
 
-- name: "Update software cache for apt-get"
-  apt:
-    update_cache: true
-  become: true
-  changed_when: false
-
 - name: "Install Visual Studio Code"
   apt:
     name: code
     state: present
+    update_cache: true
   become: true
 
 - name: "Export installed VSCode extensions"

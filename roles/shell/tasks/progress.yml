@@ -3,5 +3,4 @@
   apt:
     name: progress
     state: present
-    update_cache: true
   become: true

@@ -6,7 +6,4 @@ shell_fonts:
   - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Bold-Italic/complete/Roboto%20Mono%20Bold%20Italic%20Nerd%20Font%20Complete%20Mono.ttf
 
 exa_version: 0.9.0
-httpie_version: 2.4.0
-glances_version: 3.1.6
-nnn_version: 3.5
 fx_version: 20.0.2

@@ -6,7 +6,7 @@
     remote_src: true
   become: true
 
-- name: Add link to fx binary 
+- name: Add link to fx binary
   ansible.builtin.file:
     src: /usr/local/bin/fx-linux
     dest: /usr/local/bin/fx

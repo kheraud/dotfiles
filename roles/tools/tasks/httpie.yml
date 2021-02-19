@@ -1,13 +1,4 @@
 ---
-- name: Install pip dependencies
-  apt:
-    name:
-      - python3-pip
-      - python3-virtualenv
-      - python3-setuptools
-    state: present
-  become: true
-
 - name: Install httpie
   # @TODO not working if you run ansible in a pipenv
   # Find a way to force global even in pipenv

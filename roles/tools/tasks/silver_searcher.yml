@@ -1,0 +1,6 @@
+---
+- name: Install Silver searcher
+  apt:
+    name: silversearcher-ag
+    state: present
+  become: true

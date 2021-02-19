@@ -1,8 +1,31 @@
 ---
-- name: "Limit to Ubuntu distributions"
-  import_role:
-    name: utils
-    tasks_from: filter_distribution
+- name: "Install neovim"
+  import_tasks: neovim.yml
+  tags: neovim
+
+- name: "Install htop"
+  import_tasks: htop.yml
+  tags: htop
+
+- name: "Install Glances"
+  import_tasks: glances.yml
+  tags: glances
+
+- name: "Install httpie"
+  import_tasks: httpie.yml
+  tags: httpie
+
+- name: "Install nnn"
+  import_tasks: nnn.yml
+  tags: nnn
+
+- name: "Install Silver searcher"
+  import_tasks: silver_searcher.yml
+  tags: silver_searcher
+
+- name: "Install rsync"
+  import_tasks: rsync.yml
+  tags: rsync
 
 - name: "Install mlocate"
   import_tasks: mlocate.yml
@@ -11,14 +34,6 @@
 - name: "Install lm_sensors"
   import_tasks: lm_sensors.yml
   tags: lm_sensors
-
-- name: "Install htop"
-  import_tasks: htop.yml
-  tags: htop
-
-- name: "Install rsync"
-  import_tasks: rsync.yml
-  tags: rsync
 
 - name: "Install gpg"
   import_tasks: gpg.yml

@@ -31,12 +31,6 @@
     mode: 'u=rw,go=r'
   become: true
 
-- name: "Update software cache for apt-get"
-  apt:
-    update_cache: true
-  become: true
-  changed_when: false
-
 - name: "Install docker"
   apt:
     name:
@@ -44,4 +38,5 @@
       - docker-ce-cli
       - containerd.io
     state: present
+    update_cache: true
   become: true

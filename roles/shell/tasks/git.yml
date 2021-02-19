@@ -16,3 +16,9 @@
     src: gitconfig.j2
     dest: ~/.gitconfig
     mode: 'u=rw'
+
+- name: Install git extras
+  apt:
+    name: git-extras
+    state: present
+  become: true

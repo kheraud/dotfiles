@@ -1,9 +1,4 @@
 ---
-- name: "Limit to Ubuntu distributions"
-  import_role:
-    name: utils
-    tasks_from: filter_distribution
-
 - name: "Install desktop fonts"
   import_tasks: desktop_fonts.yml
   tags: desktop_fonts

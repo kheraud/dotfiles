@@ -18,7 +18,6 @@ ansible-playbook -K -i hosts site.yml
 The global `site.yml` playbook plays the following roles :
 
 - `shell`
-  - [cURL](https://linux.die.net/man/1/curl)
   - personal [locales](https://linux.die.net/man/1/locale)
   - [Neovim](https://github.com/neovim/neovim)
   - [Git](https://git-scm.com/)
@@ -56,7 +55,7 @@ The global `site.yml` playbook plays the following roles :
   - [dconf](https://wiki.gnome.org/Projects/dconf)
   - [My personal keybindings](roles/gnome/files)
   - [Tweaks](https://wiki.gnome.org/action/show/Apps/Tweaks?action=show&redirect=Apps%2FGnomeTweakTool)
-  - This role could be replace with : <https://extensions.gnome.org/extension/1486/extensions-sync/>
+  - This role could be replaced with : <https://extensions.gnome.org/extension/1486/extensions-sync/>
     but the plugin does not replace `switch-to-application-x` which mess with my bindings
 - `desktop`
   - desktop fonts
@@ -74,18 +73,3 @@ The global `site.yml` playbook plays the following roles :
   - [GParted](https://gparted.org/)
   - [Transmission](https://transmissionbt.com/)
   - [Dropbox](https://www.dropbox.com)
-
-## TODO
-
-- [x] <https://github.com/ryanoasis/nerd-fonts>
-- [x] <https://github.com/httpie/httpie>
-- [ ] <https://github.com/ggreer/the_silver_searcher>
-- [x] <https://github.com/nicolargo/glances>
-- [x] <https://github.com/tj/git-extras>
-- [-] <https://github.com/jarun/nnn>
-- [x] <https://github.com/antonmedv/fx>
-- [x] <https://github.com/Xfennec/progress>
-- [ ] <https://github.com/joeyespo/grip>
-- [ ] <https://github.com/jarun/ddgr>
-- [ ] <https://github.com/b4b4r07/enhancd>
-- [ ] <https://github.com/traviscross/mtr>
