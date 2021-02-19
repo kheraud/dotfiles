@@ -17,6 +17,8 @@ ansible-playbook -K -i hosts site.yml
 
 The global `site.yml` playbook plays the following roles :
 
+@TODO Update this list
+
 - `shell`
   - personal [locales](https://linux.die.net/man/1/locale)
   - [Neovim](https://github.com/neovim/neovim)

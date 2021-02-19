@@ -1,7 +1,5 @@
 ---
 - name: Install httpie
-  # @TODO not working if you run ansible in a pipenv
-  # Find a way to force global even in pipenv
   pip:
     name: "httpie=={{ httpie_version }}"
     # Here to force the usage of sysem pip
