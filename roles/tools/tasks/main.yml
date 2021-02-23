@@ -46,3 +46,7 @@
 - name: "Install topydo cli"
   import_tasks: todo.yml
   tags: todo
+
+- name: "Install ngrok"
+  import_tasks: ngrok.yml
+  tags: ngrok

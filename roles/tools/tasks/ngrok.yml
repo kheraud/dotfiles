@@ -1,0 +1,7 @@
+---
+- name: Unarchive ngrok binary
+  unarchive:
+    src: https://bin.equinox.io/c/{{ ngrok_version }}/ngrok-stable-linux-amd64.zip
+    dest: /usr/local/bin
+    remote_src: true
+  become: true
