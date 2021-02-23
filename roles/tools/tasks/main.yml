@@ -43,7 +43,7 @@
   import_tasks: ffmpeg.yml
   tags: ffmpeg
 
-- name: "Install topydo cli"
+- name: "Install todo management tools"
   import_tasks: todo.yml
   tags: todo
 

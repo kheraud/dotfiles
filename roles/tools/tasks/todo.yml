@@ -1,13 +1,4 @@
 ---
-- name: Install pip
-  apt:
-    name:
-      - python3-pip
-      - python3-virtualenv
-      - python3-setuptools
-    state: present
-  become: true
-
 - name: Install Topydo
   pip:
     name:
@@ -33,3 +24,17 @@
       {% endfor %}
     create: true
     mode: 'u=rw,g=r'
+
+- name: Fetch todo.txt cli
+  unarchive:
+    src: https://github.com/todotxt/todo.txt-cli/releases/download/v{{ todo_txt_version }}/todo.txt_cli-{{ todo_txt_version }}.tar.gz
+    dest: /tmp
+    remote_src: true
+  become: true
+
+- name: Add todo.txt cli
+  ansible.builtin.copy:
+    src: "/tmp/todo.txt_cli-{{  todo_txt_version  }}/"
+    dest: /usr/local/bin
+    remote_src: yes
+  become: true
