@@ -1,5 +1,5 @@
 [/]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
 eject=@as []
 magnifier=@as []
 magnifier-zoom-in=@as []
@@ -23,3 +23,8 @@ www=['<Primary><Shift>BackSpace']
 binding='<Super>Return'
 command='{{ ansible_user_dir }}/.urxvt/launch-in-workspace.sh'
 name='Launch tmux terminal'
+
+[custom-keybindings/custom1]
+binding='<Primary><Alt>Delete'
+command='gnome-session-quit --power-off'
+name='Power off'
