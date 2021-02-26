@@ -17,6 +17,7 @@
       delegate_to: localhost
       register: new_keybinding
 
+    # @TODO Not idempotent, rework these tasks
     - name: "Copy keybinding {{ keybinding_file }} to host"
       copy:
         src: '{{ keybinding_file }}'

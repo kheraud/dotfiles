@@ -9,18 +9,12 @@
 
 - name: "Load gnome wm keybindings into gnome"
   vars:
-    keybinding_file: 'org.gnome.desktop.wm.keybindings'
+    keybinding_file: "{{ item }}"
   include_tasks: dconf_keybinding_from_file.yml
-
-- name: "Load gnome shell keybindings into gnome"
-  vars:
-    keybinding_file: 'org.gnome.shell.keybindings'
-  include_tasks: dconf_keybinding_from_file.yml
-
-- name: "Load gnome media-keys into gnome"
-  vars:
-    keybinding_template: 'org.gnome.settings-daemon.plugins.media-keys'
-  include_tasks: dconf_keybinding_from_template.yml
+  loop:
+    - "org.gnome.desktop.wm.keybindings"
+    - "org.gnome.shell.keybindings"
+    - "org.gnome.settings-daemon.plugins.media-keys"
 
 - name: "Install gnome tweaks"
   apt:

@@ -13,17 +13,12 @@
     state: present
   become: true
 
-- name: "Check urxvt config directory exists"
-  file:
-    path: ~/.urxvt
-    state: directory
-    mode: 'u=rwx,g=rx'
-
 - name: "Copy launch Urxvt script"
   copy:
     src: launch-in-workspace.sh
-    dest: ~/.urxvt/
-    mode: 'u=rwx,g=rx'
+    dest: /usr/local/bin/
+    mode: 'u=rwx,go=rx'
+  become: true
 
 - name: "Edit .Xresources"
   copy:
