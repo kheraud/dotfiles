@@ -1,21 +1,4 @@
 ---
-- name: "Install dconf"
-  apt:
-    name:
-      - dconf-cli
-      - dconf-editor
-    state: present
-  become: true
-
-- name: "Load gnome wm keybindings into gnome"
-  vars:
-    keybinding_file: "{{ item }}"
-  include_tasks: dconf_keybinding_from_file.yml
-  loop:
-    - "org.gnome.desktop.wm.keybindings"
-    - "org.gnome.shell.keybindings"
-    - "org.gnome.settings-daemon.plugins.media-keys"
-
 - name: "Install gnome tweaks"
   apt:
     name: gnome-tweaks
