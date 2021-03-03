@@ -88,9 +88,6 @@ The global `site.yml` playbook plays the following roles :
   - [Transmission](https://transmissionbt.com/)
   - [Dropbox](https://www.dropbox.com)
 
-(*) My personal keybindings could be replaced with : [gnome-shell-extensions-sync](https://extensions.gnome.org/extension/1486/extensions-sync/)
-but the plugin [does not handle all my keybindings](https://github.com/oae/gnome-shell-extensions-sync/issues/21).
-
 ## Install a subset
 
 You can use [Ansible tags](https://docs.ansible.com/ansible/latest/user_guide/playbooks_tags.html#selecting-or-skipping-tags-when-you-run-a-playbook)
