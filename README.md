@@ -70,6 +70,7 @@ The global `site.yml` playbook plays the following roles :
     - Use [my gist](https://gist.github.com/kheraud/7fa0b1083fa5e179b796c97e390cffc2) to setup extension
   - [Numix themes](https://github.com/numixproject/numix-gtk-theme)
   - [Numix icons](https://github.com/numixproject/numix-icon-theme-circle)
+  - [Chrome gnome shell](https://gitlab.gnome.org/GNOME/chrome-gnome-shel) // Compatible Firefox
 - `desktop`
   - desktop fonts
     - ttf-mscorefonts
@@ -78,7 +79,6 @@ The global `site.yml` playbook plays the following roles :
     - [Extra google fonts](roles/desktop_fonts/files)
   - [urxvt](https://linux.die.net/man/1/urxvt)
   - [Firefox](https://www.mozilla.org/fr/firefox/new/)
-  - @TODO Install `chrome-gnome-shell`
   - [VLC](https://www.videolan.org/vlc/)
   - [VSCode](https://code.visualstudio.com/)
 - `extended_desktop`

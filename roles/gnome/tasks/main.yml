@@ -12,3 +12,9 @@
       - numix-icon-theme
     state: present
   become: true
+
+- name: "Install chrome-gnome-shell"
+  apt:
+    name: chrome-gnome-shell
+    state: present
+  become: true
