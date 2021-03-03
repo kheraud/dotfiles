@@ -68,7 +68,8 @@ The global `site.yml` playbook plays the following roles :
   - For my personal keybindings and extensions :
     - Install [gnome-shell-extensions-sync](https://github.com/oae/gnome-shell-extensions-sync)
     - Use [my gist](https://gist.github.com/kheraud/7fa0b1083fa5e179b796c97e390cffc2) to setup extension
-  - @TODO Add `numix` theme in gnome
+  - [Numix themes](https://github.com/numixproject/numix-gtk-theme)
+  - [Numix icons](https://github.com/numixproject/numix-icon-theme-circle)
 - `desktop`
   - desktop fonts
     - ttf-mscorefonts
