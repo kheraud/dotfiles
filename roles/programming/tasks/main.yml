@@ -3,18 +3,19 @@
   import_tasks: build_essential.yml
   tags: build_essential
 
-- name: "Install gvm"
-  import_tasks: gvm.yml
-  tags: gvm
-
-- name: "Install nvm"
-  import_tasks: nvm.yml
-  tags: nvm
-
-- name: "Install python"
-  import_tasks: python.yml
-  tags: python
-
 - name: "Install cheat.sh"
   import_tasks: cheat_sh.yml
   tags: cheat_sh
+
+- name: "Install asdf plugins"
+  vars:
+    plugin_name: "{{ item.key }}"
+    plugin_url: "{{ item.value.url }}"
+    plugin_versions: "{{ item.value.versions | default([]) }}"
+    plugin_apt_prerequisites: "{{item.value.apt_prerequisites | default([]) }}"
+  include_tasks:
+    file: asdf_plugin.yml
+    apply:
+      tags: "asdf_plugins"
+  tags: "asdf_plugins"
+  loop: "{{ asdf_plugin_list | dict2items | selectattr('key', 'in', asdf_plugins | dict2items | map(attribute='key') ) | items2dict | combine(asdf_plugins, recursive=True, list_merge='keep') | dict2items }}"

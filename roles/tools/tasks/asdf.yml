@@ -1,0 +1,17 @@
+---
+- name: Install asdf
+  git:
+    repo: 'https://github.com/asdf-vm/asdf.git'
+    dest: '~/.asdf'
+    version: 'v{{ asdf_version }}'
+
+- name: Add asdf preload
+  blockinfile:
+    path: ~/.zshrc_pre
+    create: true
+    marker: "# {mark} ANSIBLE MANAGED ASDF BLOCK -->"
+    block: |
+      # Here because of omz issue for asdf :
+      # https://github.com/ohmyzsh/ohmyzsh/pull/8837
+      fpath=($HOME/.asdf/completions $fpath)
+    mode: 'u=rw,g=r'

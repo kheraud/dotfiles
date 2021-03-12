@@ -1,7 +1,7 @@
 # Personal dotfiles and applications
 
 The dotfiles and applications added here are provisioned with Ansible.
-Due to a lack of time, these playbooks **only apply to `Ubuntu` >= 20.04 distribution**.
+Due to a lack of time, this playbook **only applies to `Ubuntu` >= 20.04 distribution**.
 
 ## Installation
 
@@ -34,13 +34,6 @@ The global `site.yml` playbook plays the following roles :
   - [exa](https://github.com/ogham/exa)
   - [ripgrep](https://github.com/BurntSushi/ripgrep)
   - [fx](https://github.com/antonmedv/fx)
-- `programming`
-  - [GCC / G++](https://gcc.gnu.org/)
-  - [Make](https://linux.die.net/man/1/make)
-  - [GVM](https://github.com/moovweb/gvm)
-  - [nvm](https://github.com/nvm-sh/nvm)
-  - [Python](https://www.python.org)
-  - [Cheat.sh](https://github.com/chubin/cheat.sh)
 - `tools`
   - [Neovim](https://github.com/neovim/neovim)
   - [htop](https://github.com/htop-dev/htop)
@@ -55,14 +48,29 @@ The global `site.yml` playbook plays the following roles :
   - [FFmpeg](https://ffmpeg.org/ffmpeg.html)
   - [todo.cli](https://github.com/todotxt/todo.txt-cli)
   - [topydo](https://github.com/topydo/topydo)
-  - [ngrok](https://ngrok.com/)
-- `docker / kube`
+  - [ngrok](https://ngrok.com)
+  - [asdf](https://asdf-vm.com)
   - [docker](https://docs.docker.com/engine/)
   - [docker-compose](https://docs.docker.com/compose/)
+- `programming` (heavily relying on asdf tool)
+  - [GCC / G++](https://gcc.gnu.org/)
+  - [Make](https://linux.die.net/man/1/make)
+  - [Cheat.sh](https://github.com/chubin/cheat.sh)
+  - [Python](https://www.python.org)
+  - [Nodejs](https://nodejs.org/en/)
+  - [Golang](https://golang.org/)
+  - [yarn](https://yarnpkg.com/)
+  - [java](https://www.java.com/fr/)
+  - [scala](https://scala-lang.org/)
+  - [Github cli](https://cli.github.com/)
   - [kubectl](https://kubernetes.io/docs/reference/kubectl)
   - [kubectx / kubens](https://github.com/ahmetb/kubectx#manual)
-  - [Helm](https://github.com/helm/helm)
   - [Minikube](https://github.com/kubernetes/minikube)
+  - [kind](https://github.com/kubernetes-sigs/kind)
+  - [Helm](https://github.com/helm/helm)
+  - [terraform](https://www.terraform.io/docs/cli/index.html)
+  - [vault](https://www.vaultproject.io/docs/commands)
+  - [AWS cli](https://aws.amazon.com/fr/cli/)
 - `gnome` [if gnome-shell is installed]
   - [Tweaks](https://wiki.gnome.org/action/show/Apps/Tweaks)
   - For my personal keybindings and extensions :
@@ -80,7 +88,7 @@ The global `site.yml` playbook plays the following roles :
   - [urxvt](https://linux.die.net/man/1/urxvt)
   - [Firefox](https://www.mozilla.org/fr/firefox/new/)
   - [VLC](https://www.videolan.org/vlc/)
-  - [VSCode](https://code.visualstudio.com/)
+  - [VSCode](https://code.visualstudio.com/) with [these extensions](host_vars/localhost.yml)
 - `extended_desktop`
   - [LibreOffice](https://www.libreoffice.org/)
   - [Gimp](https://www.gimp.org/)

@@ -1,0 +1,11 @@
+---
+asdf_plugins:
+  python:
+    versions:
+      - "3.9.2"
+  nodejs:
+    versions:
+      - lts
+  golang:
+    versions:
+      - "1.16"

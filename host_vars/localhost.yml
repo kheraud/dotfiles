@@ -24,10 +24,57 @@ oh_my_zsh_plugins:
   - fzf
   - zsh-aliases-exa
   - tmux
-  - zsh-nvm
   - autojump
-#  - kubectl // Slow loading : https://github.com/ohmyzsh/ohmyzsh/issues/6843
-#  - helm // Not usefull if kubectl not here
+  - asdf
+  - kubectl
+  # - helm // Slow loading
+
+asdf_plugins:
+  python:
+    versions:
+      - "3.9.2"
+  nodejs:
+    versions:
+      - lts
+  golang:
+    versions:
+      - "1.16"
+  yarn:
+    versions:
+      - "1.22.10"
+  java:
+    versions:
+      - adoptopenjdk-12.0.2+10.1
+  scala:
+    versions:
+      - "2.13.5"
+  github-cli:
+    versions:
+      - "1.7.0"
+  kubectl:
+    versions:
+      - "1.20.4"
+  kubectx:
+    versions:
+      - "0.9.3"
+  minikube:
+    versions:
+      - "1.18.1"
+  kind:
+    versions:
+      - "0.10.0"
+  helm:
+    versions:
+      - "3.5.2"
+  terraform:
+    versions:
+      - "0.14.7"
+  vault:
+    versions:
+      - "1.6.3"
+  awscli:
+    versions:
+      - "2.1.30"
 
 todo_path: '~/Dropbox/Applications/Simpletask'
 todo_context:
