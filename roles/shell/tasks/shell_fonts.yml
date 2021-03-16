@@ -12,6 +12,5 @@
     mode: "u=rwx,go=rx"
   loop: "{{  shell_fonts  }}"
   become: true
-  register: nerd_shell_fonts_added
   notify:
     - Refresh font cache

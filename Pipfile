@@ -12,5 +12,5 @@ ansible = "~=2.10.6"
 python_version = "3.8"
 
 [packages.ansible-lint]
-extras = [ "yamllint", "community",]
-version = "~=5.0.1"
+extras = [ "yamllint",]
+version = "~=5.0.3"

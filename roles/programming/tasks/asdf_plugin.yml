@@ -12,12 +12,12 @@
   register: added_plugin
   changed_when: '"already added" not in added_plugin.stderr'
 
-- name: "Get installed version of {{ plugin_name }}"
-  ansible.builtin.command: "asdf list {{ plugin_name }}"
+- name: "Get installed versions of {{ plugin_name }}"
+  ansible.builtin.command: "asdf list {{ plugin_name }}"
   register: raw_installed_version
-  changed_when: False
+  changed_when: false
 
-- name: "Format installed version of {{ plugin_name }}"
+- name: "Format installed versions of {{ plugin_name }}"
   ansible.builtin.set_fact:
     installed_version: "{{ raw_installed_version.stdout_lines | map('trim') }}"
 
@@ -27,8 +27,8 @@
     cmd: ~/.asdf/plugins/nodejs/bin/import-previous-release-team-keyring
   when: plugin_name == "nodejs" and not raw_installed_version.stdout_lines
 
-- name: "Install versions for {{ plugin_name }}"
-  ansible.builtin.command: "asdf install {{ plugin_name }} {{ plugin_version }}"
+- name: "Install versions for {{ plugin_name }}"
+  ansible.builtin.command: "asdf install {{ plugin_name }} {{ plugin_version }}"
   when: plugin_version not in installed_version
   loop: "{{ plugin_versions }}"
   loop_control:

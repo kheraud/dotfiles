@@ -2,4 +2,3 @@
 - name: Refresh font cache
   ansible.builtin.command: "fc-cache -fv"
   become: true
-  when: nerd_shell_fonts_added.changed

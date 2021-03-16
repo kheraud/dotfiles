@@ -7,6 +7,12 @@
   import_tasks: cheat_sh.yml
   tags: cheat_sh
 
+- name: "Check asdf command exists"
+  ansible.builtin.shell:
+    cmd: command -v asdf
+  changed_when: false
+  tags: "asdf_plugins"
+
 - name: "Install asdf plugins"
   vars:
     plugin_name: "{{ item.key }}"
@@ -18,4 +24,13 @@
     apply:
       tags: "asdf_plugins"
   tags: "asdf_plugins"
-  loop: "{{ asdf_plugin_list | dict2items | selectattr('key', 'in', asdf_plugins | dict2items | map(attribute='key') ) | items2dict | combine(asdf_plugins, recursive=True, list_merge='keep') | dict2items }}"
+  loop: "{{ asdf_plugin_list |
+          dict2items |
+          selectattr(
+            'key',
+            'in',
+            asdf_plugins | dict2items | map(attribute='key')
+          ) |
+          items2dict |
+          combine(asdf_plugins, recursive=True, list_merge='keep') |
+          dict2items }}"

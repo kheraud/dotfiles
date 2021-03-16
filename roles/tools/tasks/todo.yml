@@ -27,14 +27,14 @@
 
 - name: Fetch todo.txt cli
   unarchive:
-    src: https://github.com/todotxt/todo.txt-cli/releases/download/v{{ todo_txt_version }}/todo.txt_cli-{{ todo_txt_version }}.tar.gz
+    src: "https://github.com/todotxt/todo.txt-cli/releases/download/v{{ todo_txt_version }}/todo.txt_cli-{{ todo_txt_version }}.tar.gz"
     dest: /tmp
     remote_src: true
   become: true
 
 - name: Add todo.txt cli
   ansible.builtin.copy:
-    src: "/tmp/todo.txt_cli-{{  todo_txt_version  }}/"
+    src: "/tmp/todo.txt_cli-{{ todo_txt_version }}/"
     dest: /usr/local/bin
-    remote_src: yes
+    remote_src: true
   become: true

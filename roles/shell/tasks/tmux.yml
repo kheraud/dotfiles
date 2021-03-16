@@ -19,12 +19,4 @@
     repo: 'https://github.com/tmux-plugins/tpm.git'
     depth: "1"
     version: 'master'
-  register: "tmux_clone"
-
-- name: Source Tmux and TPM configurations (out tmux)
-  shell: 'tmux new-session -d -s ansible-tmux-cfg "sleep 0.1 && tmux source-file ~/.tmux.conf && ~/.tmux/plugins/tpm/bin/install_plugins"'
-  when: 'lookup("env", "TMUX") == "" and tmux_clone is changed'
-
-- name: Source Tmux and TPM configurations (in tmux)
-  shell: 'tmux source ~/.tmux.conf && ~/.tmux/plugins/tpm/bin/install_plugins'
-  when: 'lookup("env", "TMUX") != "" and tmux_clone is changed'
+  notify: Refresh tmux configuration

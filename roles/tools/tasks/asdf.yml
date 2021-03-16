@@ -3,7 +3,7 @@
   git:
     repo: 'https://github.com/asdf-vm/asdf.git'
     dest: '~/.asdf'
-    version: 'v{{ asdf_version }}'
+    version: "v{{ asdf_version }}"
 
 - name: Add asdf preload
   blockinfile:

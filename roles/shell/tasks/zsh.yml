@@ -18,7 +18,6 @@
     update: true
     accept_hostkey: true
     version: "master"
-  register: "omz_clone"
 
 - name: Copy .zshrc for users
   template:

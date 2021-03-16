@@ -1,5 +1,6 @@
 ---
 - hosts: all
+
   pre_tasks:
     - name: Limit to Ubuntu distributions
       import_role:
@@ -7,25 +8,27 @@
         tasks_from: filter_distribution
       tags:
         - always
-    - name: Install prerequisites
-      import_role:
-        name: utils
-        tasks_from: module_prerequisites
-      tags:
-        - always
+
     - name: Update apt cache
       import_role:
         name: utils
         tasks_from: apt_cache
       tags:
         - always
+
+    - name: Install prerequisites
+      import_role:
+        name: utils
+        tasks_from: module_prerequisites
+      tags:
+        - always
+
   roles:
     - role: shell
       tags: shell
 
     - role: tools
       tags: tools
-
     - role: docker
       tags:
         - docker
