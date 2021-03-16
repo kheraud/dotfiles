@@ -21,13 +21,10 @@
     version: 'master'
   register: "tmux_clone"
 
-# @TODO Fix it
 - name: Source Tmux and TPM configurations (out tmux)
-  shell: 'tmux new "sleep 0.1 && tmux source ~/.tmux.conf && ~/.tmux/plugins/tpm/bin/install_plugins"'
-  register: "tmux_content"
-  when: 'lookup("env", "TMUX") == ""'
+  shell: 'tmux new-session -d -s ansible-tmux-cfg "sleep 0.1 && tmux source-file ~/.tmux.conf && ~/.tmux/plugins/tpm/bin/install_plugins"'
+  when: 'lookup("env", "TMUX") == "" and tmux_clone is changed'
 
 - name: Source Tmux and TPM configurations (in tmux)
   shell: 'tmux source ~/.tmux.conf && ~/.tmux/plugins/tpm/bin/install_plugins'
-  register: "tmux_content"
   when: 'lookup("env", "TMUX") != "" and tmux_clone is changed'
