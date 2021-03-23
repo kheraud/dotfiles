@@ -1,6 +1,56 @@
 ---
 - name: Install nnn
-  apt:
+  ansible.builtin.apt:
     deb: "https://github.com/jarun/nnn/releases/download/v{{ nnn_version }}/nnn_{{ nnn_version }}-1_ubuntu20.04.amd64.deb"
     state: present
   become: true
+
+- name: Get installed plugins
+  ansible.builtin.find:
+    paths:
+      - "~/.config/nnn/plugins"
+    file_type: file
+  register: installed_plugins
+
+- name: Fetch nnn plugins
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs
+    dest: "/tmp/install-nnn-plugins"
+    mode: 'u=rwx,go=rx'
+  when: installed_plugins.matched | int == 0
+
+- name: Install nnn plugins
+  ansible.builtin.command: sh /tmp/install-nnn-plugins
+  when: installed_plugins.matched | int == 0
+
+- name: Copy ewrap script
+  ansible.builtin.copy:
+    src: ewrap
+    dest: /usr/local/bin/
+    mode: 'u=rwx,go=rx'
+  become: true
+
+- name: Install ueberzug
+  ansible.builtin.pip:
+    name: "ueberzug=={{ nnn_ueberzug_version }}"
+    # Here to force the usage of system pip
+    # instead of virtualenv location
+    executable: "/usr/bin/pip3"
+
+- name: Configure nnn env. var.
+  ansible.builtin.blockinfile:
+    path: ~/.zshrc_post
+    marker: "# {mark} ANSIBLE MANAGED nnn BLOCK -->"
+    block: |
+      alias n!="VISUAL=ewrap nnn -ade"
+
+      export NNN_BMS='c:~/Documents;p:~/Desktop;w:~/Download;r:~/Dropbox'
+      export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$"
+      export NNN_COLORS='#0a1b2c3d'
+      export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
+      export NNN_MCLICK='^L'
+
+      NNN_PLUG_DEFAULT='b:bookmarks;p:preview-tui;a:autojump'
+      export NNN_PLUG="$NNN_PLUG_DEFAULT"
+    create: true
+    mode: 'u=rw,g=r'

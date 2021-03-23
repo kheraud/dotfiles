@@ -11,12 +11,12 @@
   changed_when: false
   ignore_errors: true
 
-- name: Add alias for fdfind
-  blockinfile:
-    path: ~/.zshrc_post
-    marker: "# {mark} ANSIBLE MANAGED fd BLOCK -->"
-    block: |
-      alias fd="{{ fdfind_path.stdout }}"
-    create: true
-    mode: 'u=rw,g=r'
-  when: fdfind_path is succeeded
+- name: Add symlink to fdfind
+  ansible.builtin.file:
+    src: "{{ fdfind_path.stdout }}"
+    dest: /usr/bin/fd
+    owner: root
+    group: root
+    state: link
+  become: true
+  when: fdfind_path is succeeded and fdfind_path.stdout != "/usr/bin/fd"
