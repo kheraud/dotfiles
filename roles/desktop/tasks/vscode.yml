@@ -42,6 +42,6 @@
     path: ~/.zshrc_post
     marker: "# {mark} ANSIBLE MANAGED vscode BLOCK -->"
     block: |
-      alias c!="code ."
+      alias xc="code --new-window ."
     create: true
     mode: 'u=rw,g=r'

@@ -42,7 +42,7 @@
     path: ~/.zshrc_post
     marker: "# {mark} ANSIBLE MANAGED nnn BLOCK -->"
     block: |
-      alias n!="VISUAL=ewrap nnn -ade"
+      alias xn="VISUAL=ewrap nnn -ade"
 
       export NNN_BMS='c:~/Documents;p:~/Desktop;w:~/Download;r:~/Dropbox'
       export NNN_ARCHIVE="\\.(7z|bz2|gz|tar|tgz|zip)$"
