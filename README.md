@@ -34,6 +34,8 @@ The global `site.yml` playbook plays the following roles :
   - [exa](https://github.com/ogham/exa)
   - [ripgrep](https://github.com/BurntSushi/ripgrep)
   - [fx](https://github.com/antonmedv/fx)
+  - [jq](https://github.com/stedolan/jq) (redundant with fx)
+  - [progress](https://github.com/Xfennec/progress)
 - `tools`
   - [Neovim](https://github.com/neovim/neovim)
   - [htop](https://github.com/htop-dev/htop)

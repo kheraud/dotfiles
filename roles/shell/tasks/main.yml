@@ -47,6 +47,10 @@
   import_tasks: fx.yml
   tags: fx
 
+- name: "Install jq"
+  import_tasks: jq.yml
+  tags: jq
+
 - name: "Install progress"
   import_tasks: progress.yml
   tags: progress
