@@ -1,0 +1,35 @@
+---
+- name: Copy XFCE xfconf settings
+  ansible.builtin.copy:
+    src: xfconf/
+    dest: ~/.config/xfce4/xfconf/xfce-perchannel-xml/
+    mode: 'u=rw,go=r'
+  tags: xfce_conf
+  register: xfce_xconf_settings
+
+- name: Install switch-to-monitor
+  get_url:
+    url: https://raw.githubusercontent.com/calandoa/movescreen/master/movescreen.py
+    dest: /usr/local/bin/movescreen.py
+    mode: 'u=rwx,go=rx'
+  become: true
+  tags: xfce_switch_monitor
+
+- name: Install Rofi
+  ansible.builtin.apt:
+    name: rofi
+    state: present
+  become: true
+  tags: rofi
+
+- name: Init Rofi configuration
+  file:
+    path: ~/.config/rofi
+    state: directory
+    mode: 'u=rwx,go=rx'
+  tags: rofi
+
+- name: Configure panel
+  ansible.builtin.command: "xfce4-panel-profiles load {{ role_path }}/files/panel/tuned-wzp.tar.bz2"
+  tags: xfce_panel
+  when: xfce_xconf_settings.changed or xfce_force_panel_refresh

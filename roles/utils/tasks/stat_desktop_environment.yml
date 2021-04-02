@@ -1,0 +1,16 @@
+---
+- name: Check if Gnome shell is installed
+  stat:
+    path: /usr/bin/gnome-shell
+  register: gnome_shell_path
+
+- name: Check if XFCE is installed
+  stat:
+    path: /usr/bin/xfce4-session
+  register: xfce_shell_path
+
+- name: Register desktop environments
+  ansible.builtin.set_fact:
+    installed_desktop_environments:
+      gnome: "{{ gnome_shell_path.stat.exists }}"
+      xfce: "{{ xfce_shell_path.stat.exists }}"

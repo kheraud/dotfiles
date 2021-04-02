@@ -23,6 +23,14 @@
       tags:
         - always
 
+    - name: Get available desktop environment
+      import_role:
+        name: utils
+        tasks_from: stat_desktop_environment
+      tags:
+        - gnome
+        - xfce
+
   roles:
     - role: shell
       tags: shell
@@ -39,6 +47,11 @@
 
     - role: gnome
       tags: gnome
+      when: installed_desktop_environments.gnome
+
+    - role: xfce
+      tags: xfce
+      when: installed_desktop_environments.xfce
 
     - role: desktop
       tags: desktop

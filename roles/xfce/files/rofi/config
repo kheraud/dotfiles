@@ -1,0 +1,5 @@
+rofi.font: "RobotoMono Nerd Font Mono" 14
+rofi.show-icons: true
+rofi.terminal: urxvt
+rofi.m: -4
+rofi.theme: /usr/share/rofi/themes/Monokai.rasi
