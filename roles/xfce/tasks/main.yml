@@ -25,7 +25,7 @@
   become: true
   tags: xfce_move_window_to_monitor
 
-- name: Install switch-to-monitor
+- name: Install move-to-next-monitor
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/jc00ke/move-to-next-monitor/master/move-to-next-monitor
     dest: /usr/local/bin/move-to-next-monitor
@@ -58,3 +58,11 @@
   ansible.builtin.command: "xfce4-panel-profiles load {{ role_path }}/files/panel/single-bar-1.tar.bz2"
   tags: xfce_panel
   when: xfce_xconf_settings is defined and xfce_xconf_settings.changed or xfce_force_panel_refresh
+
+- name: Configure lightdm
+  ansible.builtin.copy:
+    src: lightdm/
+    dest: /etc/lightdm
+    mode: 'u=rw,go=r'
+  become: true
+  tags: lightdm
