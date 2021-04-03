@@ -1,6 +1,6 @@
 ---
 - name: "Install numix theme and icons"
-  apt:
+  ansible.builtin.apt:
     name:
       - numix-gtk-theme
       - numix-icon-theme
@@ -31,10 +31,17 @@
   tags: rofi
 
 - name: Init Rofi configuration
-  file:
+  ansible.builtin.file:
     path: ~/.config/rofi
     state: directory
     mode: 'u=rwx,go=rx'
+  tags: rofi
+
+- name: Copy Rofi settings
+  ansible.builtin.copy:
+    src: rofi/
+    dest: ~/.config/rofi/
+    mode: 'u=rw,go=r'
   tags: rofi
 
 - name: Configure panel
