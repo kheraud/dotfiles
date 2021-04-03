@@ -1,4 +1,12 @@
 ---
+- name: "Install numix theme and icons"
+  apt:
+    name:
+      - numix-gtk-theme
+      - numix-icon-theme
+    state: present
+  become: true
+
 - name: Copy XFCE xfconf settings
   ansible.builtin.copy:
     src: xfconf/
