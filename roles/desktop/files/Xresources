@@ -38,25 +38,25 @@
 *.color15: #FFFFFF
 
 !! URxvt Appearance
+
 URxvt.font: xft:RobotoMono Nerd Font Mono:size=12:style=Regular
 URxvt.boldFont: xft:RobotoMono Nerd Font Mono:size=12:style=Bold
 URxvt.italicFont: xft:RobotoMono Nerd Font Mono:size=12:style=Italic
 URxvt.boldItalicfont: xft:RobotoMono Nerd Font Mono:size=12:style=Bold Italic
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
-URxvt.geometry: 92x24
-URxvt.internalBorder: 5
+URxvt.internalBorder: -50
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
-URxvt.saveline: 0
+URxvt.saveLines: 0
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
-URxvt.urgentOnBell: true
-URxvt.depth: 24
+URxvt.depth: 32
 URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 !! Copy Paste & Other Extensions
+
 URxvt.perl-ext-common: default,matcher,font-size
-URxvt.urlLauncher: firefox
-URxvt.underlineURLs: true
+URxvt.url-launcher: firefox
 URxvt.matcher.button: 3
