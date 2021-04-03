@@ -1,5 +1,5 @@
 ---
-- name: "Install numix theme and icons"
+- name: Install numix theme and icons
   ansible.builtin.apt:
     name:
       - numix-gtk-theme
@@ -14,6 +14,16 @@
     mode: 'u=rw,go=r'
   tags: xfce_conf
   register: xfce_xconf_settings
+
+- name: Install switch-to-monitor dependencies
+  ansible.builtin.apt:
+    name:
+      - x11-utils
+      - wmctrl
+      - xdotool
+    state: present
+  become: true
+  tags: xfce_switch_monitor
 
 - name: Install switch-to-monitor
   get_url:
