@@ -7,11 +7,15 @@
   import_tasks: cheat_sh.yml
   tags: cheat_sh
 
-- name: "Check asdf command exists"
-  ansible.builtin.shell:
-    cmd: command -v asdf
-  changed_when: false
-  tags: "asdf_plugins"
+- name: Check asdf command exists
+  stat:
+    path: ~/.asdf/bin/asdf
+  register: asdf_bin_path
+
+- name: Fail if asdf is not available
+  fail:
+    msg: "Can't find asdf binary"
+  when: not asdf_bin_path.stat.exists
 
 - name: "Install asdf plugins"
   vars:

@@ -26,7 +26,7 @@
   tags: xfce_switch_monitor
 
 - name: Install switch-to-monitor
-  get_url:
+  ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/calandoa/movescreen/master/movescreen.py
     dest: /usr/local/bin/movescreen.py
     mode: 'u=rwx,go=rx'

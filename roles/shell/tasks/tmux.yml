@@ -12,6 +12,7 @@
     src: tmux.conf
     dest: '~/.tmux.conf'
     mode: 'u=rw,g=r'
+  notify: Refresh tmux configuration
 
 - name: Install Tmux Plugin Manager
   git:

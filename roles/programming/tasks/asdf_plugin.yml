@@ -1,6 +1,6 @@
 ---
 - name: "Install plugin {{ plugin_name }} prerequisites"
-  apt:
+  ansible.builtin.apt:
     name: "{{ plugin_apt_prerequisites }}"
     state: present
   when: plugin_apt_prerequisites
@@ -8,12 +8,12 @@
 
 - name: "Add plugin {{ plugin_name }}"
   # asdf return error 2 if plugin is already there
-  shell: "asdf plugin-add {{ plugin_name }} {{ plugin_url }} || /bin/true"
+  ansible.builtin.shell: "~/.asdf/bin/asdf plugin-add {{ plugin_name }} {{ plugin_url }} || /bin/true"
   register: added_plugin
   changed_when: '"already added" not in added_plugin.stderr'
 
 - name: "Get installed versions of {{ plugin_name }}"
-  ansible.builtin.command: "asdf list {{ plugin_name }}"
+  ansible.builtin.command: "~/.asdf/bin/asdf list {{ plugin_name }}"
   register: raw_installed_version
   changed_when: false
 
@@ -28,14 +28,14 @@
   when: plugin_name == "nodejs" and not raw_installed_version.stdout_lines
 
 - name: "Install versions for {{ plugin_name }}"
-  ansible.builtin.command: "asdf install {{ plugin_name }} {{ plugin_version }}"
+  ansible.builtin.command: "~/.asdf/bin/asdf install {{ plugin_name }} {{ plugin_version }}"
   when: plugin_version not in installed_version
   loop: "{{ plugin_versions }}"
   loop_control:
     loop_var: plugin_version
 
 - name: "Register default plugin version for {{ plugin_name }}"
-  blockinfile:
+  ansible.builtin.blockinfile:
     path: ~/.tool-versions
     marker: "# {mark} ANSIBLE MANAGED {{ plugin_name }} BLOCK -->"
     block: |
