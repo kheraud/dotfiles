@@ -55,6 +55,6 @@
   tags: rofi
 
 - name: Configure panel
-  ansible.builtin.command: "xfce4-panel-profiles load {{ role_path }}/files/panel/tuned-wzp.tar.bz2"
+  ansible.builtin.command: "xfce4-panel-profiles load {{ role_path }}/files/panel/single-bar-1.tar.bz2"
   tags: xfce_panel
-  when: xfce_xconf_settings.changed or xfce_force_panel_refresh
+  when: xfce_xconf_settings is defined and xfce_xconf_settings.changed or xfce_force_panel_refresh
