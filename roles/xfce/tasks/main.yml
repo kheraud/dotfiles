@@ -15,7 +15,7 @@
   tags: xfce_conf
   register: xfce_xconf_settings
 
-- name: Install switch-to-monitor dependencies
+- name: Install move-to-next-monitor dependencies
   ansible.builtin.apt:
     name:
       - x11-utils
@@ -23,15 +23,15 @@
       - xdotool
     state: present
   become: true
-  tags: xfce_switch_monitor
+  tags: xfce_move_window_to_monitor
 
 - name: Install switch-to-monitor
   ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/calandoa/movescreen/master/movescreen.py
-    dest: /usr/local/bin/movescreen.py
+    url: https://raw.githubusercontent.com/jc00ke/move-to-next-monitor/master/move-to-next-monitor
+    dest: /usr/local/bin/move-to-next-monitor
     mode: 'u=rwx,go=rx'
   become: true
-  tags: xfce_switch_monitor
+  tags: xfce_move_window_to_monitor
 
 - name: Install Rofi
   ansible.builtin.apt:

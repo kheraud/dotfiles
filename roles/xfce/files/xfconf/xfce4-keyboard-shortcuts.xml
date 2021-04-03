@@ -59,12 +59,12 @@
       <property name="&lt;Super&gt;b" type="string" value="exo-open --launch WebBrowser"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;x" type="string" value="xflock4"/>
       <property name="&lt;Super&gt;l" type="string" value="xflock4"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;Left" type="string" value="/usr/local/bin/movescreen.py left"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;Right" type="string" value="/usr/local/bin/movescreen.py right"/>
       <property name="&lt;Super&gt;m" type="string" value="pactl -- set-source-mute @DEFAULT_SOURCE@ toggle"/>
       <property name="&lt;Super&gt;Page_Up" type="string" value="pactl -- set-sink-volume @DEFAULT_SINK@ +5%"/>
       <property name="&lt;Super&gt;Page_Down" type="string" value="pactl -- set-sink-volume @DEFAULT_SINK@ -5%"/>
       <property name="&lt;Super&gt;d" type="string" value="rofi -modi &quot;drun,window&quot; -show drun"/>
+      <property name="&lt;Shift&gt;&lt;Super&gt;Right" type="string" value="move-to-next-monitor"/>
+      <property name="&lt;Shift&gt;&lt;Super&gt;Left" type="string" value="move-to-next-monitor"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

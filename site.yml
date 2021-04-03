@@ -28,8 +28,7 @@
         name: utils
         tasks_from: stat_desktop_environment
       tags:
-        - gnome
-        - xfce
+        - always
 
   roles:
     - role: shell
