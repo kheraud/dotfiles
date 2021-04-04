@@ -46,12 +46,15 @@ URxvt.boldItalicfont: xft:RobotoMono Nerd Font Mono:size=12:style=Bold Italic
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.internalBorder: -50
+URxvt.externalBorder: 0
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
 URxvt.saveLines: 0
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
+URxvt.thickness: 0
 URxvt.depth: 32
+URxvt.background: [75]#000000
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
