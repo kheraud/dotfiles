@@ -1,6 +1,6 @@
 ---
 - name: Install httpie
-  pip:
+  ansible.builtin.pip:
     name: "httpie=={{ httpie_version }}"
     # Here to force the usage of sysem pip
     # instead of virtualenv location

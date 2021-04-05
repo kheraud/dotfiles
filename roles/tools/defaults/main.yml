@@ -1,6 +1,2 @@
 ---
-todo_path: '~/todo'
-
-todo_context:
-  - name: perso
-    alias: todo
+todo_path: /usr/local/bin

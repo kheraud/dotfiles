@@ -25,7 +25,7 @@
 
 - name: Copy ewrap script
   ansible.builtin.copy:
-    src: ewrap
+    src: nnn/ewrap
     dest: /usr/local/bin/
     mode: 'u=rwx,go=rx'
   become: true

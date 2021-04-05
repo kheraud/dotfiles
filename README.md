@@ -49,7 +49,7 @@ The global `site.yml` playbook plays the following roles :
   - [GPG](https://gnupg.org/gph/en/manual.html)
   - [FFmpeg](https://ffmpeg.org/ffmpeg.html)
   - [todo.cli](https://github.com/todotxt/todo.txt-cli)
-  - [topydo](https://github.com/topydo/topydo)
+  - [todofi](https://github.com/hugokernel/todofi.sh)
   - [ngrok](https://ngrok.com)
   - [asdf](https://asdf-vm.com)
   - [docker](https://docs.docker.com/engine/)

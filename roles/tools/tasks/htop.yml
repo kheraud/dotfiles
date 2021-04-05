@@ -13,6 +13,6 @@
 
 - name: Copy Htop configuration
   copy:
-    src: htoprc
+    src: htop/htoprc
     dest: ~/.config/htop/htoprc
     mode: 'u=rw,g=r'

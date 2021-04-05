@@ -18,7 +18,7 @@
 
 - name: Copy Neovim configuration
   copy:
-    src: init.vim
+    src: nvim/init.vim
     dest: ~/.config/nvim/init.vim
     mode: 'u=rw,g=r'
 

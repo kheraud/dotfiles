@@ -65,6 +65,9 @@
       <property name="&lt;Super&gt;d" type="string" value="rofi -modi &quot;drun,window&quot; -show drun"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;Right" type="string" value="move-to-next-monitor"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;Left" type="string" value="move-to-next-monitor"/>
+      <property name="&lt;Super&gt;w" type="string" value="thunar"/>
+      <property name="&lt;Super&gt;x" type="string" value="code --new-window"/>
+      <property name="&lt;Shift&gt;&lt;Super&gt;t" type="string" value="todofi.sh"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

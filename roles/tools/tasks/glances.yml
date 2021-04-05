@@ -1,6 +1,6 @@
 ---
 - name: Install glances
-  pip:
+  ansible.builtin.pip:
     name: "glances=={{ glances_version }}"
     # Here to force the usage of sysem pip
     # instead of virtualenv location

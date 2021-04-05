@@ -1,30 +1,4 @@
 ---
-- name: Install Topydo
-  pip:
-    name:
-      - topydo
-      - topydo[columns]
-      - topydo[prompt]
-
-- name: Add aliases to todos
-  blockinfile:
-    path: ~/.zshrc_post
-    marker: "# {mark} ANSIBLE MANAGED TOPYDO BLOCK -->"
-    block: |
-      {% for todo_elt in todo_context %}
-      alias {{ todo_elt.alias }}="topydo \
-      -c {{ todo_path }}/{{ todo_elt.name }}-topydo.conf \
-      -d {{ todo_path }}/{{ todo_elt.name }}-done.txt \
-      -t {{ todo_path }}/{{ todo_elt.name }}.txt columns \
-      -l {{ todo_path }}/{{ todo_elt.name }}-topydo_columns.conf"
-      alias {{ todo_elt.alias }}-cli="topydo \
-      -c {{ todo_path }}/{{ todo_elt.name }}-topydo.conf \
-      -d {{ todo_path }}/{{ todo_elt.name }}-done.txt \
-      -t {{ todo_path }}/{{ todo_elt.name }}.txt"
-      {% endfor %}
-    create: true
-    mode: 'u=rw,g=r'
-
 - name: Fetch todo.txt cli
   unarchive:
     src: "https://github.com/todotxt/todo.txt-cli/releases/download/v{{ todo_txt_version }}/todo.txt_cli-{{ todo_txt_version }}.tar.gz"
@@ -38,3 +12,33 @@
     dest: /usr/local/bin
     remote_src: true
   become: true
+
+- name: Init todo.txt cli configuration
+  ansible.builtin.file:
+    path: ~/.config/todo
+    state: directory
+    mode: 'u=rwx,go=rx'
+
+- name: Copy todo.txt cli settings
+  ansible.builtin.template:
+    src: todo/todo_config.j2
+    dest: ~/.config/todo/config
+    mode: 'u=rw,go=r'
+
+- name: Install rofi
+  import_role:
+    name: xfce
+    tasks_from: rofi
+
+- name: Add todofi script
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/hugokernel/todofi.sh/master/todofi.sh
+    dest: /usr/local/bin/
+    mode: 'u=rwx,go=rx'
+  become: true
+
+- name: Copy todofi settings
+  ansible.builtin.copy:
+    src: todo/todofish.conf
+    dest: ~/.config/todofish.conf
+    mode: 'u=rw,go=r'

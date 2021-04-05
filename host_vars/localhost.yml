@@ -76,12 +76,7 @@ asdf_plugins:
     versions:
       - "2.1.30"
 
-todo_path: '~/Dropbox/Applications/Simpletask'
-todo_context:
-  - name: perso
-    alias: todo
-  - name: pro
-    alias: todop
+todo_path: '/home/kheraud/Dropbox/Applications/Simpletask/personal'
 
 vscode_extensions:
   - 4ops.terraform

@@ -34,24 +34,7 @@
   tags: xfce_move_window_to_monitor
 
 - name: Install Rofi
-  ansible.builtin.apt:
-    name: rofi
-    state: present
-  become: true
-  tags: rofi
-
-- name: Init Rofi configuration
-  ansible.builtin.file:
-    path: ~/.config/rofi
-    state: directory
-    mode: 'u=rwx,go=rx'
-  tags: rofi
-
-- name: Copy Rofi settings
-  ansible.builtin.copy:
-    src: rofi/
-    dest: ~/.config/rofi/
-    mode: 'u=rw,go=r'
+  import_tasks: rofi.yml
   tags: rofi
 
 - name: Configure panel
