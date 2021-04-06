@@ -1,39 +1,42 @@
 [user]
-	name = {{ git_username }}
+        name = {{ git_username }}
 	email = {{ git_email }}
 [push]
-  default = current
+	default = current
 [alias]
-  st = status
-  co = checkout
-  squash = commit --amend -C HEAD
+	st = status
+	co = checkout
+	squash = commit --amend -C HEAD
 [core]
-  excludesfile = ~/.gitignore
-  autocrlf = input
-  editor = nvim
-  pager = less
+	excludesfile = ~/.gitignore
+	autocrlf = input
+	editor = nvim
+	pager = less
 [fetch]
-  prune = true
+	prune = true
 [rebase]
-  autosquash = true
+	autosquash = true
 [diff]
-  tool = nvimdiff
-  guitool = vscode
+	tool = nvimdiff
+	guitool = vscode
 [difftool]
-  prompt = false
+	prompt = false
 [difftool "vscode"]
-  cmd = code --wait --diff $LOCAL $REMOTE
+	cmd = code --wait --diff $LOCAL $REMOTE
 [difftool "nvimdiff"]
-  cmd = nvim -d $LOCAL $REMOTE
+	cmd = nvim -d $LOCAL $REMOTE
 [merge]
-  tool = nvimdiff
-  guitool = vscode
+	tool = nvimdiff
+	guitool = vscode
 [mergetool]
-  keepBackup = false
-  prompt = false
+	keepBackup = false
+	prompt = false
 [mergetool "vscode"]
-  keepBackup = false
-  cmd = code --wait $MERGED
+	keepBackup = false
+	cmd = code --wait $MERGED
 [mergetool "nvimdiff"]
-  keepBackup = false
-  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED
+	keepBackup = false
+	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED
+[pull]
+	ff = only
+
