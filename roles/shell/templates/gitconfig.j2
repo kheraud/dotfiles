@@ -1,6 +1,11 @@
 [user]
-        name = {{ git_username }}
+	name = {{ git_username }}
 	email = {{ git_email }}
+{% if git_signing_key is defined %}
+	signingkey = {{ git_signing_key }}
+[commit]
+	gpgsign = true
+{% endif %}
 [push]
 	default = current
 [alias]
@@ -39,4 +44,3 @@
 	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED
 [pull]
 	ff = only
-
