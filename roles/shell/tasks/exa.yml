@@ -1,32 +1,32 @@
 ---
 - name: Install unzip
-  apt:
+  ansible.builtin.apt:
     name: unzip
     state: present
   become: true
 
 - name: Unarchive exa binary
-  unarchive:
-    src: https://github.com/ogham/exa/releases/download/v{{ exa_version }}/exa-linux-x86_64-{{ exa_version }}.zip
-    dest: /usr/local/bin
+  ansible.builtin.unarchive:
+    src: https://github.com/ogham/exa/releases/download/v{{ exa_version }}/exa-linux-x86_64-v{{ exa_version }}.zip
+    dest: /tmp
     remote_src: true
     creates: /usr/local/bin/exa
   become: true
 
 - name: Rename exa binary
-  command:
-    cmd: mv -f /usr/local/bin/exa-linux-x86_64 /usr/local/bin/exa
+  ansible.builtin.command:
+    cmd: mv -f /tmp/bin/exa /usr/local/bin/exa
     creates: /usr/local/bin/exa
   become: true
 
-# - name: Fetch exa man page
-#   get_url:
-#     url: https://raw.githubusercontent.com/ogham/exa/master/contrib/man/exa.1
-#     dest: /usr/share/man/man1/exa.1
-#   become: true
+- name: Rename exa man page
+  ansible.builtin.command:
+    cmd: mv -f /tmp/man/exa.1 /usr/share/man/man1/exa.1
+    creates: /usr/local/bin/exa
+  become: true
 
 - name: Fetch zsh-aliases-exa alias for oh-my-zsh aliases
-  git:
+  ansible.builtin.git:
     repo: 'https://github.com/DarrinTisdale/zsh-aliases-exa.git'
     dest: '~/.oh-my-custom/plugins/zsh-aliases-exa'
     version: 'master'
