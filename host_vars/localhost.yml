@@ -2,7 +2,7 @@
 git_username: kheraud
 git_email: 1894658+kheraud@users.noreply.github.com
 # Remove this key if you don't need gpp signing
-git_signing_key: 80219341EC9FBA78
+git_signing_key: 3350552D883C1BAA
 
 shell_user_locales:
   LANG: en_US.UTF-8
