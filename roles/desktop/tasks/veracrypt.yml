@@ -1,0 +1,12 @@
+---
+# - name: "Install required dependencies for Veracrypt"
+#   apt:
+#     name: xz-utils
+#     state: present
+#   become: true
+
+- name: Install Veracrypt
+  ansible.builtin.apt:
+    deb: "https://launchpad.net/veracrypt/trunk/{{ veracrypt_version }}/+download/{{ veracrypt_artifact_version }}.deb"
+    state: present
+  become: true

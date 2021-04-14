@@ -91,6 +91,7 @@ The global `site.yml` playbook plays the following roles :
   - [Firefox](https://www.mozilla.org/fr/firefox/new/)
   - [VLC](https://www.videolan.org/vlc/)
   - [VSCode](https://code.visualstudio.com/) with [these extensions](host_vars/localhost.yml)
+  - [Veracrypt](https://github.com/veracrypt/VeraCrypt)
 - `extended_desktop`
   - [LibreOffice](https://www.libreoffice.org/)
   - [Gimp](https://www.gimp.org/)

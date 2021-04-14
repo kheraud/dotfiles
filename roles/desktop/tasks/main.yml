@@ -18,3 +18,7 @@
 - name: "Install VSCode"
   import_tasks: vscode.yml
   tags: vscode
+
+- name: "Install Veracrypt"
+  import_tasks: veracrypt.yml
+  tags: veracrypt

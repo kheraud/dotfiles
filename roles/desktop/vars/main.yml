@@ -1,2 +1,4 @@
 ---
 vscode_microsoft_asc_url: https://packages.microsoft.com/keys/microsoft.asc
+veracrypt_version: 1.24-update7
+veracrypt_artifact_version: veracrypt-1.24-Update7-Ubuntu-20.10-amd64
