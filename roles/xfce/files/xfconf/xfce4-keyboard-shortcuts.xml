@@ -44,7 +44,6 @@
       <property name="&lt;Alt&gt;F3" type="empty">
         <property name="startup-notify" type="bool" value="true"/>
       </property>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;Delete" type="string" value="xflock4"/>
       <property name="Print" type="string" value="xfce4-screenshooter -f"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Escape" type="string" value="xkill"/>
       <property name="&lt;Alt&gt;F2" type="empty">
@@ -68,6 +67,7 @@
       <property name="&lt;Super&gt;w" type="string" value="thunar"/>
       <property name="&lt;Super&gt;x" type="string" value="code --new-window"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;t" type="string" value="todofi.sh"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;Delete" type="string" value="xfce4-session-logout"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
