@@ -54,7 +54,7 @@ URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.thickness: 0
 URxvt.depth: 32
-URxvt.background: [75]#000000
+URxvt.background: #1d2021
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
