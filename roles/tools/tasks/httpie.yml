@@ -5,3 +5,10 @@
     # Here to force the usage of sysem pip
     # instead of virtualenv location
     executable: "/usr/bin/pip3"
+
+- name: Install http-prompt
+  ansible.builtin.pip:
+    name: "http-prompt=={{ http_prompt_version }}"
+    # Here to force the usage of sysem pip
+    # instead of virtualenv location
+    executable: "/usr/bin/pip3"

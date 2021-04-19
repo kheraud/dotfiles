@@ -1,5 +1,6 @@
 ---
 httpie_version: 2.4.0
+http_prompt_version: 2.1.0
 glances_version: 3.1.6
 nnn_version: 3.6
 nnn_ueberzug_version: 18.1.9
