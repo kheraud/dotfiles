@@ -18,3 +18,7 @@
 - name: "Install Dropbox"
   import_tasks: dropbox.yml
   tags: dropbox
+
+- name: "Install Yarr"
+  import_tasks: yarr.yml
+  tags: yarr

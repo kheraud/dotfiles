@@ -98,6 +98,7 @@ The global `site.yml` playbook plays the following roles :
   - [GParted](https://gparted.org/)
   - [Transmission](https://transmissionbt.com/)
   - [Dropbox](https://www.dropbox.com)
+  - [Yarr](https://github.com/nkanaev/yarr)
 
 ## Install a subset
 

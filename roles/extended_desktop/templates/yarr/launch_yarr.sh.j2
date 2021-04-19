@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ $(pgrep yarr) -ne 0 ]; then
+    xdg-open http://localhost:{{ yarr_local_port }}
+else
+    yarr -db {{ yarr_db_path }} -addr 127.0.0.1:{{ yarr_local_port }} -open &
+fi

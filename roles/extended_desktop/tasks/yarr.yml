@@ -1,0 +1,15 @@
+---
+- name: "Fetch Yarr"
+  ansible.builtin.unarchive:
+    src: "https://github.com/nkanaev/yarr/releases/download/v{{ yarr_version }}/yarr-v{{ yarr_version }}-linux64.zip"
+    dest: /usr/local/bin/yarr
+    remote_src: true
+    creates: /usr/local/bin/yarr
+  become: true
+
+- name: "Add yarr launching script"
+  ansible.builtin.template:
+    src: yarr/launch_yarr.sh.j2
+    dest: /usr/local/bin/launch_yarr.sh
+    mode: 'u=rwx,go=rx'
+  become: true
