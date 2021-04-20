@@ -74,12 +74,6 @@ pip-selfcheck.json
 *.patch
 *.diff
 
-## Dropbox ignores
-# Dropbox settings and caches
-.dropbox
-.dropbox.attr
-.dropbox.cache
-
 ## LibreOffice locks
 .~lock.*#
 

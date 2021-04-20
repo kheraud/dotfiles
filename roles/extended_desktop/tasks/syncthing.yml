@@ -1,0 +1,40 @@
+---
+- name: "Add Syncthing GPG key"
+  ansible.builtin.apt_key:
+    url: "{{ syncthing_apt_key_url }}"
+    state: present
+  become: true
+
+- name: "Copy Syncthing repo list"
+  ansible.builtin.copy:
+    src: syncthing/apt.list
+    dest: /etc/apt/sources.list.d/syncthing.list
+    mode: 'u=rw,go=r'
+  become: true
+  register: syncthing_apt_list
+
+- name: "Copy Syncthing apt pinning"
+  ansible.builtin.copy:
+    src: syncthing/pin
+    dest: /etc/apt/preferences.d/syncthing
+    mode: 'u=rw,go=r'
+  become: true
+
+- name: "Update apt cache"
+  ansible.builtin.apt:
+    update_cache: true
+  become: true
+  changed_when: false
+  when: syncthing_apt_list.changed
+
+- name: Install Syncthing
+  ansible.builtin.apt:
+    name: syncthing
+    state: present
+  become: true
+
+- name: Link Syncthing for server autostart
+  ansible.builtin.file:
+    src: "/usr/share/applications/syncthing-start.desktop"
+    dest: "~/.config/autostart/syncthing-start.desktop"
+    state: link
