@@ -2,16 +2,11 @@
 - name: Fetch todo.txt cli
   ansible.builtin.unarchive:
     src: "https://github.com/todotxt/todo.txt-cli/releases/download/v{{ todo_txt_version }}/todo.txt_cli-{{ todo_txt_version }}.tar.gz"
-    dest: /tmp
-    remote_src: true
-    creates: /usr/local/bin/todo.sh
-  become: true
-
-- name: Add todo.txt cli
-  ansible.builtin.copy:
-    src: "/tmp/todo.txt_cli-{{ todo_txt_version }}/"
     dest: /usr/local/bin
     remote_src: true
+    extra_opts:
+      - "--strip-components"
+      - "1"
   become: true
 
 - name: Init todo.txt cli configuration
