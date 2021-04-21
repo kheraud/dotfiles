@@ -78,7 +78,7 @@ asdf_plugins:
     versions:
       - "2.1.30"
 
-todo_path: '/home/kheraud/Dropbox/Applications/Simpletask/personal'
+todo_path: '/home/kheraud/Sync/Applications/Simpletask/personal'
 
 vscode_extensions:
   - 4ops.terraform

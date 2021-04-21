@@ -52,7 +52,7 @@
     block: |
       alias xn="VISUAL=ewrap nnn -ade"
 
-      export NNN_BMS='c:~/Documents;p:~/Desktop;w:~/Download;r:~/Dropbox'
+      export NNN_BMS='c:~/Documents;p:~/Desktop;w:~/Download;s:~/Sync'
       export NNN_ARCHIVE="\\.(7z|bz2|gz|tar|tgz|zip)$"
       export NNN_COLORS='#0a1b2c3d'
       export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
