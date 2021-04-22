@@ -23,6 +23,13 @@
       tags:
         - always
 
+    - name: Get common vars
+      import_role:
+        name: utils
+        tasks_from: common_vars
+      tags:
+        - always
+
     - name: Get available desktop environment
       import_role:
         name: utils

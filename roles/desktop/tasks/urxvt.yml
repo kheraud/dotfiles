@@ -21,7 +21,9 @@
   become: true
 
 - name: "Edit .Xresources"
-  copy:
-    src: Xresources
+  ansible.builtin.template:
+    src: urxvt/Xresources.j2
     dest: ~/.Xresources
     mode: 'u=rwx,g=rx'
+  vars:
+    font_name: "{{ available_fonts[urxvt_font] }}"

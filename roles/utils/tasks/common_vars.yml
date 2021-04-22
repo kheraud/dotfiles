@@ -1,0 +1,4 @@
+---
+- name: Include common vars
+  include_vars:
+    file: main.yml

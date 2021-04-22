@@ -20,6 +20,8 @@ shell_user_locales:
   LC_TELEPHONE: fr_FR.UTF-8
   LC_TIME: fr_FR.UTF-8
 
+urxvt_font: "iosevka"
+
 oh_my_zsh_plugins:
   - git
   - zsh-autosuggestions
