@@ -3,6 +3,10 @@
   import_tasks: desktop_fonts.yml
   tags: desktop_fonts
 
+- name: "Install shell fonts"
+  import_tasks: shell_fonts.yml
+  tags: shell_fonts
+
 - name: "Install Urxvt"
   import_tasks: urxvt.yml
   tags: urxvt

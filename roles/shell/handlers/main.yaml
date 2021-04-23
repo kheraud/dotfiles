@@ -1,8 +1,4 @@
 ---
-- name: Refresh font cache
-  ansible.builtin.command: "fc-cache -fv"
-  become: true
-
 - name: Source Tmux and TPM configurations (outside tmux)
   shell: 'tmux new-session -d -s ansible-tmux-cfg "sleep 0.1 && tmux source-file ~/.tmux.conf && ~/.tmux/plugins/tpm/bin/install_plugins"'
   when: 'lookup("env", "TMUX")|length == 0'
