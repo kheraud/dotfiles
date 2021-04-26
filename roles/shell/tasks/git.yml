@@ -1,4 +1,9 @@
 ---
+- name: "Fail if git user not defined"
+  fail:
+    msg: "You MUST define a valid git_username and git_email configuration"
+  when: (not git_username ) or (not git_email)
+
 - name: Install Git
   apt:
     name: git
