@@ -34,7 +34,7 @@
   become: true
 
 - name: Link Syncthing for server autostart
-  ansible.builtin.file:
-    src: "/usr/share/applications/syncthing-start.desktop"
+  ansible.builtin.copy:
+    src: syncthing/syncthing-start.desktop
     dest: "~/.config/autostart/syncthing-start.desktop"
-    state: link
+    mode: 'u=rw,go=r'
