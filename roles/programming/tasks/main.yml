@@ -17,6 +17,14 @@
     msg: "Can't find asdf binary"
   when: not asdf_bin_path.stat.exists
 
+# Quick fix to solve old release GPG check issues
+- name: "Install GPG for nodejs"
+  ansible.builtin.shell:
+    cmd: ~/.asdf/plugins/nodejs/bin/import-previous-release-team-keyring
+  changed_when: false
+  when: "'nodejs' in asdf_plugins"
+  tags: "asdf_plugins"
+
 - name: "Install asdf plugins"
   vars:
     plugin_name: "{{ item.key }}"

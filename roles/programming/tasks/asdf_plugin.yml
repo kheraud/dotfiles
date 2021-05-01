@@ -21,12 +21,6 @@
   ansible.builtin.set_fact:
     installed_version: "{{ raw_installed_version.stdout_lines | map('trim') }}"
 
-# Quick fix to solve old release GPG check issues
-- name: "Install GPG for nodejs"
-  ansible.builtin.shell:
-    cmd: ~/.asdf/plugins/nodejs/bin/import-previous-release-team-keyring
-  when: plugin_name == "nodejs" and not raw_installed_version.stdout_lines
-
 - name: "Install versions for {{ plugin_name }}"
   ansible.builtin.command: "~/.asdf/bin/asdf install {{ plugin_name }} {{ plugin_version }}"
   when: plugin_version not in installed_version
