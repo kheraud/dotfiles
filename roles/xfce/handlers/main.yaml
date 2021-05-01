@@ -1,0 +1,7 @@
+---
+- name: Recommend X refresh
+  ansible.builtin.debug:
+    msg:
+      - XFCE settings changed
+      - you should restart X server
+      - sudo systemctl lightdm restart
