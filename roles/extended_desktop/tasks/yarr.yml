@@ -5,6 +5,7 @@
     dest: /usr/local/bin/
     remote_src: true
     creates: /usr/local/bin/yarr
+    mode: 'u=rwx,go=rx'
   become: true
 
 - name: "Add yarr launching script"
