@@ -1,0 +1,6 @@
+---
+- name: "Install Thunderbird"
+  apt:
+    name: thunderbird
+    state: present
+  become: true
