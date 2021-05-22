@@ -1,29 +1,35 @@
 ---
 - name: "Fail if git user not defined"
-  fail:
+  ansible.builtin.fail:
     msg: "You MUST define a valid git_username and git_email configuration"
   when: (not git_username ) or (not git_email)
 
 - name: Install Git
-  apt:
+  ansible.builtin.apt:
     name: git
     state: present
   become: true
 
+- name: Install delta
+  ansible.builtin.apt:
+    deb: "https://github.com/dandavison/delta/releases/download/{{ delta_version }}/git-delta_{{ delta_version }}_amd64.deb"
+    state: present
+  become: true
+
 - name: Copy gitignore configuration
-  copy:
+  ansible.builtin.copy:
     src: gitignore
     dest: ~/.gitignore
     mode: 'u=rw'
 
 - name: Apply gitconfig configuration
-  template:
+  ansible.builtin.template:
     src: gitconfig.j2
     dest: ~/.gitconfig
     mode: 'u=rw'
 
 - name: Install git extras
-  apt:
+  ansible.builtin.apt:
     name: git-extras
     state: present
   become: true

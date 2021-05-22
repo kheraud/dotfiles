@@ -15,21 +15,25 @@
 [core]
 	excludesfile = ~/.gitignore
 	autocrlf = input
+	pager = delta
 	editor = nvim
-	pager = less
 [fetch]
 	prune = true
 [rebase]
 	autosquash = true
 [diff]
-	tool = nvimdiff
+	tool = delta
 	guitool = vscode
 [difftool]
 	prompt = false
+[difftool "delta"]
+	cmd = delta -s -n --diff $LOCAL $REMOTE
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
-[difftool "nvimdiff"]
-	cmd = nvim -d $LOCAL $REMOTE
+[delta]
+	features = side-by-side line-numbers decorations
+[interactive]
+	diffFilter = delta --color-only
 [merge]
 	tool = nvimdiff
 	guitool = vscode
