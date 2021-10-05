@@ -62,3 +62,5 @@ asdf_plugin_list:
     url: https://github.com/Banno/asdf-hashicorp.git
   awscli:
     url: https://github.com/MetricMike/asdf-awscli.git
+  gcloud:
+    url: https://github.com/jthegedus/asdf-gcloud.git
