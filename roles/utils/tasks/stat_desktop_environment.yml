@@ -13,4 +13,4 @@
   ansible.builtin.set_fact:
     installed_desktop_environments:
       gnome: "{{ gnome_shell_path.stat.exists }}"
-      xfce: "{{ xfce_shell_path.stat.exists }}"
+      xfce: "{{ xfce_shell_path.stat.exists }}"

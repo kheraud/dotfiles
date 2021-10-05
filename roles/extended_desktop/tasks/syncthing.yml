@@ -20,15 +20,9 @@
     mode: 'u=rw,go=r'
   become: true
 
-- name: "Update apt cache"
-  ansible.builtin.apt:
-    update_cache: true
-  become: true
-  changed_when: false
-  when: syncthing_apt_list.changed
-
 - name: Install Syncthing
   ansible.builtin.apt:
+    update_cache: true
     name: syncthing
     state: present
   become: true
