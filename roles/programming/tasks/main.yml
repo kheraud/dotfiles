@@ -7,6 +7,10 @@
   import_tasks: cheat_sh.yml
   tags: cheat_sh
 
+- name: "Install tldr"
+  import_tasks: tldr.yml
+  tags: tldr
+
 - name: Check asdf command exists
   stat:
     path: ~/.asdf/bin/asdf

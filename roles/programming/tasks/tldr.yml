@@ -1,0 +1,7 @@
+---
+- name: Install tldr
+  ansible.builtin.pip:
+    name: "tldr=={{ tldr_version }}"
+    # Here to force the usage of system pip
+    # instead of virtualenv location
+    executable: "/usr/bin/pip3"

@@ -58,6 +58,7 @@ The global `site.yml` playbook plays the following roles :
   - [GCC / G++](https://gcc.gnu.org/)
   - [Make](https://linux.die.net/man/1/make)
   - [Cheat.sh](https://github.com/chubin/cheat.sh)
+  - [Tldr](https://github.com/tldr-pages/tldr)
   - [Python](https://www.python.org)
   - [Nodejs](https://nodejs.org/en/)
   - [Golang](https://golang.org/)

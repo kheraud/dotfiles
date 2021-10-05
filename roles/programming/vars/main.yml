@@ -1,4 +1,6 @@
 ---
+tldr_version: "2.0.0"
+
 asdf_plugin_list:
   python:
     url: https://github.com/danhper/asdf-python.git
