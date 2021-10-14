@@ -22,6 +22,8 @@ asdf_plugin_list:
       - libxmlsec1-dev
       - libffi-dev
       - liblzma-dev
+  poetry:
+    url: https://github.com/asdf-community/asdf-poetry.git
   nodejs:
     url: https://github.com/asdf-vm/asdf-nodejs.git
     apt_prerequisites:
