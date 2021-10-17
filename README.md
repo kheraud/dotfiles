@@ -114,6 +114,6 @@ to target some tools or group of tools. You will have to dig in the
 Example, install only `shell` tools :
 
 ```shell
-pipenv install && pipenv shell
-ansible-playbook -K -i hosts --tags "shell" site.yml
+poetry install && \
+poetry run ansible-playbook -K -i hosts --tags "shell" site.yml
 ```
