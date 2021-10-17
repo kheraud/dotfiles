@@ -1,7 +1,11 @@
 # Personal dotfiles and applications
 
 The dotfiles and applications added here are provisioned with Ansible.
-Due to a lack of time, this playbook **only applies to `Ubuntu` >= 20.04 distribution**.
+
+## Prerequisites
+
+- Due to a lack of time, this playbook **only applies to `Ubuntu` >= 20.04 distribution**.
+- [Poetry](https://github.com/python-poetry/poetry) `>= 1.1.0`
 
 ## Installation
 
@@ -12,8 +16,8 @@ Then edit `host_vars/*.yml` with custom settings
 (`host_vars/localhost.yml` is a good start).
 
 ```shell
-pipenv install && pipenv shell
-ansible-playbook -K -i hosts site.yml
+poetry install && \
+poetry run ansible-playbook -K -i hosts site.yml
 ```
 
 ## Content of the playbooks

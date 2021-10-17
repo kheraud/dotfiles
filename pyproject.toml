@@ -1,0 +1,15 @@
+[tool.poetry]
+name = ".dotfiles"
+version = "1.0.0"
+description = ""
+authors = ["kheraud <1894658+kheraud@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+ansible = "~4.2.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
