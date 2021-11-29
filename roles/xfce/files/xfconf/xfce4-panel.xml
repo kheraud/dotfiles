@@ -24,10 +24,9 @@
       <property name="mode" type="uint" value="0"/>
       <property name="nrows" type="uint" value="1"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="48"/>
-        <value type="int" value="45"/>
-        <value type="int" value="44"/>
         <value type="int" value="2"/>
+        <value type="int" value="44"/>
+        <value type="int" value="5"/>
         <value type="int" value="1"/>
         <value type="int" value="3"/>
         <value type="int" value="4"/>
@@ -45,20 +44,22 @@
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="28"/>
       <property name="span-monitors" type="bool" value="false"/>
+      <property name="output-name" type="string" value="Primary"/>
     </property>
   </property>
   <property name="plugins" type="empty">
     <property name="plugin-1" type="string" value="tasklist">
       <property name="flat-buttons" type="bool" value="true"/>
-      <property name="grouping" type="uint" value="0"/>
+      <property name="grouping" type="uint" value="1"/>
       <property name="include-all-workspaces" type="bool" value="false"/>
       <property name="middle-click" type="uint" value="1"/>
       <property name="show-handle" type="bool" value="false"/>
       <property name="show-labels" type="bool" value="true"/>
       <property name="show-wireframes" type="bool" value="false"/>
-      <property name="sort-order" type="uint" value="1"/>
+      <property name="sort-order" type="uint" value="3"/>
       <property name="switch-workspace-on-unminimize" type="bool" value="false"/>
       <property name="window-scrolling" type="bool" value="false"/>
+      <property name="include-all-monitors" type="bool" value="true"/>
     </property>
     <property name="plugin-11" type="string" value="separator">
       <property name="expand" type="bool" value="false"/>
@@ -93,10 +94,6 @@
         <value type="string" value="-logout-dialog"/>
       </property>
     </property>
-    <property name="plugin-2" type="string" value="separator">
-      <property name="expand" type="bool" value="false"/>
-      <property name="style" type="uint" value="3"/>
-    </property>
     <property name="plugin-3" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
@@ -110,19 +107,17 @@
       <property name="workspace-scrolling" type="bool" value="true"/>
     </property>
     <property name="plugin-44" type="string" value="windowmenu">
-      <property name="style" type="uint" value="0"/>
+      <property name="style" type="uint" value="1"/>
       <property name="workspace-actions" type="bool" value="true"/>
-    </property>
-    <property name="plugin-45" type="string" value="directorymenu">
-      <property name="base-directory" type="string" value="/home/kheraud"/>
+      <property name="workspace-names" type="bool" value="true"/>
+      <property name="urgentcy-notification" type="bool" value="true"/>
+      <property name="all-workspaces" type="bool" value="true"/>
     </property>
     <property name="plugin-47" type="string" value="notification-plugin"/>
-    <property name="plugin-48" type="string" value="separator">
-      <property name="style" type="uint" value="0"/>
-    </property>
     <property name="plugin-7" type="string" value="statusnotifier">
       <property name="icon-size" type="int" value="20"/>
       <property name="known-items" type="array">
+        <value type="string" value="vlc"/>
         <value type="string" value="org.guido-berhoerster.code.package-update-indicator"/>
         <value type="string" value="dropbox-client-121859"/>
         <value type="string" value="dropbox-client-21074"/>
@@ -153,9 +148,15 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="enable-wnck" type="bool" value="false"/>
-      <property name="mpris-players" type="string" value="firefox.instance1891;firefox.instance2158;firefox.instance2986;firefox.instance3099;firefox.instance3200;firefox.instance5578;firefox.instance67980"/>
+      <property name="mpris-players" type="string" value="firefox.instance1831;firefox.instance1851;firefox.instance1861;firefox.instance1863;firefox.instance1891;firefox.instance1904;firefox.instance1926;firefox.instance2158;firefox.instance2761;firefox.instance2986;firefox.instance3099;firefox.instance3200;firefox.instance4005;firefox.instance5578;firefox.instance67980;vlc"/>
       <property name="show-notifications" type="bool" value="true"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
+    <property name="plugin-2" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-5" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
   </property>
 </channel>
