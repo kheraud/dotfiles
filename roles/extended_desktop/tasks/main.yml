@@ -18,7 +18,3 @@
 - name: "Install Transmission"
   import_tasks: transmission.yml
   tags: transmission
-
-- name: "Install Yarr"
-  import_tasks: yarr.yml
-  tags: yarr

@@ -102,7 +102,6 @@ The global `site.yml` playbook plays the following roles :
   - [Gimp](https://www.gimp.org/)
   - [GParted](https://gparted.org/)
   - [Transmission](https://transmissionbt.com/)
-  - [Yarr](https://github.com/nkanaev/yarr)
 
 ## Install a subset
 
