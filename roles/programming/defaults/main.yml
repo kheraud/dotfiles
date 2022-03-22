@@ -2,10 +2,10 @@
 asdf_plugins:
   python:
     versions:
-      - "3.9.2"
+      - "3.10.3"
   nodejs:
     versions:
       - lts
   golang:
     versions:
-      - "1.16"
+      - "1.17"
