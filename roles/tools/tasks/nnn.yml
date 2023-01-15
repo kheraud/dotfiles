@@ -30,21 +30,6 @@
     mode: 'u=rwx,go=rx'
   become: true
 
-- name: Install ueberzug dependencies
-  ansible.builtin.apt:
-    name:
-      - libxext6
-      - libxext-dev
-    state: present
-  become: true
-
-- name: Install ueberzug
-  ansible.builtin.pip:
-    name: "ueberzug=={{ nnn_ueberzug_version }}"
-    # Here to force the usage of system pip
-    # instead of virtualenv location
-    executable: "/usr/bin/pip3"
-
 - name: Configure nnn env. var.
   ansible.builtin.blockinfile:
     path: ~/.zshrc_post
