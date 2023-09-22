@@ -54,7 +54,6 @@ The global `site.yml` playbook plays the following roles :
   - [ngrok](https://ngrok.com)
   - [asdf](https://asdf-vm.com)
   - [docker](https://docs.docker.com/engine/)
-  - [docker-compose](https://docs.docker.com/compose/)
 - `programming` (heavily relying on asdf tool)
   - [GCC / G++](https://gcc.gnu.org/)
   - [Make](https://linux.die.net/man/1/make)
