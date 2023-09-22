@@ -1,5 +1,3 @@
 ---
 docker_apt_key_url: https://download.docker.com/linux/debian/gpg
 docker_apt_repo_distrib: buster
-
-docker_compose_version: "1.29.2"
