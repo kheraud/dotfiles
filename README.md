@@ -45,7 +45,6 @@ The global `site.yml` playbook plays the following roles :
   - [htop](https://github.com/htop-dev/htop)
   - [Glances](https://github.com/nicolargo/glances)
   - [HTTPie](https://github.com/httpie/httpie)
-  - [nnn](https://github.com/jarun/nnn)
   - [the silver searcher](https://github.com/ggreer/the_silver_searcher)
   - [rsync](https://rsync.samba.org)
   - [mlocate](https://linux.die.net/man/5/mlocate.db)

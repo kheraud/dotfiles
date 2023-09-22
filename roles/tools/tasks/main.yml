@@ -15,10 +15,6 @@
   import_tasks: httpie.yml
   tags: httpie
 
-- name: "Install nnn"
-  import_tasks: nnn.yml
-  tags: nnn
-
 - name: "Install Silver searcher"
   import_tasks: silver_searcher.yml
   tags: silver_searcher
