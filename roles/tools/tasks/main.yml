@@ -39,10 +39,6 @@
   import_tasks: ffmpeg.yml
   tags: ffmpeg
 
-- name: "Install todo management tools"
-  import_tasks: todo.yml
-  tags: todo
-
 - name: "Install ngrok"
   import_tasks: ngrok.yml
   tags: ngrok
