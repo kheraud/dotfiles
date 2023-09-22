@@ -1,7 +1,6 @@
 ---
-httpie_version: 3.1.0
+httpie_version: 3.2.2
 http_prompt_version: 2.1.0
 glances_version: 3.2.4
 ngrok_version: "4VmDzA7iaHb"
-todo_txt_version: 2.12.0
-asdf_version: 0.9.0
+asdf_version: 0.13.1
