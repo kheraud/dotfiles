@@ -51,8 +51,6 @@ The global `site.yml` playbook plays the following roles :
   - [lm-sensors](https://github.com/lm-sensors/lm-sensors)
   - [GPG](https://gnupg.org/gph/en/manual.html)
   - [FFmpeg](https://ffmpeg.org/ffmpeg.html)
-  - [todo.cli](https://github.com/todotxt/todo.txt-cli)
-  - [todofi](https://github.com/hugokernel/todofi.sh)
   - [ngrok](https://ngrok.com)
   - [asdf](https://asdf-vm.com)
   - [docker](https://docs.docker.com/engine/)
