@@ -1,4 +1,10 @@
 ---
+- name: "Install asdf"
+  import_tasks: asdf.yml
+  tags:
+    - asdf
+    - programming
+
 - name: "Install neovim"
   import_tasks: neovim.yml
   tags: neovim
@@ -42,9 +48,3 @@
 - name: "Install ngrok"
   import_tasks: ngrok.yml
   tags: ngrok
-
-- name: "Install asdf"
-  import_tasks: asdf.yml
-  tags:
-    - asdf
-    - programming

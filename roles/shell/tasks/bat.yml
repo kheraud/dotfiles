@@ -5,19 +5,3 @@
     state: present
     dpkg_options: "force-overwrite"  # Issue specific with bat and ripgrep https://github.com/sharkdp/bat/issues/938#issuecomment-646745610
   become: true
-
-- name: Get batcat path
-  command: which batcat
-  register: batcat_path
-  changed_when: false
-  ignore_errors: true
-
-- name: Add symlink to batcat
-  ansible.builtin.file:
-    src: "{{ batcat_path.stdout }}"
-    dest: /usr/bin/bat
-    owner: root
-    group: root
-    state: link
-  become: true
-  when: batcat_path is succeeded and batcat_path.stdout != "/usr/bin/bat"
