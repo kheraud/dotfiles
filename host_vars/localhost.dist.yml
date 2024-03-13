@@ -1,12 +1,6 @@
 ---
 # This file list all the default config, override specific ones
 
-# Extended_desktop configs
-# Location of yarr database (use a synchronisation / replicated location)
-yarr_db_path: "~/Sync/Applications/yarr/common-feeds.db"
-# Port on which yarr is listening : http://localhost:<yarr_local_port>
-yarr_local_port: 7070
-
 # Programming configs
 # List of asdf plugins to install with the list of versions expected for
 # each plugin
@@ -16,10 +10,50 @@ asdf_plugins:
       - "3.10.3"
   nodejs:
     versions:
-      - "16.14.2"
+      - "19.9.0"
+      - "20.11.1"
   golang:
     versions:
       - "1.17"
+  yarn:
+    versions:
+      - "1.22.18"
+  java:
+    versions:
+      - adoptopenjdk-12.0.2+10.1
+  scala:
+    versions:
+      - "2.13.8"
+  github-cli:
+    versions:
+      - "2.45.0"
+  kubectl:
+    versions:
+      - "1.23.5"
+  kubectx:
+    versions:
+      - "0.9.4"
+  minikube:
+    versions:
+      - "1.25.2"
+  kind:
+    versions:
+      - "0.12.0"
+  helm:
+    versions:
+      - "3.8.1"
+  terraform:
+    versions:
+      - "1.7.4"
+  vault:
+    versions:
+      - "1.9.4"
+  packer:
+    versions:
+      - "1.8.0"
+  awscli:
+    versions:
+      - "2.15.28"
 
 # Shell configs
 git_username: null
@@ -51,6 +85,13 @@ shell_extra_locales: []
 oh_my_zsh_plugins:
   - git
   - zsh-autosuggestions
+  - fzf
+  - zsh-aliases-exa
+  - tmux
+  - autojump
+  - asdf
+  - kubectl
+  # - helm // Slow loading
 
 # List here remote omz plugins you want to install
 oh_my_sh_extra_plugins:
@@ -62,15 +103,39 @@ oh_my_sh_extra_plugins:
 xfce_force_panel_refresh: false
 # If you want to define a different panel profile, define it here
 # valid options: default, purple-haze
-xfce_panel_profile: default
-
-# Tools configs
-# Location of todo.txt files (use a synchronisation / replicated location)
-todo_path: /usr/local/bin
+xfce_panel_profile: purple-haze
 
 # Desktop configs
 # List of VS Code extension to install
-vscode_extensions: []
+vscode_extensions:
+  - 4ops.terraform
+  - Arjun.swagger-viewer
+  - DavidAnson.vscode-markdownlint
+  - dbaeumer.vscode-eslint
+  - donjayamanne.githistory
+  - eamodio.gitlens
+  - EditorConfig.EditorConfig
+  - esbenp.prettier-vscode
+  - fabiospampinato.vscode-diff
+  - golang.go
+  - hilleer.yaml-plus-json
+  - HookyQR.beautify
+  - jebbs.plantuml
+  - mhutchie.git-graph
+  - ms-azuretools.vscode-docker
+  - ms-kubernetes-tools.vscode-kubernetes-tools
+  - ms-python.python
+  - ms-toolsai.jupyter
+  - ms-vscode-remote.remote-containers
+  - ms-vsliveshare.vsliveshare
+  - redhat.vscode-yaml
+  - techer.open-in-browser
+  - vscode-icons-team.vscode-icons
+  - vscode-snippet.snippet
+  - xabikos.JavaScriptSnippets
+  - yzane.markdown-pdf
+  - yzhang.markdown-all-in-one
+
 # Font in uRXVT terminal
 # valid options: roboto, iosevka, hack, firacode
-urxvt_font: "roboto"
+urxvt_font: "hack"
