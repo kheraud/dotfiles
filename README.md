@@ -35,7 +35,7 @@ The global `site.yml` playbook plays the following roles :
   - [fd](https://github.com/sharkdp/fd)
   - [fzf](https://github.com/junegunn/fzf)
   - [bat](https://github.com/sharkdp/bat)
-  - [exa](https://github.com/ogham/exa)
+  - [eza](https://github.com/eza-community/eza)
   - [ripgrep](https://github.com/BurntSushi/ripgrep)
   - [fx](https://github.com/antonmedv/fx)
   - [jq](https://github.com/stedolan/jq) (redundant with fx)
