@@ -1,19 +1,19 @@
 ---
 shell_fonts:
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete%20Mono.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Italic/complete/Roboto%20Mono%20Italic%20Nerd%20Font%20Complete%20Mono.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Bold/complete/Roboto%20Mono%20Bold%20Nerd%20Font%20Complete%20Mono.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Bold-Italic/complete/Roboto%20Mono%20Bold%20Italic%20Nerd%20Font%20Complete%20Mono.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Iosevka/Regular/complete/Iosevka%20Term%20Nerd%20Font%20Complete%20Mono.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Iosevka/Italic/complete/Iosevka%20Term%20Italic%20Nerd%20Font%20Complete%20Mono.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Iosevka/Bold/complete/Iosevka%20Term%20Bold%20Nerd%20Font%20Complete%20Mono.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Iosevka/Bold-Italic/complete/Iosevka%20Term%20Bold%20Italic%20Nerd%20Font%20Complete%20Mono.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Italic/complete/Hack%20Italic%20Nerd%20Font%20Complete%20Mono.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Bold/complete/Hack%20Bold%20Nerd%20Font%20Complete%20Mono.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/BoldItalic/complete/Hack%20Bold%20Italic%20Nerd%20Font%20Complete%20Mono.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FiraCode/Regular/complete/Fira%20Code%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FiraCode/Bold/complete/Fira%20Code%20Bold%20Nerd%20Font%20Complete%20Mono.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Regular/RobotoMonoNerdFontMono-Regular.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Italic/RobotoMonoNerdFont-Italic.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Bold/RobotoMonoNerdFontMono-Bold.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Bold-Italic/RobotoMonoNerdFontMono-BoldItalic.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/Regular/IosevkaTermNerdFontMono-Regular.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/Italic/IosevkaTermNerdFontMono-Italic.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/Bold/IosevkaTermNerdFontMono-Bold.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/Bold-Italic/IosevkaTermNerdFontMono-BoldItalic.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Regular/HackNerdFontMono-Regular.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Italic/HackNerdFont-Italic.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Bold/HackNerdFontMono-Bold.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/BoldItalic/HackNerdFontMono-BoldItalic.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FiraCode/Regular/FiraCodeNerdFontMono-Regular.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FiraCode/Bold/FiraCodeNerdFontMono-Bold.ttf
 
 available_fonts:
   roboto: "RobotoMono Nerd Font Mono"
