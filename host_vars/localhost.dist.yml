@@ -86,7 +86,7 @@ oh_my_zsh_plugins:
   - git
   - zsh-autosuggestions
   - fzf
-  - zsh-aliases-exa
+  - zsh-eza
   - tmux
   - autojump
   - asdf

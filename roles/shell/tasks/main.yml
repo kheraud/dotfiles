@@ -31,9 +31,9 @@
   import_tasks: bat.yml
   tags: bat
 
-- name: "Install exa"
-  import_tasks: exa.yml
-  tags: exa
+- name: "Install eza"
+  import_tasks: eza.yml
+  tags: eza
 
 - name: "Install ripgrep"
   import_tasks: ripgrep.yml

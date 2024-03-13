@@ -1,0 +1,19 @@
+---
+- name: Install unzip
+  ansible.builtin.apt:
+    name: unzip
+    state: present
+  become: true
+
+- name: Unarchive eza binary
+  ansible.builtin.unarchive:
+    src: https://github.com/eza-community/eza/releases/download/v{{ eza_version }}/eza_x86_64-unknown-linux-gnu.zip
+    dest: /usr/local/bin
+    remote_src: true
+  become: true
+
+- name: Fetch zsh-eza alias for oh-my-zsh aliases
+  ansible.builtin.git:
+    repo: 'https://github.com/z-shell/zsh-eza.git'
+    dest: '~/.oh-my-custom/plugins/zsh-eza'
+    version: 'main'
