@@ -1,28 +1,28 @@
 [[package]]
 name = "ansible"
-version = "4.2.0"
+version = "9.3.0"
 description = "Radically simple IT automation"
 category = "main"
 optional = false
-python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*"
+python-versions = ">=3.10"
 
 [package.dependencies]
-ansible-core = ">=2.11.2,<2.12"
+ansible-core = ">=2.16.4,<2.17.0"
 
 [[package]]
 name = "ansible-core"
-version = "2.11.12"
+version = "2.16.4"
 description = "Radically simple IT automation"
 category = "main"
 optional = false
-python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*"
+python-versions = ">=3.10"
 
 [package.dependencies]
 cryptography = "*"
-jinja2 = "*"
+jinja2 = ">=3.0.0"
 packaging = "*"
-PyYAML = "*"
-resolvelib = ">=0.5.3,<0.6.0"
+PyYAML = ">=5.1"
+resolvelib = ">=0.5.3,<1.1.0"
 
 [[package]]
 name = "cffi"
@@ -104,7 +104,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "resolvelib"
-version = "0.5.5"
+version = "1.0.1"
 description = "Resolve abstract dependencies into concrete ones"
 category = "main"
 optional = false
@@ -112,19 +112,17 @@ python-versions = "*"
 
 [package.extras]
 examples = ["html5lib", "packaging", "pygraphviz", "requests"]
-lint = ["black", "flake8"]
-release = ["setl", "towncrier"]
+lint = ["black", "flake8", "mypy", "isort", "types-requests"]
+release = ["build", "towncrier", "twine"]
 test = ["commentjson", "packaging", "pytest"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.8"
-content-hash = "05bc941ece881dc306f4993b144056509078ef07cc88f19957947ee6d627bdda"
+python-versions = "^3.11"
+content-hash = "fc9ac3e589f8875c93a5853de79234c840144085052c76157609f8add5c732a7"
 
 [metadata.files]
-ansible = [
-    {file = "ansible-4.2.0.tar.gz", hash = "sha256:737d819ffbd7a80c28795b4edd93e59ad21e6e6d53af0d19f57412814f9260d0"},
-]
+ansible = []
 ansible-core = []
 cffi = []
 cryptography = []
@@ -133,7 +131,4 @@ markupsafe = []
 packaging = []
 pycparser = []
 pyyaml = []
-resolvelib = [
-    {file = "resolvelib-0.5.5-py2.py3-none-any.whl", hash = "sha256:b0143b9d074550a6c5163a0f587e49c49017434e3cdfe853941725f5455dd29c"},
-    {file = "resolvelib-0.5.5.tar.gz", hash = "sha256:123de56548c90df85137425a3f51eb93df89e2ba719aeb6a8023c032758be950"},
-]
+resolvelib = []

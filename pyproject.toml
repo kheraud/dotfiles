@@ -5,8 +5,8 @@ description = ""
 authors = ["kheraud <1894658+kheraud@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-ansible = "~4.2.0"
+python = "^3.11"
+ansible = "~9.3.0"
 
 [tool.poetry.dev-dependencies]
 

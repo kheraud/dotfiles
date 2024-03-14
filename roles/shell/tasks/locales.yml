@@ -14,7 +14,7 @@
     | selectattr("value", "search", ".UTF-8")
     | map(attribute="value")
     | list
-    | unique }} + {{ shell_extra_locales }}'
+    | unique + shell_extra_locales }}'
   become: true
 
 - name: Define locales for current user
