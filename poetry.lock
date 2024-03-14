@@ -1,21 +1,21 @@
 [[package]]
 name = "ansible"
-version = "4.10.0"
+version = "5.10.0"
 description = "Radically simple IT automation"
 category = "main"
 optional = false
-python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*"
+python-versions = ">=3.8"
 
 [package.dependencies]
-ansible-core = ">=2.11.7,<2.12.0"
+ansible-core = ">=2.12.7,<2.13.0"
 
 [[package]]
 name = "ansible-core"
-version = "2.11.12"
+version = "2.12.10"
 description = "Radically simple IT automation"
 category = "main"
 optional = false
-python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*"
+python-versions = ">=3.8"
 
 [package.dependencies]
 cryptography = "*"
@@ -119,7 +119,7 @@ test = ["commentjson", "packaging", "pytest"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "e5d44cea63a2389554853c2122b0f780b134d511fbd26f23f303e5811e57b0a8"
+content-hash = "60624fb7823a7cb6f95af309f47b80e666e0cf996e0341be812e3a52f371755d"
 
 [metadata.files]
 ansible = []
