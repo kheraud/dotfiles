@@ -1,25 +1,24 @@
 [[package]]
 name = "ansible"
-version = "8.7.0"
+version = "9.3.0"
 description = "Radically simple IT automation"
 category = "main"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 
 [package.dependencies]
-ansible-core = ">=2.15.7,<2.16.0"
+ansible-core = ">=2.16.4,<2.17.0"
 
 [[package]]
 name = "ansible-core"
-version = "2.15.9"
+version = "2.16.4"
 description = "Radically simple IT automation"
 category = "main"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 
 [package.dependencies]
 cryptography = "*"
-importlib-resources = {version = ">=5.0,<5.1", markers = "python_version < \"3.10\""}
 jinja2 = ">=3.0.0"
 packaging = "*"
 PyYAML = ">=5.1"
@@ -56,18 +55,6 @@ sdist = ["build"]
 ssh = ["bcrypt (>=3.1.5)"]
 test = ["pytest (>=6.2.0)", "pytest-benchmark", "pytest-cov", "pytest-xdist", "pretend", "certifi"]
 test-randomorder = ["pytest-randomly"]
-
-[[package]]
-name = "importlib-resources"
-version = "5.0.7"
-description = "Read resources from Python packages"
-category = "main"
-optional = false
-python-versions = ">=3.6"
-
-[package.extras]
-docs = ["sphinx", "jaraco.packaging (>=8.2)", "rst.linker (>=1.9)"]
-testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-cov", "pytest-enabler", "pytest-black (>=0.3.7)", "pytest-mypy"]
 
 [[package]]
 name = "jinja2"
@@ -131,15 +118,14 @@ test = ["commentjson", "packaging", "pytest"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.9"
-content-hash = "3234000dc0e15d798553a85fb130c033682a581e12f171b62fc2cdfbf1f1c519"
+python-versions = "^3.11"
+content-hash = "fc9ac3e589f8875c93a5853de79234c840144085052c76157609f8add5c732a7"
 
 [metadata.files]
 ansible = []
 ansible-core = []
 cffi = []
 cryptography = []
-importlib-resources = []
 jinja2 = []
 markupsafe = []
 packaging = []
