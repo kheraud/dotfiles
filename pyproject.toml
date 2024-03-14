@@ -6,7 +6,7 @@ authors = ["kheraud <1894658+kheraud@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-ansible = "~7.7.0"
+ansible = "~8.7.0"
 
 [tool.poetry.dev-dependencies]
 
