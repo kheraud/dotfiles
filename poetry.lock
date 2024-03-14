@@ -1,17 +1,17 @@
 [[package]]
 name = "ansible"
-version = "5.10.0"
+version = "6.7.0"
 description = "Radically simple IT automation"
 category = "main"
 optional = false
 python-versions = ">=3.8"
 
 [package.dependencies]
-ansible-core = ">=2.12.7,<2.13.0"
+ansible-core = ">=2.13.7,<2.14.0"
 
 [[package]]
 name = "ansible-core"
-version = "2.12.10"
+version = "2.13.13"
 description = "Radically simple IT automation"
 category = "main"
 optional = false
@@ -19,10 +19,10 @@ python-versions = ">=3.8"
 
 [package.dependencies]
 cryptography = "*"
-jinja2 = "*"
+jinja2 = ">=3.0.0"
 packaging = "*"
-PyYAML = "*"
-resolvelib = ">=0.5.3,<0.6.0"
+PyYAML = ">=5.1"
+resolvelib = ">=0.5.3,<0.9.0"
 
 [[package]]
 name = "cffi"
@@ -104,7 +104,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "resolvelib"
-version = "0.5.5"
+version = "0.8.1"
 description = "Resolve abstract dependencies into concrete ones"
 category = "main"
 optional = false
@@ -112,14 +112,14 @@ python-versions = "*"
 
 [package.extras]
 examples = ["html5lib", "packaging", "pygraphviz", "requests"]
-lint = ["black", "flake8"]
-release = ["setl", "towncrier"]
+lint = ["black", "flake8", "mypy", "isort", "types-requests"]
+release = ["build", "towncrier", "twine"]
 test = ["commentjson", "packaging", "pytest"]
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "60624fb7823a7cb6f95af309f47b80e666e0cf996e0341be812e3a52f371755d"
+content-hash = "a7f3d301d77992a488b6458b2a9e6d25d27e2c9a021936662a530ad5c7c69184"
 
 [metadata.files]
 ansible = []
@@ -131,7 +131,4 @@ markupsafe = []
 packaging = []
 pycparser = []
 pyyaml = []
-resolvelib = [
-    {file = "resolvelib-0.5.5-py2.py3-none-any.whl", hash = "sha256:b0143b9d074550a6c5163a0f587e49c49017434e3cdfe853941725f5455dd29c"},
-    {file = "resolvelib-0.5.5.tar.gz", hash = "sha256:123de56548c90df85137425a3f51eb93df89e2ba719aeb6a8023c032758be950"},
-]
+resolvelib = []
