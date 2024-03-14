@@ -103,7 +103,7 @@ oh_my_sh_extra_plugins:
 xfce_force_panel_refresh: false
 # If you want to define a different panel profile, define it here
 # valid options: default, purple-haze
-xfce_panel_profile: purple-haze
+xfce_panel_profile: grey-matter
 
 # Desktop configs
 # List of VS Code extension to install
