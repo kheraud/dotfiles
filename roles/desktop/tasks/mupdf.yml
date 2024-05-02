@@ -1,0 +1,6 @@
+---
+- name: "Install muPDF"
+  apt:
+    name: mupdf
+    state: present
+  become: true

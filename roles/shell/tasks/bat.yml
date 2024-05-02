@@ -5,3 +5,19 @@
     state: present
     dpkg_options: "force-overwrite"  # Issue specific with bat and ripgrep https://github.com/sharkdp/bat/issues/938#issuecomment-646745610
   become: true
+
+- name: Get batcat path
+  command: which batcat
+  register: batcat_path
+  changed_when: false
+  ignore_errors: true
+
+- name: Add alias for batcat
+  blockinfile:
+    path: ~/.zshrc_post
+    marker: "# {mark} ANSIBLE MANAGED bat BLOCK -->"
+    block: |
+      alias bat="{{ batcat_path.stdout }}"
+    create: true
+    mode: 'u=rw,g=r'
+  when: batcat_path is succeeded

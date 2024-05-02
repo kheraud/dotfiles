@@ -4,7 +4,7 @@ The dotfiles and applications added here are provisioned with Ansible.
 
 ## Prerequisites
 
-- Due to a lack of time, this playbook **only applies to `Ubuntu` >= 20.04 distribution**.
+- Due to a lack of time, this playbook **only applies to `Ubuntu` >= 24.04 distribution**.
 - [Poetry](https://github.com/python-poetry/poetry) `>= 1.1.0`
 
 ## Installation
@@ -74,7 +74,7 @@ The global `site.yml` playbook plays the following roles :
   - [terraform](https://www.terraform.io/docs/cli/index.html)
   - [vault](https://www.vaultproject.io/docs/commands)
   - [AWS cli](https://aws.amazon.com/fr/cli/)
-- `gnome` [if gnome-shell is installed]
+- `gnome` [if gnome-shell is installed, :warning: not tested for a long time]
   - [Tweaks](https://wiki.gnome.org/action/show/Apps/Tweaks)
   - For my personal keybindings and extensions :
     - Install [gnome-shell-extensions-sync](https://github.com/oae/gnome-shell-extensions-sync)

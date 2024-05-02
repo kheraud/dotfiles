@@ -1,6 +1,6 @@
 ---
-- name: Install mlocate
+- name: Install plocate
   apt:
-    name: mlocate
+    name: plocate
     state: present
   become: true

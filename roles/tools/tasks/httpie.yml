@@ -1,14 +1,6 @@
 ---
 - name: Install httpie
-  ansible.builtin.pip:
-    name: "httpie=={{ httpie_version }}"
-    # Here to force the usage of user pip
-    # instead of ansible virtualenv location
-    executable: "/home/kheraud/.asdf/shims/pip3"
-
-- name: Install http-prompt
-  ansible.builtin.pip:
-    name: "http-prompt=={{ http_prompt_version }}"
-    # Here to force the usage of user pip
-    # instead of ansible virtualenv location
-    executable: "/home/kheraud/.asdf/shims/pip3"
+  ansible.builtin.apt:
+    name: httpie
+    state: present
+  become: true
