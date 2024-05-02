@@ -17,12 +17,21 @@
       <property name="&lt;Super&gt;p" type="empty"/>
       <property name="&lt;Primary&gt;Escape" type="empty"/>
       <property name="XF86WWW" type="empty"/>
+      <property name="HomePage" type="empty"/>
       <property name="XF86Mail" type="empty"/>
       <property name="Print" type="empty"/>
-      <property name="&lt;Super&gt;l" type="empty"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;Escape" type="empty"/>
       <property name="&lt;Alt&gt;Print" type="empty"/>
       <property name="&lt;Shift&gt;Print" type="empty"/>
+      <property name="&lt;Super&gt;e" type="empty"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;f" type="empty"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;Escape" type="empty"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;Escape" type="empty"/>
+      <property name="&lt;Super&gt;r" type="empty">
+        <property name="startup-notify" type="empty"/>
+      </property>
+      <property name="&lt;Alt&gt;&lt;Super&gt;s" type="empty"/>
+      <property name="&lt;Super&gt;l" type="empty"/>
+      <property name="&lt;Alt&gt;Pause" type="empty"/>
       <property name="XF86HomePage" type="empty"/>
       <property name="&lt;Super&gt;w" type="empty"/>
       <property name="&lt;Super&gt;m" type="empty"/>
@@ -30,8 +39,6 @@
       <property name="&lt;Super&gt;f" type="empty"/>
       <property name="&lt;Super&gt;F1" type="empty"/>
       <property name="&lt;Super&gt;t" type="empty"/>
-      <property name="&lt;Super&gt;r" type="empty"/>
-      <property name="&lt;Super&gt;e" type="empty"/>
       <property name="XF86Calculator" type="empty"/>
       <property name="XF86Music" type="empty"/>
       <property name="&lt;Super&gt;1" type="empty"/>
@@ -61,13 +68,14 @@
       <property name="&lt;Super&gt;m" type="string" value="pactl -- set-source-mute @DEFAULT_SOURCE@ toggle"/>
       <property name="&lt;Super&gt;Page_Up" type="string" value="pactl -- set-sink-volume @DEFAULT_SINK@ +5%"/>
       <property name="&lt;Super&gt;Page_Down" type="string" value="pactl -- set-sink-volume @DEFAULT_SINK@ -5%"/>
-      <property name="&lt;Super&gt;d" type="string" value="rofi -modi &quot;drun,window&quot; -show drun"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;Right" type="string" value="move-to-next-monitor"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;Left" type="string" value="move-to-next-monitor"/>
       <property name="&lt;Super&gt;w" type="string" value="thunar"/>
       <property name="&lt;Super&gt;x" type="string" value="code --new-window"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Delete" type="string" value="xfce4-session-logout"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;n" type="string" value="code --new-window /home/kheraud/AppSync/Notes"/>
+      <property name="&lt;Shift&gt;&lt;Super&gt;d" type="string" value="rofi -modi &quot;drun,window&quot; -show drun"/>
+      <property name="&lt;Super&gt;d" type="string" value="xfce4-popup-whiskermenu -c"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
@@ -124,6 +132,14 @@
       <property name="&lt;Primary&gt;F10" type="empty"/>
       <property name="&lt;Primary&gt;F11" type="empty"/>
       <property name="&lt;Primary&gt;F12" type="empty"/>
+      <property name="&lt;Super&gt;KP_Left" type="empty"/>
+      <property name="&lt;Super&gt;KP_Right" type="empty"/>
+      <property name="&lt;Super&gt;KP_Down" type="empty"/>
+      <property name="&lt;Super&gt;KP_Up" type="empty"/>
+      <property name="&lt;Super&gt;KP_Page_Up" type="empty"/>
+      <property name="&lt;Super&gt;KP_Home" type="empty"/>
+      <property name="&lt;Super&gt;KP_End" type="empty"/>
+      <property name="&lt;Super&gt;KP_Next" type="empty"/>
       <property name="&lt;Alt&gt;F5" type="empty"/>
       <property name="&lt;Super&gt;KP_1" type="empty"/>
       <property name="&lt;Super&gt;Down" type="empty"/>

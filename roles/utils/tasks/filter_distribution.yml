@@ -1,6 +1,6 @@
 ---
-- name: "Limit to Ubuntu >= 20.04 distributions"
+- name: "Limit to Ubuntu >= 24.04 distributions"
   fail:
     msg: "{{ ansible_distribution }} {{ ansible_distribution_version }} is not supported by this playbook"
   when: (ansible_distribution != "Ubuntu") or
-        (ansible_distribution_version is version("20.04", "<"))
+        (ansible_distribution_version is version("24.04", "<"))

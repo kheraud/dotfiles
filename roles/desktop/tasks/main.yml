@@ -11,13 +11,13 @@
   import_tasks: urxvt.yml
   tags: urxvt
 
+- name: "Install mupdf"
+  import_tasks: mupdf.yml
+  tags: pdf
+
 - name: "Install Firefox"
   import_tasks: firefox.yml
   tags: firefox
-
-- name: "Install VLC"
-  import_tasks: vlc.yml
-  tags: vlc
 
 - name: "Install VSCode"
   import_tasks: vscode.yml
@@ -26,3 +26,7 @@
 - name: "Install Veracrypt"
   import_tasks: veracrypt.yml
   tags: veracrypt
+
+- name: "Install VLC"
+  import_tasks: vlc.yml
+  tags: vlc

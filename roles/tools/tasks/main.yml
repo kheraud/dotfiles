@@ -29,9 +29,9 @@
   import_tasks: rsync.yml
   tags: rsync
 
-- name: "Install mlocate"
-  import_tasks: mlocate.yml
-  tags: mlocate
+- name: "Install plocate"
+  import_tasks: plocate.yml
+  tags: plocate
 
 - name: "Install lm_sensors"
   import_tasks: lm_sensors.yml

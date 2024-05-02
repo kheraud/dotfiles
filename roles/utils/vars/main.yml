@@ -4,10 +4,10 @@ shell_fonts:
   - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Italic/RobotoMonoNerdFont-Italic.ttf
   - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Bold/RobotoMonoNerdFontMono-Bold.ttf
   - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Bold-Italic/RobotoMonoNerdFontMono-BoldItalic.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/Regular/IosevkaTermNerdFontMono-Regular.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/Italic/IosevkaTermNerdFontMono-Italic.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/Bold/IosevkaTermNerdFontMono-Bold.ttf
-  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/Bold-Italic/IosevkaTermNerdFontMono-BoldItalic.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/IosevkaTermNerdFontMono-Regular.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/IosevkaTermNerdFontMono-Italic.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/IosevkaTermNerdFontMono-Bold.ttf
+  - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/IosevkaTermNerdFontMono-BoldItalic.ttf
   - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Regular/HackNerdFontMono-Regular.ttf
   - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Italic/HackNerdFont-Italic.ttf
   - https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Bold/HackNerdFontMono-Bold.ttf

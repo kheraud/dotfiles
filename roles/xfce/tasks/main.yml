@@ -38,16 +38,3 @@
 - name: Install Rofi
   import_tasks: rofi.yml
   tags: rofi
-
-- name: Configure panel  # noqa no-handler
-  ansible.builtin.command: "xfce4-panel-profiles load {{ role_path }}/files/panel/{{ xfce_panel_profile }}.tar.bz2"
-  tags: xfce_panel
-  when: xfce_xconf_settings is defined and xfce_xconf_settings.changed or xfce_force_panel_refresh
-
-- name: Configure lightdm
-  ansible.builtin.copy:
-    src: lightdm/
-    dest: /etc/lightdm
-    mode: 'u=rw,go=r'
-  become: true
-  tags: lightdm

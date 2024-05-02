@@ -1,7 +1,6 @@
 ---
 - name: Install glances
-  ansible.builtin.pip:
-    name: "glances=={{ glances_version }}"
-    # Here to force the usage of user pip
-    # instead of ansible virtualenv location
-    executable: "/home/kheraud/.asdf/shims/pip3"
+  ansible.builtin.apt:
+    name: glances
+    state: present
+  become: true

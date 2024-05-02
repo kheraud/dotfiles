@@ -7,10 +7,9 @@
   become: true
 
 - name: "Add plugin {{ plugin_name }}"
-  # asdf return error 2 if plugin is already there
-  ansible.builtin.shell: "~/.asdf/bin/asdf plugin-add {{ plugin_name }} {{ plugin_url }} || /bin/true"
+  ansible.builtin.shell: "~/.asdf/bin/asdf plugin add {{ plugin_name }} {{ plugin_url }}"
   register: added_plugin
-  changed_when: '"already added" not in added_plugin.stderr'
+  changed_when: '"already added" not in added_plugin.stdout'
 
 - name: "Get installed versions of {{ plugin_name }}"
   ansible.builtin.command: "~/.asdf/bin/asdf list {{ plugin_name }}"
@@ -19,7 +18,7 @@
 
 - name: "Format installed versions of {{ plugin_name }}"
   ansible.builtin.set_fact:
-    installed_version: "{{ raw_installed_version.stdout_lines | map('trim') }}"
+    installed_version: "{{ raw_installed_version.stdout_lines | map('trim', ' ') | map('trim', '*') }}"
 
 - name: "Install versions for {{ plugin_name }}"
   ansible.builtin.command: "~/.asdf/bin/asdf install {{ plugin_name }} {{ plugin_version }}"
