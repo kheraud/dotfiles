@@ -1,5 +1,46 @@
 ---
-# This file list all the default config, override specific ones
+
+# Shell configs
+git_username: null
+git_email: null
+# Keep a null key if you don't gpg sign
+git_signing_key: null
+
+# Define which language is expected for each console need
+shell_user_locales:
+  LANG: en_US.UTF-8
+  LANGUAGE: en
+  LC_ADDRESS: en_US.UTF-8
+  LC_COLLATE: C
+  LC_CTYPE: en_US.UTF-8
+  LC_MONETARY: en_US.UTF-8
+  LC_MEASUREMENT: en_US.UTF-8
+  LC_MESSAGES: en_US.UTF-8
+  LC_NAME: en_US.UTF-8
+  LC_NUMERIC: en_US.UTF-8
+  LC_PAPER: en_US.UTF-8
+  LC_RESPONSE: en_US.UTF-8
+  LC_TELEPHONE: en_US.UTF-8
+  LC_TIME: en_US.UTF-8
+
+# If you want extra languages to be installed, list them here
+shell_extra_locales: []
+
+# List here the omz plugins you want to enable
+oh_my_zsh_plugins:
+  - git
+  - zsh-autosuggestions
+  - fzf
+  - zsh-eza
+  - tmux
+  - autojump
+  - asdf
+  - kubectl
+  # - helm // Slow loading
+
+# List here remote omz plugins you want to install
+oh_my_sh_extra_plugins:
+  zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions
 
 # Programming configs
 # List of asdf plugins to install with the list of versions expected for
@@ -55,71 +96,22 @@ asdf_plugins:
     versions:
       - "2.15.28"
 
-# Shell configs
-git_username: null
-git_email: null
-# Keep a null key if you don't gpg sign
-git_signing_key: null
-
-# Define which language is expected for each console need
-shell_user_locales:
-  LANG: en_US.UTF-8
-  LANGUAGE: en
-  LC_ADDRESS: en_US.UTF-8
-  LC_COLLATE: C
-  LC_CTYPE: en_US.UTF-8
-  LC_MONETARY: en_US.UTF-8
-  LC_MEASUREMENT: en_US.UTF-8
-  LC_MESSAGES: en_US.UTF-8
-  LC_NAME: en_US.UTF-8
-  LC_NUMERIC: en_US.UTF-8
-  LC_PAPER: en_US.UTF-8
-  LC_RESPONSE: en_US.UTF-8
-  LC_TELEPHONE: en_US.UTF-8
-  LC_TIME: en_US.UTF-8
-
-# If you want extra languages to be installed, list them here
-shell_extra_locales: []
-
-# List here the omz plugins you want to enable
-oh_my_zsh_plugins:
-  - git
-  - zsh-autosuggestions
-  - fzf
-  - zsh-eza
-  - tmux
-  - autojump
-  - asdf
-  - kubectl
-  # - helm // Slow loading
-
-# List here remote omz plugins you want to install
-oh_my_sh_extra_plugins:
-  zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions
-
-# Xfce configs
-# If xfce configuration does not change, panel is not refreshed
-# If you want to force panel refresh, use this var
-xfce_force_panel_refresh: false
-# If you want to define a different panel profile, define it here
-# valid options: default, purple-haze
-xfce_panel_profile: grey-matter
 
 # Desktop configs
 # List of VS Code extension to install
 vscode_extensions:
   - 4ops.terraform
-  - Arjun.swagger-viewer
-  - DavidAnson.vscode-markdownlint
+  - arjun.swagger-viewer
+  - davidanson.vscode-markdownlint
   - dbaeumer.vscode-eslint
   - donjayamanne.githistory
   - eamodio.gitlens
-  - EditorConfig.EditorConfig
+  - editorconfig.editorconfig
   - esbenp.prettier-vscode
   - fabiospampinato.vscode-diff
   - golang.go
   - hilleer.yaml-plus-json
-  - HookyQR.beautify
+  - hookyqr.beautify
   - jebbs.plantuml
   - mhutchie.git-graph
   - ms-azuretools.vscode-docker
@@ -132,10 +124,10 @@ vscode_extensions:
   - techer.open-in-browser
   - vscode-icons-team.vscode-icons
   - vscode-snippet.snippet
-  - xabikos.JavaScriptSnippets
+  - xabikos.javascriptsnippets
   - yzane.markdown-pdf
   - yzhang.markdown-all-in-one
 
-# Font in uRXVT terminal
-# valid options: roboto, iosevka, hack, firacode
-urxvt_font: "hack"
+# Font in terminal
+# valid options: roboto, iosevka, hack, firacode, dejavu
+shell_font: "hack"

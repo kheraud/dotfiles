@@ -61,7 +61,6 @@
       <property name="&lt;Shift&gt;Print" type="string" value="xfce4-screenshooter -r"/>
       <property name="&lt;Super&gt;p" type="string" value="xfce4-display-settings --minimal"/>
       <property name="override" type="bool" value="true"/>
-      <property name="&lt;Super&gt;Return" type="string" value="launch-in-workspace.sh"/>
       <property name="&lt;Super&gt;b" type="string" value="exo-open --launch WebBrowser"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;x" type="string" value="xflock4"/>
       <property name="&lt;Super&gt;l" type="string" value="xflock4"/>
@@ -76,6 +75,7 @@
       <property name="&lt;Shift&gt;&lt;Super&gt;n" type="string" value="code --new-window /home/kheraud/AppSync/Notes"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;d" type="string" value="rofi -modi &quot;drun,window&quot; -show drun"/>
       <property name="&lt;Super&gt;d" type="string" value="xfce4-popup-whiskermenu -c"/>
+      <property name="&lt;Super&gt;Return" type="string" value="launch-alacritty-in-ws.sh"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
