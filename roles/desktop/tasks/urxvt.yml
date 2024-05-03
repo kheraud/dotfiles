@@ -33,4 +33,4 @@
     dest: ~/.Xresources
     mode: 'u=rwx,g=rx'
   vars:
-    font_name: "{{ available_fonts[urxvt_font] }}"
+    font_name: "{{ shell_fonts[urxvt_font]['name'] }}"

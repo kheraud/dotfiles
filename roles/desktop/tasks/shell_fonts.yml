@@ -6,11 +6,12 @@
   become: true
 
 - name: Install nerd shell fonts
-  get_url:
-    url: "{{ item }}"
+  ansible.builtin.unarchive:
+    src: "{{ item.value.url }}"
     dest: /usr/share/fonts
+    remote_src: true
     mode: "u=rwx,go=rx"
-  loop: "{{  shell_fonts  }}"
+  loop: "{{  shell_fonts | dict2items }}"
   become: true
   notify:
     - Refresh font cache
