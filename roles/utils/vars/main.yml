@@ -14,4 +14,4 @@ shell_fonts:
     name: "FiraCode Nerd Font Mono"
   dejavu:
     url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/DejaVuSansMono.tar.xz
-    name: "DejaVu Sans Nerd Font Mono"
+    name: "DejaVuSansM Nerd Font Mono"

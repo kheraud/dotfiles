@@ -2,3 +2,4 @@
 vscode_microsoft_asc_url: https://packages.microsoft.com/keys/microsoft.asc
 veracrypt_version: 1.26.7
 veracrypt_artifact_version: veracrypt-1.26.7-Ubuntu-23.04-amd64
+alacritty_version: 0.12.2-2

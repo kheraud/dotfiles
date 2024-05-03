@@ -88,7 +88,7 @@ The global `site.yml` playbook plays the following roles :
     - fonts-crosextra-carlito
     - fonts-crosextra-caladea
     - [Extra google fonts](roles/desktop_fonts/files)
-  - [urxvt](https://linux.die.net/man/1/urxvt)
+  - [Alacritty](https://github.com/alacritty/alacritty)
   - [Firefox](https://www.mozilla.org/fr/firefox/new/)
   - [VLC](https://www.videolan.org/vlc/)
   - [VSCode](https://code.visualstudio.com/) with [these extensions](host_vars/localhost.yml)

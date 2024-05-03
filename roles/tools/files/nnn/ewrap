@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 if [ -z "$TMUX" ]; then
-    urxvt -e bash -i -c "nvim \"$*\""
+    alacritty --command "nvim \"$*\""
 else
     tmux split-window -h "nvim \"$*\""
 fi

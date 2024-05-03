@@ -1,7 +1,7 @@
 ---
-- name: "Install Urxvt"
+- name: "Install Alacritty"
   apt:
-    name: rxvt-unicode
+    name: "alacritty={{ alacritty_version }}"
     state: present
   become: true
 
@@ -13,24 +13,24 @@
     state: present
   become: true
 
-- name: Add dependencies for urxvt script
+- name: Add dependencies for launch script
   ansible.builtin.apt:
     name:
       - wmctrl
     state: present
   become: true
 
-- name: "Copy launch Urxvt script"
+- name: "Copy launch alacritty script"
   copy:
-    src: launch-in-workspace.sh
+    src: launch-alacritty-in-ws.sh
     dest: /usr/local/bin/
     mode: 'u=rwx,go=rx'
   become: true
 
-- name: "Edit .Xresources"
+- name: "Edit alacritty configuration"
   ansible.builtin.template:
-    src: urxvt/Xresources.j2
-    dest: ~/.Xresources
+    src: alacritty/alacritty.yml.j2
+    dest: ~/.config/alacritty/alacritty.yml
     mode: 'u=rwx,g=rx'
   vars:
-    font_name: "{{ shell_fonts[urxvt_font]['name'] }}"
+    font_name: "{{ shell_fonts[shell_font]['name'] }}"
