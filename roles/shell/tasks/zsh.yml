@@ -10,6 +10,11 @@
   user:
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh
+  register: set_default_shell
+
+- name: "End play if zsh is not the current shell (restart your terminal)"
+  ansible.builtin.meta: end_host
+  when: set_default_shell.changed
 
 - name: Clone oh-my-zsh for users
   git:
