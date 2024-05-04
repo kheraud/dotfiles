@@ -1,0 +1,23 @@
+---
+- name: Is {{ font_name }} font sources downloaded ?
+  ansible.builtin.stat:
+    path: "/tmp/shell_fonts/{{ font_url | basename }}"
+  register: font_archive_stated
+  changed_when: false
+
+- name: Get {{ font_name }} fonts
+  ansible.builtin.get_url:
+    url: "{{ font_url }}"
+    dest: "/tmp/shell_fonts/{{ font_url | basename }}"
+    mode: "u=rwx,go=rx"
+  become: true
+  when: not font_archive_stated.stat.exists or force_shell_font
+  register: get_shell_font
+
+- name: Deploy {{ font_name }} font
+  ansible.builtin.unarchive:
+    src: "/tmp/shell_fonts/{{ font_url | basename }}"
+    dest: /usr/share/fonts
+    mode: "u=rwx,go=rx"
+  become: true
+  when: get_shell_font.changed or force_shell_font

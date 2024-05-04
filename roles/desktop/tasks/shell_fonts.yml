@@ -5,13 +5,19 @@
     state: present
   become: true
 
-- name: Install nerd shell fonts
-  ansible.builtin.unarchive:
-    src: "{{ item.value.url }}"
-    dest: /usr/share/fonts
-    remote_src: true
+- name: Create tmp folder for font
+  ansible.builtin.file:
     mode: "u=rwx,go=rx"
-  loop: "{{  shell_fonts | dict2items }}"
+    path: "/tmp/shell_fonts"
+    state: directory
   become: true
-  notify:
-    - Refresh font cache
+
+- name: "Install nerd fonts"
+  vars:
+    font_name: "{{ item.key }}"
+    font_url: "{{ item.value.url }}"
+  include_tasks:
+    file: shell_font_dl.yml
+    apply:
+      tags: "shell_fonts"
+  loop: "{{  shell_fonts | dict2items }}"

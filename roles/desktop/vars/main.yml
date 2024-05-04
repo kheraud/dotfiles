@@ -3,3 +3,19 @@ vscode_microsoft_asc_url: https://packages.microsoft.com/keys/microsoft.asc
 veracrypt_version: 1.26.7
 veracrypt_artifact_version: veracrypt-1.26.7-Ubuntu-23.04-amd64
 alacritty_version: 0.12.2-2
+shell_fonts:
+  roboto:
+    url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/RobotoMono.tar.xz
+    name: "RobotoMono Nerd Font Mono"
+  iosevka:
+    url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/IosevkaTerm.tar.xz
+    name: "Iosevka Term,Iosevka Nerd Font Mono"
+  hack:
+    url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.tar.xz
+    name: "Hack Nerd Font Mono"
+  firacode:
+    url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.tar.xz
+    name: "FiraCode Nerd Font Mono"
+  dejavu:
+    url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/DejaVuSansMono.tar.xz
+    name: "DejaVuSansM Nerd Font Mono"
