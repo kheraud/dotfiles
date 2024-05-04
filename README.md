@@ -29,7 +29,7 @@ The global `site.yml` playbook plays the following roles :
   - [Git](https://git-scm.com/)
   - [Zsh](https://www.zsh.org)
   - [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh)
-  - [Roboto Mono Nerd fonts](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/RobotoMono)
+  - [Some Nerd fonts](https://github.com/ryanoasis/nerd-fonts)
   - [Tmux](https://leanpub.com/the-tao-of-tmux/read)
   - [autojump](https://github.com/wting/autojump)
   - [fd](https://github.com/sharkdp/fd)
@@ -47,7 +47,7 @@ The global `site.yml` playbook plays the following roles :
   - [HTTPie](https://github.com/httpie/httpie)
   - [the silver searcher](https://github.com/ggreer/the_silver_searcher)
   - [rsync](https://rsync.samba.org)
-  - [mlocate](https://linux.die.net/man/5/mlocate.db)
+  - [plocate](hhttps://plocate.sesse.net/)
   - [lm-sensors](https://github.com/lm-sensors/lm-sensors)
   - [GPG](https://gnupg.org/gph/en/manual.html)
   - [FFmpeg](https://ffmpeg.org/ffmpeg.html)
@@ -74,14 +74,6 @@ The global `site.yml` playbook plays the following roles :
   - [terraform](https://www.terraform.io/docs/cli/index.html)
   - [vault](https://www.vaultproject.io/docs/commands)
   - [AWS cli](https://aws.amazon.com/fr/cli/)
-- `gnome` [if gnome-shell is installed, :warning: not tested for a long time]
-  - [Tweaks](https://wiki.gnome.org/action/show/Apps/Tweaks)
-  - For my personal keybindings and extensions :
-    - Install [gnome-shell-extensions-sync](https://github.com/oae/gnome-shell-extensions-sync)
-    - Use [my gist](https://gist.github.com/kheraud/7fa0b1083fa5e179b796c97e390cffc2) to setup extension
-  - [Numix themes](https://github.com/numixproject/numix-gtk-theme)
-  - [Numix icons](https://github.com/numixproject/numix-icon-theme-circle)
-  - [Chrome gnome shell](https://gitlab.gnome.org/GNOME/chrome-gnome-shel) // Compatible Firefox
 - `desktop`
   - desktop fonts
     - ttf-mscorefonts
@@ -92,8 +84,8 @@ The global `site.yml` playbook plays the following roles :
   - [Firefox](https://www.mozilla.org/fr/firefox/new/)
   - [VLC](https://www.videolan.org/vlc/)
   - [VSCode](https://code.visualstudio.com/) with [these extensions](host_vars/localhost.yml)
+  - [MuPDF](https://mupdf.com/)
   - [Veracrypt](https://github.com/veracrypt/VeraCrypt)
-- `extended_desktop`
   - [LibreOffice](https://www.libreoffice.org/)
   - [Gimp](https://www.gimp.org/)
   - [GParted](https://gparted.org/)

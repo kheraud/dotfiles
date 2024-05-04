@@ -4,15 +4,3 @@
     name: firefox
     state: present
   become: true
-
-- name: "Check if Gnome shell is installed"
-  stat:
-    path: /usr/bin/gnome-shell
-  register: gnome_shell_path
-
-- name: "Install chrome-gnome-shell"
-  apt:
-    name: chrome-gnome-shell
-    state: present
-  become: true
-  when: gnome_shell_path.stat.exists

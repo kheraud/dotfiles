@@ -51,16 +51,9 @@
     - role: programming
       tags: programming
 
-    - role: gnome
-      tags: gnome
-      when: installed_desktop_environments.gnome
-
     - role: xfce
       tags: xfce
-      when: installed_desktop_environments.xfce
+      when: is_xfce_installed
 
     - role: desktop
       tags: desktop
-
-    - role: extended_desktop
-      tags: extended_desktop

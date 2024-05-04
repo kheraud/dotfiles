@@ -30,3 +30,23 @@
 - name: "Install VLC"
   import_tasks: vlc.yml
   tags: vlc
+
+- name: "Install Libreoffice"
+  import_tasks: libreoffice.yml
+  tags: libreoffice
+
+- name: "Install Gimp"
+  import_tasks: gimp.yml
+  tags: gimp
+
+- name: "Install GParted"
+  import_tasks: gparted.yml
+  tags: gparted
+
+- name: "Install Thunderbird"
+  import_tasks: thunderbird.yml
+  tags: thunderbird
+
+- name: "Install Transmission"
+  import_tasks: transmission.yml
+  tags: transmission
