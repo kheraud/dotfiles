@@ -1,0 +1,6 @@
+---
+- name: "Install file-roller archive manager"
+  apt:
+    name: "file-roller"
+    state: present
+  become: true

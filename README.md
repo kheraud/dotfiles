@@ -81,10 +81,11 @@ The global `site.yml` playbook plays the following roles :
     - fonts-crosextra-caladea
     - [Extra google fonts](roles/desktop_fonts/files)
   - [Alacritty](https://github.com/alacritty/alacritty)
+  - [MuPDF](https://mupdf.com/)
+  - [Nomacs](https://nomacs.org/)
   - [Firefox](https://www.mozilla.org/fr/firefox/new/)
   - [VLC](https://www.videolan.org/vlc/)
   - [VSCode](https://code.visualstudio.com/) with [these extensions](host_vars/localhost.yml)
-  - [MuPDF](https://mupdf.com/)
   - [Veracrypt](https://github.com/veracrypt/VeraCrypt)
   - [LibreOffice](https://www.libreoffice.org/)
   - [Gimp](https://www.gimp.org/)

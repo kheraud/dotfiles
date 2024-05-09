@@ -1,0 +1,6 @@
+---
+- name: "Install nomacs image viewer"
+  apt:
+    name: "nomacs"
+    state: present
+  become: true

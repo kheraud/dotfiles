@@ -15,6 +15,14 @@
   import_tasks: mupdf.yml
   tags: pdf
 
+- name: "Install nomacs"
+  import_tasks: nomacs.yml
+  tags: img_viewer
+
+- name: "Install file roller"
+  import_tasks: archiver.yml
+  tags: archive_manager
+
 - name: "Install Firefox"
   import_tasks: firefox.yml
   tags: firefox
