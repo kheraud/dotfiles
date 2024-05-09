@@ -1,28 +1,8 @@
 ---
-- name: "Install GPG"
-  apt:
-    name: gpg
-    state: present
-  become: true
-
-- name: "Download ASC file"
-  apt_key:
-    url: "{{ vscode_microsoft_asc_url }}"
-    state: present
-  become: true
-
-- name: "Copy repo list"
-  copy:
-    src: vscode.list
-    dest: /etc/apt/sources.list.d/vscode.list
-    mode: 'u=rw,go=r'
-  become: true
-
 - name: "Install Visual Studio Code"
-  apt:
-    name: code
+  ansible.builtin.apt:
+    deb: "{{ vscode_microsoft_url }}"
     state: present
-    update_cache: true
   become: true
 
 - name: "Export installed VSCode extensions"
