@@ -1,7 +1,7 @@
 ---
 - name: "Install Alacritty"
   apt:
-    name: "alacritty={{ alacritty_version }}"
+    name: "alacritty"
     state: present
   become: true
 
@@ -29,8 +29,8 @@
 
 - name: "Edit alacritty configuration"
   ansible.builtin.template:
-    src: alacritty/alacritty.yml.j2
-    dest: ~/.config/alacritty/alacritty.yml
+    src: alacritty/alacritty.toml.j2
+    dest: ~/.config/alacritty/alacritty.toml
     mode: 'u=rwx,g=rx'
   vars:
     font_name: "{{ shell_fonts[shell_font]['name'] }}"
