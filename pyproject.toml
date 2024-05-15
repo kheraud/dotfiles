@@ -3,10 +3,11 @@ name = "dotfiles"
 version = "1.0.0"
 description = ""
 authors = ["kheraud <1894658+kheraud@users.noreply.github.com>"]
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11"
-ansible = "~9.3.0"
+ansible = "~9.5.0"
 
 [tool.poetry.dev-dependencies]
 
