@@ -27,6 +27,12 @@
     mode: 'u=rwx,go=rx'
   become: true
 
+- name: "Ensure alacritty config path exists"
+  ansible.builtin.file:
+    mode: "ug=rwx,o=rx"
+    path: ~/.config/alacritty
+    state: directory
+
 - name: "Edit alacritty configuration"
   ansible.builtin.template:
     src: alacritty/alacritty.toml.j2
