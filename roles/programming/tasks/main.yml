@@ -18,7 +18,7 @@
 
 - name: Fail if asdf is not available
   fail:
-    msg: "Can't find asdf binary"
+    msg: "Can't find asdf binary, you probably need to restart your terminal / session"
   when: not asdf_bin_path.stat.exists
 
 - name: "Install asdf plugins"
