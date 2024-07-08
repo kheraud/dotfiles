@@ -111,7 +111,6 @@ vscode_extensions:
   - fabiospampinato.vscode-diff
   - golang.go
   - hilleer.yaml-plus-json
-  - hookyqr.beautify
   - jebbs.plantuml
   - mhutchie.git-graph
   - ms-azuretools.vscode-docker
