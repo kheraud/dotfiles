@@ -1,8 +1,8 @@
 ---
-- name: Install numix theme and icons
+- name: Install orchis theme and numix icons
   ansible.builtin.apt:
     name:
-      - numix-gtk-theme
+      - orchis-gtk-theme
       - numix-icon-theme
     state: present
   become: true
