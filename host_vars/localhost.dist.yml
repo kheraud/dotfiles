@@ -35,7 +35,8 @@ oh_my_zsh_plugins:
   - tmux
   - autojump
   - asdf
-  - kubectl
+  - direnv
+  # - kubectl
   # - helm // Slow loading
 
 # List here remote omz plugins you want to install
