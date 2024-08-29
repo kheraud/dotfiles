@@ -32,6 +32,7 @@ The global `site.yml` playbook plays the following roles :
   - [Some Nerd fonts](https://github.com/ryanoasis/nerd-fonts)
   - [Tmux](https://leanpub.com/the-tao-of-tmux/read)
   - [autojump](https://github.com/wting/autojump)
+  - [direnv](https://github.com/direnv/direnv)
   - [fd](https://github.com/sharkdp/fd)
   - [fzf](https://github.com/junegunn/fzf)
   - [bat](https://github.com/sharkdp/bat)
