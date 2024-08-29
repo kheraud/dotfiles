@@ -19,6 +19,10 @@
   import_tasks: autojump.yml
   tags: autojump
 
+- name: "Install direnv"
+  import_tasks: direnv.yml
+  tags: direnv
+
 - name: "Install fd"
   import_tasks: fd.yml
   tags: fd
