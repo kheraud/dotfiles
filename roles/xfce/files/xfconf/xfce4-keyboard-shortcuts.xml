@@ -62,7 +62,7 @@
       <property name="&lt;Super&gt;p" type="string" value="xfce4-display-settings --minimal"/>
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Super&gt;b" type="string" value="exo-open --launch WebBrowser"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;x" type="string" value="xflock4"/>
+      <property name="&lt;Shift&gt;&lt;Super&gt;x" type="string" value="xfce4-session-logout --suspend"/>
       <property name="&lt;Super&gt;l" type="string" value="xflock4"/>
       <property name="&lt;Super&gt;m" type="string" value="pactl -- set-source-mute @DEFAULT_SOURCE@ toggle"/>
       <property name="&lt;Super&gt;Page_Up" type="string" value="pactl -- set-sink-volume @DEFAULT_SINK@ +5%"/>
