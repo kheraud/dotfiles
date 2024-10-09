@@ -47,3 +47,12 @@
     dest: "~/.oh-my-custom/plugins/{{ item.key }}"
     version: 'master'
   loop: "{{ oh_my_sh_extra_plugins | dict2items }}"
+
+- name: "Add alias to load omz module on the fly"
+  blockinfile:
+    path: ~/.zshrc_post
+    marker: "# {mark} ANSIBLE MANAGED omz ^plugin BLOCK -->"
+    block: |
+      alias omzp="omz plugin enable"
+    create: true
+    mode: 'u=rw,g=r'
