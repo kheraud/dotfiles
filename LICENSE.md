@@ -1,7 +1,7 @@
 The MIT License (MIT)
 =====================
 
-**Copyright (c) 2020 Karim Heraud (kheraud@fastmail.com)**
+**Copyright (c) 2024 Karim Heraud (<1894658+kheraud@users.noreply.github.com>)**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
