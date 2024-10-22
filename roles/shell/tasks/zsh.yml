@@ -53,6 +53,6 @@
     path: ~/.zshrc_post
     marker: "# {mark} ANSIBLE MANAGED omz ^plugin BLOCK -->"
     block: |
-      alias omzp="omz plugin enable"
+      alias omzp="omz plugin load"
     create: true
     mode: 'u=rw,g=r'

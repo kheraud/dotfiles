@@ -5,7 +5,7 @@ The dotfiles and applications added here are provisioned with Ansible.
 ## Prerequisites
 
 - Due to a lack of time, this playbook **only applies to `Ubuntu` >= 24.04 distribution**.
-- [Poetry](https://github.com/python-poetry/poetry) `>= 1.1.0`
+- [uv](https://github.com/astral-sh/uv) `>= 0.4.25`
 
 ## Installation
 
@@ -16,8 +16,8 @@ Then edit `host_vars/*.yml` with custom settings
 (`host_vars/localhost.yml` is a good start).
 
 ```shell
-poetry install && \
-poetry run ansible-playbook -K -i hosts site.yml
+uv sync && \
+uv run ansible-playbook -K -i hosts site.yml
 ```
 
 ## Content of the playbooks
@@ -102,6 +102,14 @@ to target some tools or group of tools. You will have to dig in the
 Example, install only `shell` tools :
 
 ```shell
-poetry install && \
-poetry run ansible-playbook -K -i hosts --tags "shell" site.yml
+uv sync && \
+uv run ansible-playbook -K -i hosts --tags "shell" site.yml
 ```
+
+## TODO
+
+Add tools:
+
+- age
+- sops
+- rythmbox

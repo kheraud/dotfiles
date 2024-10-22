@@ -1,16 +1,10 @@
-[tool.poetry]
+[project]
 name = "dotfiles"
 version = "1.0.0"
-description = ""
+description = "K. Heraud personal dotfiles"
 authors = ["kheraud <1894658+kheraud@users.noreply.github.com>"]
-package-mode = false
-
-[tool.poetry.dependencies]
-python = "^3.11"
-ansible = "~9.5.0"
-
-[tool.poetry.dev-dependencies]
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ansible~=9.5.0",
+]
