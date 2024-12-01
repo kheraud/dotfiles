@@ -94,6 +94,7 @@ The global `site.yml` playbook plays the following roles :
   - [Gimp](https://www.gimp.org/)
   - [GParted](https://gparted.org/)
   - [Transmission](https://transmissionbt.com/)
+  - 
 
 ## Install a subset
 
@@ -107,9 +108,3 @@ Example, install only `shell` tools :
 uv sync && \
 uv run ansible-playbook -K -i hosts --tags "shell" site.yml
 ```
-
-## TODO
-
-Add tools:
-
-- rythmbox
