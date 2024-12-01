@@ -1,6 +1,4 @@
 ---
-httpie_version: 3.2.2
-http_prompt_version: 2.1.0
-glances_version: 3.4.0
 ngrok_version: "4VmDzA7iaHb"
 asdf_version: 0.14.0
+sops_version: 3.9.1

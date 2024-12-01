@@ -37,9 +37,9 @@
   import_tasks: lm_sensors.yml
   tags: lm_sensors
 
-- name: "Install gpg"
-  import_tasks: gpg.yml
-  tags: gpg
+- name: "Install sec tools"
+  import_tasks: sec.yml
+  tags: sec
 
 - name: "Install ffmpeg"
   import_tasks: ffmpeg.yml

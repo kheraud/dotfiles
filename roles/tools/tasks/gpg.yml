@@ -1,6 +1,0 @@
----
-- name: Install GPG
-  apt:
-    name: gnupg2
-    state: present
-  become: true

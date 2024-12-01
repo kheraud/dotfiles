@@ -42,6 +42,9 @@ The global `site.yml` playbook plays the following roles :
   - [jq](https://github.com/stedolan/jq) (redundant with fx)
   - [progress](https://github.com/Xfennec/progress)
 - `tools`
+  - [GPG](https://gnupg.org/gph/en/manual.html)
+  - [Sops](https://github.com/getsops/sops)
+  - [Age](https://github.com/FiloSottile/age)
   - [Neovim](https://github.com/neovim/neovim)
   - [htop](https://github.com/htop-dev/htop)
   - [Glances](https://github.com/nicolargo/glances)
@@ -50,7 +53,6 @@ The global `site.yml` playbook plays the following roles :
   - [rsync](https://rsync.samba.org)
   - [plocate](hhttps://plocate.sesse.net/)
   - [lm-sensors](https://github.com/lm-sensors/lm-sensors)
-  - [GPG](https://gnupg.org/gph/en/manual.html)
   - [FFmpeg](https://ffmpeg.org/ffmpeg.html)
   - [ngrok](https://ngrok.com)
   - [asdf](https://asdf-vm.com)
@@ -110,6 +112,4 @@ uv run ansible-playbook -K -i hosts --tags "shell" site.yml
 
 Add tools:
 
-- age
-- sops
 - rythmbox
