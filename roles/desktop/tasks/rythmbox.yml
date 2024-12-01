@@ -1,0 +1,6 @@
+---
+- name: "Install Rhythmbox"
+  apt:
+    name: rhythmbox
+    state: present
+  become: true

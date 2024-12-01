@@ -58,3 +58,7 @@
 - name: "Install Transmission"
   import_tasks: transmission.yml
   tags: transmission
+
+- name: "Install Rythmbox"
+  import_tasks: rythmbox.yml
+  tags: rythmbox
