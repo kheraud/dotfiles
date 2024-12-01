@@ -94,7 +94,7 @@ The global `site.yml` playbook plays the following roles :
   - [Gimp](https://www.gimp.org/)
   - [GParted](https://gparted.org/)
   - [Transmission](https://transmissionbt.com/)
-  - 
+  - [Rythmbox](http://www.rhythmbox.org)
 
 ## Install a subset
 
