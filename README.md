@@ -111,3 +111,4 @@ uv run ansible-playbook -K -i hosts --tags "shell" site.yml
 
 ## TODO
 
+- Refacto asdf role to avoid feeding the repo and rely on the builtin urls

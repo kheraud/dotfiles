@@ -70,3 +70,9 @@ asdf_plugin_list:
     url: https://github.com/MetricMike/asdf-awscli.git
   gcloud:
     url: https://github.com/jthegedus/asdf-gcloud.git
+  glab:
+    url: https://github.com/particledecay/asdf-glab.git
+  krew:
+    url: https://github.com/bjw-s/asdf-krew.git
+  clusterctl:
+    url: https://github.com/pfnet-research/asdf-clusterctl.git

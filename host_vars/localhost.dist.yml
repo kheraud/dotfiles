@@ -49,54 +49,50 @@ oh_my_sh_extra_plugins:
 asdf_plugins:
   python:
     versions:
-      - "3.10.3"
+      - "latest"
+      - "3.11.11"
   nodejs:
     versions:
-      - "19.9.0"
-      - "20.11.1"
+      - "21.7.3"
   golang:
     versions:
-      - "1.17"
-  yarn:
-    versions:
-      - "1.22.18"
-  java:
-    versions:
-      - adoptopenjdk-12.0.2+10.1
-  scala:
-    versions:
-      - "2.13.8"
+      - "1.22.10"
   github-cli:
     versions:
-      - "2.45.0"
+      - "latest"
+  glab:
+    versions:
+      - " latest"
   kubectl:
     versions:
-      - "1.23.5"
+      - "latest"
+  krew:
+    versions:
+      - latest
+  clusterctl:
+    versions:
+      - latest
   kubectx:
     versions:
-      - "0.9.4"
-  minikube:
-    versions:
-      - "1.25.2"
+      - "latest"
   kind:
     versions:
-      - "0.12.0"
+      - "latest"
   helm:
     versions:
-      - "3.8.1"
+      - "latest"
   terraform:
     versions:
-      - "1.7.4"
+      - "latest"
   vault:
     versions:
-      - "1.9.4"
+      - "latest"
   packer:
     versions:
-      - "1.8.0"
+      - "latest"
   awscli:
     versions:
-      - "2.15.28"
-
+      - "latest"
 
 # Desktop configs
 # List of VS Code extension to install
