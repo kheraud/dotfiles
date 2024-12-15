@@ -97,4 +97,4 @@ uv run ansible-playbook -K -i hosts --tags "shell" site.yml
 
 ## TODO
 
-- Refacto asdf role to avoid feeding the repo and rely on the builtin urls
+- Add a msg at the end of asdf installs to list the tools and versions installed that are not listed in the conf

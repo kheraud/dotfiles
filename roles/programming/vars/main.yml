@@ -22,8 +22,6 @@ asdf_plugin_list:
       - libxmlsec1-dev
       - libffi-dev
       - liblzma-dev
-  poetry:
-    url: https://github.com/asdf-community/asdf-poetry.git
   nodejs:
     url: https://github.com/asdf-vm/asdf-nodejs.git
     apt_prerequisites:
@@ -46,33 +44,3 @@ asdf_plugin_list:
       - curl
       - unzip
       - jq
-  scala:
-    url: https://github.com/mtatheonly/asdf-scala.git
-  github-cli:
-    url: https://github.com/bartlomiejdanek/asdf-github-cli.git
-  kubectl:
-    url: https://github.com/Banno/asdf-kubectl.git
-  kubectx:
-    url: https://gitlab.com/wt0f/asdf-kubectx.git
-  minikube:
-    url: https://github.com/alvarobp/asdf-minikube.git
-  kind:
-    url: https://github.com/johnlayton/asdf-kind.git
-  helm:
-    url: https://github.com/Antiarchitect/asdf-helm.git
-  terraform:
-    url: https://github.com/Banno/asdf-hashicorp.git
-  vault:
-    url: https://github.com/Banno/asdf-hashicorp.git
-  packer:
-    url: https://github.com/Banno/asdf-hashicorp.git
-  awscli:
-    url: https://github.com/MetricMike/asdf-awscli.git
-  gcloud:
-    url: https://github.com/jthegedus/asdf-gcloud.git
-  glab:
-    url: https://github.com/particledecay/asdf-glab.git
-  krew:
-    url: https://github.com/bjw-s/asdf-krew.git
-  clusterctl:
-    url: https://github.com/pfnet-research/asdf-clusterctl.git
