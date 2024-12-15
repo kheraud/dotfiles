@@ -53,26 +53,26 @@ asdf_plugins:
       - "3.11.11"
   nodejs:
     versions:
-      - "21.7.3"
+      - "latest"
   golang:
     versions:
-      - "1.22.10"
+      - "latest"
   github-cli:
     versions:
       - "latest"
   glab:
     versions:
-      - " latest"
+      - "latest"
   kubectl:
+    versions:
+      - "latest"
+  kubectx:
     versions:
       - "latest"
   krew:
     versions:
-      - latest
+      - "latest"
   clusterctl:
-    versions:
-      - latest
-  kubectx:
     versions:
       - "latest"
   kind:

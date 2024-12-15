@@ -24,9 +24,9 @@
 - name: "Install asdf plugins"
   vars:
     plugin_name: "{{ item.key }}"
-    plugin_url: "{{ item.value.url }}"
+    plugin_url: "{{ item.value.url | default(None) }}"
     plugin_versions: "{{ item.value.versions | default([]) }}"
-    plugin_apt_prerequisites: "{{item.value.apt_prerequisites | default([]) }}"
+    plugin_apt_prerequisites: "{{item.value.apt_prerequisites | default([]) }}"
   include_tasks:
     file: asdf_plugin.yml
     apply:

@@ -20,19 +20,35 @@
   ansible.builtin.set_fact:
     installed_version: "{{ raw_installed_version.stdout_lines | map('trim', ' ') | map('trim', '*') }}"
 
-- name: "Install versions for {{ plugin_name }}"
-  ansible.builtin.command: "~/.asdf/bin/asdf install {{ plugin_name }} {{ plugin_version }}"
-  when: plugin_version not in installed_version
-  loop: "{{ plugin_versions }}"
-  loop_control:
-    loop_var: plugin_version
+- name: "Resolve 'latest' version"
+  ansible.builtin.command: "~/.asdf/bin/asdf latest {{ plugin_name }}"
+  register: latest_version
+  when: "'latest' in plugin_versions"
+  changed_when: false
 
-- name: "Register default plugin version for {{ plugin_name }}"
-  ansible.builtin.blockinfile:
-    path: ~/.tool-versions
-    marker: "# {mark} ANSIBLE MANAGED {{ plugin_name }} BLOCK -->"
-    block: |
-      {{ plugin_name }} {{ plugin_versions[0] }}
-    create: true
-    mode: 'u=rw,g=r'
+- name: "Block install versions for {{ plugin_name }}"
+  vars:
+    resolved_plugin_versions: |-
+      [
+      {% for version in plugin_versions %}
+         "{{ latest_version.stdout if version == 'latest' else version  }}",
+      {% endfor %}
+      ]
   when: plugin_versions
+  block:
+
+    - name: "Install versions for {{ plugin_name }}"
+      ansible.builtin.command: "~/.asdf/bin/asdf install {{ plugin_name }} {{ plugin_version  }}"
+      when: plugin_version not in installed_version
+      loop: "{{ resolved_plugin_versions }}"
+      loop_control:
+        loop_var: plugin_version
+
+    - name: "Register default plugin version for {{ plugin_name }}"
+      ansible.builtin.blockinfile:
+        path: ~/.tool-versions
+        marker: "# {mark} ANSIBLE MANAGED {{ plugin_name }} BLOCK -->"
+        block: |
+          {{ plugin_name }} {{ plugin_versions[0] }}
+        create: true
+        mode: 'u=rw,g=r'
