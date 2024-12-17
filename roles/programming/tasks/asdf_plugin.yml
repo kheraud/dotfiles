@@ -49,6 +49,6 @@
         path: ~/.tool-versions
         marker: "# {mark} ANSIBLE MANAGED {{ plugin_name }} BLOCK -->"
         block: |
-          {{ plugin_name }} {{ plugin_versions[0] }}
+          {{ plugin_name }} {{ latest_version.stdout if plugin_versions[0] == 'latest' else plugin_versions[0] }}
         create: true
         mode: 'u=rw,g=r'
