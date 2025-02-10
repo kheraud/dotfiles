@@ -1,17 +1,18 @@
 ---
 - name: Install asdf
-  git:
-    repo: 'https://github.com/asdf-vm/asdf.git'
-    dest: '~/.asdf'
-    version: "v{{ asdf_version }}"
+  ansible.builtin.unarchive:
+    src: https://github.com/asdf-vm/asdf/releases/download/v{{asdf_version}}/asdf-v{{asdf_version}}-linux-amd64.tar.gz
+    dest: /usr/local/bin
+    mode: "u=rwx,go=rx"
+    remote_src: true
+  become: true
 
 - name: Add asdf preload
   blockinfile:
-    path: ~/.zshrc_pre
+    path: ~/.zshrc_post
     create: true
     marker: "# {mark} ANSIBLE MANAGED ASDF BLOCK -->"
     block: |
-      # Here because of omz issue for asdf :
-      # https://github.com/ohmyzsh/ohmyzsh/pull/8837
-      fpath=($HOME/.asdf/completions $fpath)
+      export ASDF_DATA_DIR="$HOME/.asdf"
+      export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
     mode: 'u=rw,g=r'

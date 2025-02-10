@@ -7,12 +7,12 @@
   become: true
 
 - name: "Add plugin {{ plugin_name }}"
-  ansible.builtin.shell: "~/.asdf/bin/asdf plugin add {{ plugin_name }} {{ plugin_url }}"
+  ansible.builtin.shell: "asdf plugin add {{ plugin_name }}"
   register: added_plugin
-  changed_when: '"already added" not in added_plugin.stdout'
+  changed_when: '"already added" not in ",".join(added_plugin.stderr_lines)'
 
 - name: "Get installed versions of {{ plugin_name }}"
-  ansible.builtin.command: "~/.asdf/bin/asdf list {{ plugin_name }}"
+  ansible.builtin.command: "asdf list {{ plugin_name }}"
   register: raw_installed_version
   changed_when: false
 
@@ -21,7 +21,7 @@
     installed_version: "{{ raw_installed_version.stdout_lines | map('trim', ' ') | map('trim', '*') }}"
 
 - name: "Resolve 'latest' version"
-  ansible.builtin.command: "~/.asdf/bin/asdf latest {{ plugin_name }}"
+  ansible.builtin.command: "asdf latest {{ plugin_name }}"
   register: latest_version
   when: "'latest' in plugin_versions"
   changed_when: false
@@ -35,10 +35,10 @@
       {% endfor %}
       ]
   when: plugin_versions
-  block:
 
+  block:
     - name: "Install versions for {{ plugin_name }}"
-      ansible.builtin.command: "~/.asdf/bin/asdf install {{ plugin_name }} {{ plugin_version  }}"
+      ansible.builtin.command: "asdf install {{ plugin_name }} {{ plugin_version  }}"
       when: plugin_version not in installed_version
       loop: "{{ resolved_plugin_versions }}"
       loop_control:
@@ -52,3 +52,21 @@
           {{ plugin_name }} {{ latest_version.stdout if plugin_versions[0] == 'latest' else plugin_versions[0] }}
         create: true
         mode: 'u=rw,g=r'
+
+    - name: "Register pre zsh scripts for {{ plugin_name }}"
+      ansible.builtin.blockinfile:
+        path: ~/.zshrc_pre
+        marker: "# {mark} ANSIBLE MANAGED {{ plugin_name }} BLOCK -->"
+        block: "{{ plugin_extra_zsh_pre_conf }}"
+        create: true
+        mode: 'u=rw,g=r'
+      when: "plugin_extra_zsh_pre_conf is defined"
+
+    - name: "Register post zsh scripts for {{ plugin_name }}"
+      ansible.builtin.blockinfile:
+        path: ~/.zshrc_post
+        marker: "# {mark} ANSIBLE MANAGED {{ plugin_name }} BLOCK -->"
+        block: "{{ plugin_extra_zsh_post_conf }}"
+        create: true
+        mode: 'u=rw,g=r'
+      when: "plugin_extra_zsh_post_conf is defined"

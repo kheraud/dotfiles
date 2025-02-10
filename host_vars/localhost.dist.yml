@@ -48,15 +48,47 @@ oh_my_sh_extra_plugins:
 # each plugin
 asdf_plugins:
   python:
+    apt_prerequisites:
+      - make
+      - build-essential
+      - libssl-dev
+      - zlib1g-dev
+      - libbz2-dev
+      - libreadline-dev
+      - libsqlite3-dev
+      - wget
+      - curl
+      - llvm
+      - libncurses5-dev
+      - xz-utils
+      - tk-dev
+      - libxml2-dev
+      - libxmlsec1-dev
+      - libffi-dev
+      - liblzma-dev
     versions:
       - "latest"
-      - "3.11.11"
+      - "3.12.5"
+      - "3.11.9"
+      - "3.11.8"
   nodejs:
+    apt_prerequisites:
+      - dirmngr
+      - gpg
+      - curl
+      - gawk
     versions:
       - "latest"
+      - "19.9.0"
+      - "20.11.1"
+      - "21.7.3"
   golang:
+    apt_prerequisites:
+      - coreutils
+      - curl
     versions:
       - "latest"
+      - "1.17"
   github-cli:
     versions:
       - "latest"
@@ -66,9 +98,21 @@ asdf_plugins:
   kubectl:
     versions:
       - "latest"
-  kubectx:
+    extra_zsh_post_conf: |
+      source <(kubectl completion zsh)
+  kubecolor:
     versions:
       - "latest"
+    extra_zsh_post_conf: |
+      alias kubectl=kubecolor
+      alias k=kubecolor
+      compdef kubecolor=kubectl
+  kubie:
+    versions:
+      - "latest"
+    extra_zsh_post_conf: |
+      alias kctx="kubie ctx"
+      alias kns="kubie ns"
   krew:
     versions:
       - "latest"

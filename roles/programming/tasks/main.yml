@@ -13,7 +13,7 @@
 
 - name: Check asdf command exists
   stat:
-    path: ~/.asdf/bin/asdf
+    path: /usr/local/bin/asdf
   register: asdf_bin_path
 
 - name: Fail if asdf is not available
@@ -21,24 +21,31 @@
     msg: "Can't find asdf binary, you probably need to restart your terminal / session"
   when: not asdf_bin_path.stat.exists
 
+# - name: Get asdf plugins/versions really installed
+#   ansible.builtin.command: "asdf list"
+#   register: raw_asdf_list
+#   changed_when: false
+#   tags: asdf_plugins
+
+# - name: Format asdf plugins/versions
+#   ansible.builtin.set_fact:
+#     current_asdf_list: "{{ raw_asdf_list.stdout |
+#               regex_replace('\\n[\\s*]{2}', '\\n- ') |
+#               regex_replace('(^|\n)([^-].+)\\n', '\\1\\2:\\n') |
+#               from_yaml }}"
+#   tags: asdf_plugins
+
 - name: "Install asdf plugins"
   vars:
     plugin_name: "{{ item.key }}"
-    plugin_url: "{{ item.value.url | default(None) }}"
     plugin_versions: "{{ item.value.versions | default([]) }}"
     plugin_apt_prerequisites: "{{item.value.apt_prerequisites | default([]) }}"
+    plugin_extra_zsh_pre_conf: "{{item.value.extra_zsh_pre_conf }}"
+    plugin_extra_zsh_post_conf: "{{item.value.extra_zsh_post_conf }}"
+    versions_already_installed: "{{current_asdf_list[item.key] |default(None)}}" 
   include_tasks:
     file: asdf_plugin.yml
     apply:
       tags: "asdf_plugins"
   tags: "asdf_plugins"
-  loop: "{{ asdf_plugin_list |
-          dict2items |
-          selectattr(
-            'key',
-            'in',
-            asdf_plugins | dict2items | map(attribute='key')
-          ) |
-          items2dict |
-          combine(asdf_plugins, recursive=True, list_merge='keep') |
-          dict2items }}"
+  loop: "{{ asdf_plugins | dict2items }}"
