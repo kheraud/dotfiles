@@ -147,7 +147,7 @@
       <property name="&lt;Super&gt;Left" type="empty"/>
       <property name="&lt;Super&gt;Right" type="empty"/>
       <property name="&lt;Super&gt;KP_7" type="empty"/>
-      <property name="&lt;Super&gt;Up" type="empty"/>
+      <property name="&lt;Super&gt;Up" type="string" value="maximize_window_key"/>
       <property name="&lt;Super&gt;KP_9" type="empty"/>
       <property name="&lt;Super&gt;d" type="empty"/>
     </property>
