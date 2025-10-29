@@ -1,5 +1,5 @@
 ---
-vscode_microsoft_url: https://vscode.download.prss.microsoft.com/dbazure/download/stable/dc96b837cf6bb4af9cd736aa3af08cf8279f7685/code_1.89.1-1715060508_amd64.deb
+vscode_microsoft_url: https://update.code.visualstudio.com/latest/linux-deb-x64/stable
 veracrypt_version: 1.26.7
 veracrypt_artifact_version: veracrypt-1.26.7-Ubuntu-23.04-amd64
 shell_fonts:

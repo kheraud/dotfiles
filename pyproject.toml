@@ -4,7 +4,7 @@ version = "1.0.0"
 description = "K. Heraud personal dotfiles"
 authors = ["kheraud <1894658+kheraud@users.noreply.github.com>"]
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
-    "ansible~=9.5.0",
+    "ansible~=12.1.0",
 ]

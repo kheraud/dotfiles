@@ -3,7 +3,7 @@
   ansible.builtin.apt:
     name: "{{ plugin_apt_prerequisites }}"
     state: present
-  when: plugin_apt_prerequisites
+  when: plugin_apt_prerequisites|length > 0
   become: true
 
 - name: "Add plugin {{ plugin_name }}"
@@ -28,13 +28,13 @@
 
 - name: "Block install versions for {{ plugin_name }}"
   vars:
-    resolved_plugin_versions: |-
-      [
-      {% for version in plugin_versions %}
-         "{{ latest_version.stdout if version == 'latest' else version  }}",
-      {% endfor %}
-      ]
-  when: plugin_versions
+    resolved_plugin_versions: >-
+      {{
+        plugin_versions |
+        map('regex_replace', '^latest$', latest_version.stdout) |
+        list
+      }}
+  when: plugin_versions| length > 0
 
   block:
     - name: "Install versions for {{ plugin_name }}"
