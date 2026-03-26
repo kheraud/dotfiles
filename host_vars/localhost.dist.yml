@@ -1,10 +1,10 @@
 ---
 
 # Shell configs
-git_username: null
-git_email: null
+shell_git_username: null
+shell_git_email: null
 # Keep a null key if you don't gpg sign
-git_signing_key: null
+shell_git_signing_key: null
 
 # Define which language is expected for each console need
 shell_user_locales:
@@ -27,7 +27,7 @@ shell_user_locales:
 shell_extra_locales: []
 
 # List here the omz plugins you want to enable
-oh_my_zsh_plugins:
+shell_oh_my_zsh_plugins:
   - git
   - zsh-autosuggestions
   - fzf
@@ -40,7 +40,7 @@ oh_my_zsh_plugins:
   # - helm // Slow loading
 
 # List here remote omz plugins you want to install
-oh_my_sh_extra_plugins:
+shell_oh_my_sh_extra_plugins:
   zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions
 
 # Programming configs
