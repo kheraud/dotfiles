@@ -1,6 +1,6 @@
 ---
 - name: "Install Transmission"
-  apt:
+  ansible.builtin.apt:
     name: transmission
     state: present
   become: true

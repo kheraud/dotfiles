@@ -1,6 +1,6 @@
 ---
 - name: Install fontconfig
-  apt:
+  ansible.builtin.apt:
     name: fontconfig
     state: present
   become: true
@@ -16,8 +16,8 @@
   vars:
     font_name: "{{ item.key }}"
     font_url: "{{ item.value.url }}"
-  include_tasks:
+  ansible.builtin.include_tasks:
     file: shell_font_dl.yml
     apply:
       tags: "shell_fonts"
-  loop: "{{  shell_fonts | dict2items }}"
+  loop: "{{  desktop_shell_fonts | dict2items }}"

@@ -1,6 +1,6 @@
 ---
 - name: Install Veracrypt
   ansible.builtin.apt:
-    deb: "https://launchpad.net/veracrypt/trunk/{{ veracrypt_version }}/+download/{{ veracrypt_artifact_version }}.deb"
+    deb: "https://launchpad.net/veracrypt/trunk/{{ desktop_veracrypt_version }}/+download/{{ desktop_veracrypt_artifact_version }}.deb"
     state: present
   become: true

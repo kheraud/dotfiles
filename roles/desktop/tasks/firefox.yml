@@ -1,6 +1,6 @@
 ---
 - name: "Install Firefox"
-  apt:
+  ansible.builtin.apt:
     name: firefox
     state: present
   become: true

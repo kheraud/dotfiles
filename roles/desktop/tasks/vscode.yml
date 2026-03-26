@@ -1,24 +1,25 @@
 ---
 - name: "Install Visual Studio Code"
   ansible.builtin.apt:
-    deb: "{{ vscode_microsoft_url }}"
+    deb: "{{ desktop_vscode_microsoft_url }}"
     state: present
   become: true
 
 - name: "Export installed VSCode extensions"
-  command: code --list-extensions
-  register: vscode_installed_extensions
+  ansible.builtin.command: code --list-extensions
+  register: desktop_vscode_installed_extensions
   changed_when: false
 
 - name: "Install missing VSCode extensions"
   vars:
-    missing_extensions: "{{ vscode_extensions | difference(vscode_installed_extensions.stdout_lines) }}"
-  command: code --install-extension {{ item }}
+    missing_extensions: "{{ desktop_vscode_extensions | difference(desktop_vscode_installed_extensions.stdout_lines) }}"
+  ansible.builtin.command: code --install-extension {{ item }}
   loop: "{{ missing_extensions }}"
   when: missing_extensions | length > 0
+  changed_when: true
 
 - name: "Add alias to launch VSCode easily"
-  blockinfile:
+  ansible.builtin.blockinfile:
     path: ~/.zshrc_post
     marker: "# {mark} ANSIBLE MANAGED vscode BLOCK -->"
     block: |

@@ -1,6 +1,6 @@
 ---
 - name: "Install Libreoffice"
-  apt:
+  ansible.builtin.apt:
     name: libreoffice
     state: present
   become: true

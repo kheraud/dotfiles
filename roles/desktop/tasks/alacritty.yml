@@ -1,12 +1,12 @@
 ---
 - name: "Install Alacritty"
-  apt:
+  ansible.builtin.apt:
     name: "alacritty"
     state: present
   become: true
 
 - name: "Install xdotool + xsel"
-  apt:
+  ansible.builtin.apt:
     name:
       - xdotool
       - xsel
@@ -21,7 +21,7 @@
   become: true
 
 - name: "Copy launch alacritty script"
-  copy:
+  ansible.builtin.copy:
     src: launch-alacritty-in-ws.sh
     dest: /usr/local/bin/
     mode: 'u=rwx,go=rx'
@@ -39,4 +39,4 @@
     dest: ~/.config/alacritty/alacritty.toml
     mode: 'u=rwx,g=rx'
   vars:
-    font_name: "{{ shell_fonts[shell_font]['name'] }}"
+    font_name: "{{ desktop_shell_fonts[desktop_shell_font]['name'] }}"
