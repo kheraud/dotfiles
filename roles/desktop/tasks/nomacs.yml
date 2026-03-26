@@ -1,6 +1,6 @@
 ---
 - name: "Install nomacs image viewer"
-  apt:
+  ansible.builtin.apt:
     name: "nomacs"
     state: present
   become: true

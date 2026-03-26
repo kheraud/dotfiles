@@ -1,6 +1,6 @@
 ---
 - name: "Install Rhythmbox"
-  apt:
+  ansible.builtin.apt:
     name: rhythmbox
     state: present
   become: true

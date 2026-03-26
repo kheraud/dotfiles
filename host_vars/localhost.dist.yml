@@ -140,7 +140,7 @@ programming_asdf_plugins:
 
 # Desktop configs
 # List of VS Code extension to install
-vscode_extensions:
+desktop_vscode_extensions:
   - 4ops.terraform
   - arjun.swagger-viewer
   - davidanson.vscode-markdownlint
@@ -170,4 +170,4 @@ vscode_extensions:
 
 # Font in terminal
 # valid options: roboto, iosevka, hack, firacode, dejavu
-shell_font: "hack"
+desktop_shell_font: "hack"

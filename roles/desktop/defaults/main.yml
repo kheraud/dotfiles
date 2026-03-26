@@ -1,4 +1,4 @@
 ---
-vscode_extensions: []
-shell_font: "roboto"
-force_shell_font: false
+desktop_vscode_extensions: []
+desktop_shell_font: "roboto"
+desktop_force_shell_font: false

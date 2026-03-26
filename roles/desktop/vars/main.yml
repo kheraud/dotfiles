@@ -1,8 +1,8 @@
 ---
-vscode_microsoft_url: https://update.code.visualstudio.com/latest/linux-deb-x64/stable
-veracrypt_version: 1.26.7
-veracrypt_artifact_version: veracrypt-1.26.7-Ubuntu-23.04-amd64
-shell_fonts:
+desktop_vscode_microsoft_url: https://update.code.visualstudio.com/latest/linux-deb-x64/stable
+desktop_veracrypt_version: 1.26.7
+desktop_veracrypt_artifact_version: veracrypt-1.26.7-Ubuntu-23.04-amd64
+desktop_shell_fonts:
   roboto:
     url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/RobotoMono.tar.xz
     name: "RobotoMono Nerd Font Mono"
