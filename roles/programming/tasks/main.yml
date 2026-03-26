@@ -14,12 +14,12 @@
 - name: Check asdf command exists
   ansible.builtin.stat:
     path: /usr/local/bin/asdf
-  register: asdf_bin_path
+  register: programming_asdf_bin_path
 
 - name: Fail if asdf is not available
   ansible.builtin.fail:
     msg: "Can't find asdf binary, you probably need to restart your terminal / session"
-  when: not asdf_bin_path.stat.exists
+  when: not programming_asdf_bin_path.stat.exists
 
 - name: Install asdf plugins
   vars:
@@ -33,4 +33,4 @@
     apply:
       tags: asdf_plugins
   tags: asdf_plugins
-  loop: "{{ asdf_plugins | dict2items }}"
+  loop: "{{ programming_asdf_plugins | dict2items }}"
