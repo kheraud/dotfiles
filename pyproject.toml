@@ -13,7 +13,3 @@ dependencies = [
 dev = [
     "ansible-lint>=26.3.0",
 ]
-
-[[tool.uv.index]]
-url = "https://artifactory.michelin.com/api/pypi/pypi/simple"
-default = true

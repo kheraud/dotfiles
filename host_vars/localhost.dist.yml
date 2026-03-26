@@ -46,7 +46,7 @@ oh_my_sh_extra_plugins:
 # Programming configs
 # List of asdf plugins to install with the list of versions expected for
 # each plugin
-asdf_plugins:
+programming_asdf_plugins:
   python:
     apt_prerequisites:
       - make

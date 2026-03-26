@@ -1,5 +1,5 @@
 ---
-- name: "Install plugin {{ plugin_name }} prerequisites"
+- name: "Install prerequisites for plugin {{ plugin_name }}"
   ansible.builtin.apt:
     name: "{{ plugin_apt_prerequisites }}"
     state: present
@@ -8,22 +8,22 @@
 
 - name: "Add plugin {{ plugin_name }}"
   ansible.builtin.command: "asdf plugin add {{ plugin_name }}"
-  register: added_plugin
-  changed_when: '"already added" not in added_plugin.stderr'
-  failed_when: added_plugin.rc != 0 and '"already added" not in added_plugin.stderr'
+  register: programming_added_plugin
+  changed_when: '"already added" not in programming_added_plugin.stderr'
+  failed_when: programming_added_plugin.rc != 0 and '"already added" not in programming_added_plugin.stderr'
 
 - name: "Get installed versions of {{ plugin_name }}"
   ansible.builtin.command: "asdf list {{ plugin_name }}"
-  register: raw_installed_version
+  register: programming_raw_installed_version
   changed_when: false
 
 - name: "Format installed versions of {{ plugin_name }}"
   ansible.builtin.set_fact:
-    installed_version: "{{ raw_installed_version.stdout_lines | map('trim') | map('replace', '*', '') | map('trim') | list }}"
+    programming_installed_version: "{{ programming_raw_installed_version.stdout_lines | map('trim') | map('replace', '*', '') | map('trim') | list }}"
 
 - name: "Resolve 'latest' version for {{ plugin_name }}"
   ansible.builtin.command: "asdf latest {{ plugin_name }}"
-  register: latest_version
+  register: programming_latest_version
   when: "'latest' in plugin_versions"
   changed_when: false
 
@@ -32,14 +32,14 @@
     resolved_plugin_versions: >-
       {{
         plugin_versions |
-        map('regex_replace', '^latest$', latest_version.stdout | default('')) |
+        map('regex_replace', '^latest$', programming_latest_version.stdout | default('')) |
         list
       }}
   when: plugin_versions | length > 0
   block:
-    - name: "Install version {{ plugin_version }} for {{ plugin_name }}"
+    - name: "Install asdf version {{ plugin_version }}"
       ansible.builtin.command: "asdf install {{ plugin_name }} {{ plugin_version }}"
-      when: plugin_version not in installed_version
+      when: plugin_version not in programming_installed_version
       changed_when: true
       loop: "{{ resolved_plugin_versions }}"
       loop_control:
@@ -50,7 +50,7 @@
         path: "~/.tool-versions"
         marker: "# {mark} ANSIBLE MANAGED {{ plugin_name }} BLOCK"
         block: |
-          {{ plugin_name }} {{ latest_version.stdout | default('') if plugin_versions[0] == 'latest' else plugin_versions[0] }}
+          {{ plugin_name }} {{ programming_latest_version.stdout | default('') if plugin_versions[0] == 'latest' else plugin_versions[0] }}
         create: true
         mode: "u=rw,g=r,o="
 

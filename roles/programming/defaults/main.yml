@@ -1,5 +1,5 @@
 ---
-asdf_plugins:
+programming_asdf_plugins:
   python:
     versions:
       - "3.10.3"
