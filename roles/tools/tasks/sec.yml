@@ -13,7 +13,7 @@
 
 - name: Fetch sops binary
   ansible.builtin.get_url:
-    url: "https://github.com/getsops/sops/releases/download/v{{ sops_version }}/sops-v{{ sops_version }}.linux.amd64"
+    url: "https://github.com/getsops/sops/releases/download/v{{ tools_sops_version }}/sops-v{{ tools_sops_version }}.linux.amd64"
     dest: /usr/local/bin/sops
     mode: 'u=rwx,go=rx'
   become: true

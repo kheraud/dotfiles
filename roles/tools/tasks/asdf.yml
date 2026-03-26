@@ -1,14 +1,14 @@
 ---
 - name: Install asdf
   ansible.builtin.unarchive:
-    src: https://github.com/asdf-vm/asdf/releases/download/v{{asdf_version}}/asdf-v{{asdf_version}}-linux-amd64.tar.gz
+    src: https://github.com/asdf-vm/asdf/releases/download/v{{ tools_asdf_version }}/asdf-v{{ tools_asdf_version }}-linux-amd64.tar.gz
     dest: /usr/local/bin
     mode: "u=rwx,go=rx"
     remote_src: true
   become: true
 
 - name: Add asdf preload
-  blockinfile:
+  ansible.builtin.blockinfile:
     path: ~/.zshrc_post
     create: true
     marker: "# {mark} ANSIBLE MANAGED ASDF BLOCK -->"

@@ -1,18 +1,18 @@
 ---
 - name: Install htop
-  apt:
+  ansible.builtin.apt:
     name: htop
     state: present
   become: true
 
 - name: Check htop config directory exists
-  file:
+  ansible.builtin.file:
     path: ~/.config/htop
     state: directory
     mode: 'u=rwx,g=rx'
 
 - name: Copy Htop configuration
-  copy:
+  ansible.builtin.copy:
     src: htop/htoprc
     dest: ~/.config/htop/htoprc
     mode: 'u=rw,g=r'
