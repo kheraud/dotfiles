@@ -1,56 +1,56 @@
 ---
 - name: "Install locales"
-  import_tasks: locales.yml
+  ansible.builtin.import_tasks: locales.yml
   tags: locales
 
 - name: "Install git"
-  import_tasks: git.yml
+  ansible.builtin.import_tasks: git.yml
   tags: git
 
 - name: "Install zsh"
-  import_tasks: zsh.yml
+  ansible.builtin.import_tasks: zsh.yml
   tags: zsh
 
 - name: "Install tmux"
-  import_tasks: tmux.yml
+  ansible.builtin.import_tasks: tmux.yml
   tags: tmux
 
 - name: "Install autojump"
-  import_tasks: autojump.yml
+  ansible.builtin.import_tasks: autojump.yml
   tags: autojump
 
 - name: "Install direnv"
-  import_tasks: direnv.yml
+  ansible.builtin.import_tasks: direnv.yml
   tags: direnv
 
 - name: "Install fd"
-  import_tasks: fd.yml
+  ansible.builtin.import_tasks: fd.yml
   tags: fd
 
 - name: "Install fzf"
-  import_tasks: fzf.yml
+  ansible.builtin.import_tasks: fzf.yml
   tags: fzf
 
 - name: "Install bat"
-  import_tasks: bat.yml
+  ansible.builtin.import_tasks: bat.yml
   tags: bat
 
 - name: "Install eza"
-  import_tasks: eza.yml
+  ansible.builtin.import_tasks: eza.yml
   tags: eza
 
 - name: "Install ripgrep"
-  import_tasks: ripgrep.yml
+  ansible.builtin.import_tasks: ripgrep.yml
   tags: ripgrep
 
 - name: "Install fx"
-  import_tasks: fx.yml
+  ansible.builtin.import_tasks: fx.yml
   tags: fx
 
 - name: "Install jq"
-  import_tasks: jq.yml
+  ansible.builtin.import_tasks: jq.yml
   tags: jq
 
 - name: "Install progress"
-  import_tasks: progress.yml
+  ansible.builtin.import_tasks: progress.yml
   tags: progress

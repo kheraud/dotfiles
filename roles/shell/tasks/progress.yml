@@ -1,6 +1,6 @@
 ---
 - name: Install progress
-  apt:
+  ansible.builtin.apt:
     name: progress
     state: present
   become: true

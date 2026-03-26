@@ -1,23 +1,23 @@
 ---
 - name: Install Zsh
-  apt:
+  ansible.builtin.apt:
     name: zsh
     state: present
   become: true
 
 - name: Set current shell to Zsh
   become: true
-  user:
+  ansible.builtin.user:
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh
-  register: set_default_shell
+  register: shell_set_default_shell
 
 - name: "End play if zsh is not the current shell (restart your terminal)"
   ansible.builtin.meta: end_host
-  when: set_default_shell.changed
+  when: shell_set_default_shell.changed  # noqa: no-handler
 
 - name: Clone oh-my-zsh for users
-  git:
+  ansible.builtin.git:
     dest: '~/.oh-my-zsh'
     repo: 'https://github.com/robbyrussell/oh-my-zsh.git'
     update: true
@@ -25,31 +25,32 @@
     version: "master"
 
 - name: Copy .zshrc for users
-  template:
+  ansible.builtin.template:
     src: zshrc.j2
     dest: ~/.zshrc
     mode: 'u=rw,g=r'
 
 - name: Import lambda-gister theme
-  get_url:
+  ansible.builtin.get_url:
     url: 'https://raw.githubusercontent.com/ergenekonyigit/lambda-gitster/main/lambda-gitster.zsh-theme'
     dest: ~/.oh-my-zsh/themes/lambda-gitster.zsh-theme
+    mode: 'u=rw,g=r'
 
 - name: Create custom plugin directory
-  file:
+  ansible.builtin.file:
     path: ~/.oh-my-custom/plugins
     state: directory
     mode: 'u=rwx,g=rx'
 
 - name: Add extra plugins
-  git:
+  ansible.builtin.git:
     repo: "{{ item.value }}"
     dest: "~/.oh-my-custom/plugins/{{ item.key }}"
     version: 'master'
-  loop: "{{ oh_my_sh_extra_plugins | dict2items }}"
+  loop: "{{ shell_oh_my_sh_extra_plugins | dict2items }}"
 
 - name: "Add alias to load omz module on the fly"
-  blockinfile:
+  ansible.builtin.blockinfile:
     path: ~/.zshrc_post
     marker: "# {mark} ANSIBLE MANAGED omz ^plugin BLOCK -->"
     block: |

@@ -1,8 +1,8 @@
 [user]
-	name = {{ git_username }}
-	email = {{ git_email }}
-{% if git_signing_key is defined %}
-	signingkey = {{ git_signing_key }}
+	name = {{ shell_git_username }}
+	email = {{ shell_git_email }}
+{% if shell_git_signing_key is defined %}
+	signingkey = {{ shell_git_signing_key }}
 [commit]
 	gpgsign = true
 {% endif %}

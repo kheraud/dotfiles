@@ -1,6 +1,6 @@
 ---
 - name: Install autojump
-  apt:
+  ansible.builtin.apt:
     name: autojump
     state: present
   become: true
