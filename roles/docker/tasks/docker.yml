@@ -34,7 +34,7 @@
   template:
     src: docker.list.j2
     dest: /etc/apt/sources.list.d/docker.list
-    mode: 'u=rw,go=r'
+    mode: "u=rw,go=r"
   become: true
 
 - name: "Install docker"

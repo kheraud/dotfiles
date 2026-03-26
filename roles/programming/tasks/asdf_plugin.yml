@@ -3,13 +3,14 @@
   ansible.builtin.apt:
     name: "{{ plugin_apt_prerequisites }}"
     state: present
-  when: plugin_apt_prerequisites|length > 0
+  when: plugin_apt_prerequisites | length > 0
   become: true
 
 - name: "Add plugin {{ plugin_name }}"
-  ansible.builtin.shell: "asdf plugin add {{ plugin_name }}"
+  ansible.builtin.command: "asdf plugin add {{ plugin_name }}"
   register: added_plugin
-  changed_when: '"already added" not in ",".join(added_plugin.stderr_lines)'
+  changed_when: '"already added" not in added_plugin.stderr'
+  failed_when: added_plugin.rc != 0 and '"already added" not in added_plugin.stderr'
 
 - name: "Get installed versions of {{ plugin_name }}"
   ansible.builtin.command: "asdf list {{ plugin_name }}"
@@ -18,55 +19,55 @@
 
 - name: "Format installed versions of {{ plugin_name }}"
   ansible.builtin.set_fact:
-    installed_version: "{{ raw_installed_version.stdout_lines | map('trim', ' ') | map('trim', '*') }}"
+    installed_version: "{{ raw_installed_version.stdout_lines | map('trim') | map('replace', '*', '') | map('trim') | list }}"
 
-- name: "Resolve 'latest' version"
+- name: "Resolve 'latest' version for {{ plugin_name }}"
   ansible.builtin.command: "asdf latest {{ plugin_name }}"
   register: latest_version
   when: "'latest' in plugin_versions"
   changed_when: false
 
-- name: "Block install versions for {{ plugin_name }}"
+- name: "Install and configure versions for {{ plugin_name }}"
   vars:
     resolved_plugin_versions: >-
       {{
         plugin_versions |
-        map('regex_replace', '^latest$', latest_version.stdout) |
+        map('regex_replace', '^latest$', latest_version.stdout | default('')) |
         list
       }}
-  when: plugin_versions| length > 0
-
+  when: plugin_versions | length > 0
   block:
-    - name: "Install versions for {{ plugin_name }}"
-      ansible.builtin.command: "asdf install {{ plugin_name }} {{ plugin_version  }}"
+    - name: "Install version {{ plugin_version }} for {{ plugin_name }}"
+      ansible.builtin.command: "asdf install {{ plugin_name }} {{ plugin_version }}"
       when: plugin_version not in installed_version
+      changed_when: true
       loop: "{{ resolved_plugin_versions }}"
       loop_control:
         loop_var: plugin_version
 
-    - name: "Register default plugin version for {{ plugin_name }}"
+    - name: "Set default version for {{ plugin_name }}"
       ansible.builtin.blockinfile:
-        path: ~/.tool-versions
-        marker: "# {mark} ANSIBLE MANAGED {{ plugin_name }} BLOCK -->"
+        path: "~/.tool-versions"
+        marker: "# {mark} ANSIBLE MANAGED {{ plugin_name }} BLOCK"
         block: |
-          {{ plugin_name }} {{ latest_version.stdout if plugin_versions[0] == 'latest' else plugin_versions[0] }}
+          {{ plugin_name }} {{ latest_version.stdout | default('') if plugin_versions[0] == 'latest' else plugin_versions[0] }}
         create: true
-        mode: 'u=rw,g=r'
+        mode: "u=rw,g=r,o="
 
-    - name: "Register pre zsh scripts for {{ plugin_name }}"
+    - name: "Add pre-zsh config for {{ plugin_name }}"
       ansible.builtin.blockinfile:
-        path: ~/.zshrc_pre
-        marker: "# {mark} ANSIBLE MANAGED {{ plugin_name }} BLOCK -->"
+        path: "~/.zshrc_pre"
+        marker: "# {mark} ANSIBLE MANAGED {{ plugin_name }} BLOCK"
         block: "{{ plugin_extra_zsh_pre_conf }}"
         create: true
-        mode: 'u=rw,g=r'
-      when: "plugin_extra_zsh_pre_conf is defined"
+        mode: "u=rw,g=r,o="
+      when: plugin_extra_zsh_pre_conf | length > 0
 
-    - name: "Register post zsh scripts for {{ plugin_name }}"
+    - name: "Add post-zsh config for {{ plugin_name }}"
       ansible.builtin.blockinfile:
-        path: ~/.zshrc_post
-        marker: "# {mark} ANSIBLE MANAGED {{ plugin_name }} BLOCK -->"
+        path: "~/.zshrc_post"
+        marker: "# {mark} ANSIBLE MANAGED {{ plugin_name }} BLOCK"
         block: "{{ plugin_extra_zsh_post_conf }}"
         create: true
-        mode: 'u=rw,g=r'
-      when: "plugin_extra_zsh_post_conf is defined"
+        mode: "u=rw,g=r,o="
+      when: plugin_extra_zsh_post_conf | length > 0

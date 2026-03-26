@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: kheraud
+  description: Install programming tools and asdf-managed language runtimes
+  license: MIT
+  min_ansible_version: "2.10"
+  platforms:
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+
+dependencies: []

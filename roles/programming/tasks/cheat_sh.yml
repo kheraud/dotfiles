@@ -1,13 +1,13 @@
 ---
 - name: Install cheat.sh requirements
-  apt:
+  ansible.builtin.apt:
     name: rlwrap
     state: present
   become: true
 
 - name: Install cheat.sh
-  get_url:
+  ansible.builtin.get_url:
     url: https://cht.sh/:cht.sh
     dest: /usr/local/bin/cht.sh
-    mode: 'u=rwx,go=rx'
+    mode: "u=rwx,go=rx"
   become: true
