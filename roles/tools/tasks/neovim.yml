@@ -1,29 +1,31 @@
 ---
 - name: Install Neovim
-  apt:
+  ansible.builtin.apt:
     name: neovim
     state: present
   become: true
 
 - name: Check neovim config directory exists
-  file:
+  ansible.builtin.file:
     path: ~/.config/nvim/autoload
     state: directory
     mode: 'u=rwx,g=rx'
 
 - name: Fetch Vim plug
-  get_url:
+  ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     dest: ~/.config/nvim/autoload/plug.vim
+    mode: 'u=rw,g=r'
 
 - name: Copy Neovim configuration
-  copy:
+  ansible.builtin.copy:
     src: nvim/init.vim
     dest: ~/.config/nvim/init.vim
     mode: 'u=rw,g=r'
 
 - name: Run NeoVim Pluginstall
-  shell: >
+  ansible.builtin.shell: >
     nvim +PlugInstall +qall
   args:
     creates: ~/.config/nvim/plugged
+  changed_when: false

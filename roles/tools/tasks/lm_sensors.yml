@@ -1,6 +1,6 @@
 ---
 - name: Install lm-sensors
-  apt:
+  ansible.builtin.apt:
     name: lm-sensors
     state: present
   become: true

@@ -1,6 +1,6 @@
 ---
 - name: Install plocate
-  apt:
+  ansible.builtin.apt:
     name: plocate
     state: present
   become: true
