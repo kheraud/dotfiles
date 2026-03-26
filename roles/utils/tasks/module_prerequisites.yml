@@ -1,6 +1,6 @@
 ---
 - name: Install network dependencies
-  apt:
+  ansible.builtin.apt:
     name:
       - apt-transport-https
       - ca-certificates
@@ -9,7 +9,7 @@
   become: true
 
 - name: Install Ansible dependencies
-  apt:
+  ansible.builtin.apt:
     name:
       - sudo
       - python3
@@ -22,7 +22,7 @@
   become: true
 
 - name: "Install xz-utils required for remote deb install"
-  apt:
+  ansible.builtin.apt:
     name: xz-utils
     state: present
   become: true

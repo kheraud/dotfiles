@@ -1,9 +1,9 @@
 ---
 - name: Check if XFCE is installed
-  stat:
+  ansible.builtin.stat:
     path: /usr/bin/xfce4-session
-  register: xfce_shell_path
+  register: utils_xfce_shell_path
 
 - name: Register desktop environments
   ansible.builtin.set_fact:
-    is_xfce_installed: "{{ xfce_shell_path.stat.exists }}"
+    utils_is_xfce_installed: "{{ utils_xfce_shell_path.stat.exists }}"
