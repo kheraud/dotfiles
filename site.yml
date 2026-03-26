@@ -53,7 +53,7 @@
 
     - role: xfce
       tags: xfce
-      when: is_xfce_installed
+      when: utils_is_xfce_installed
 
     - role: desktop
       tags: desktop
