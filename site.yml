@@ -1,37 +1,38 @@
 ---
-- hosts: all
+- name: "Configure dotfiles on localhost"
+  hosts: all
 
   pre_tasks:
     - name: Limit to Ubuntu distributions
-      import_role:
+      ansible.builtin.import_role:
         name: utils
         tasks_from: filter_distribution
       tags:
         - always
 
     - name: Update apt cache
-      import_role:
+      ansible.builtin.import_role:
         name: utils
         tasks_from: apt_cache
       tags:
         - always
 
     - name: Install prerequisites
-      import_role:
+      ansible.builtin.import_role:
         name: utils
         tasks_from: module_prerequisites
       tags:
         - always
 
     - name: Get common vars
-      import_role:
+      ansible.builtin.import_role:
         name: utils
         tasks_from: common_vars
       tags:
         - always
 
     - name: Get available desktop environment
-      import_role:
+      ansible.builtin.import_role:
         name: utils
         tasks_from: stat_desktop_environment
       tags:
