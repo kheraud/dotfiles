@@ -72,7 +72,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=({{ oh_my_zsh_plugins | join(' ') }})
+plugins=({{ shell_oh_my_zsh_plugins | join(' ') }})
 
 source $ZSH/oh-my-zsh.sh
 

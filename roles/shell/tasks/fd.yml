@@ -1,22 +1,22 @@
 ---
 - name: Install fd package
-  apt:
+  ansible.builtin.apt:
     name: fd-find
     state: present
   become: true
 
 - name: Get fdfind path
-  command: which fdfind
-  register: fdfind_path
+  ansible.builtin.command: which fdfind
+  register: shell_fdfind_path
   changed_when: false
   ignore_errors: true
 
 - name: Add symlink to fdfind
   ansible.builtin.file:
-    src: "{{ fdfind_path.stdout }}"
+    src: "{{ shell_fdfind_path.stdout }}"
     dest: /usr/bin/fd
     owner: root
     group: root
     state: link
   become: true
-  when: fdfind_path is succeeded and fdfind_path.stdout != "/usr/bin/fd"
+  when: shell_fdfind_path is succeeded and shell_fdfind_path.stdout != "/usr/bin/fd"

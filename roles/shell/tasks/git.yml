@@ -1,8 +1,8 @@
 ---
 - name: "Fail if git user not defined"
   ansible.builtin.fail:
-    msg: "You MUST define a valid git_username and git_email configuration"
-  when: (not git_username ) or (not git_email)
+    msg: "You MUST define a valid shell_git_username and shell_git_email configuration"
+  when: (not shell_git_username) or (not shell_git_email)
 
 - name: Install Git
   ansible.builtin.apt:
@@ -12,7 +12,7 @@
 
 - name: Install delta
   ansible.builtin.apt:
-    deb: "https://github.com/dandavison/delta/releases/download/{{ delta_version }}/git-delta_{{ delta_version }}_amd64.deb"
+    deb: "https://github.com/dandavison/delta/releases/download/{{ shell_delta_version }}/git-delta_{{ shell_delta_version }}_amd64.deb"
     state: present
   become: true
 

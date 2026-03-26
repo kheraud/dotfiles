@@ -1,6 +1,6 @@
 ---
 - name: Install Tmux
-  apt:
+  ansible.builtin.apt:
     name:
       - tmux
       - xsel
@@ -8,14 +8,14 @@
   become: true
 
 - name: Copy Tmux configuration
-  copy:
+  ansible.builtin.copy:
     src: tmux.conf
     dest: '~/.tmux.conf'
     mode: 'u=rw,g=r'
   notify: Refresh tmux configuration
 
 - name: Install Tmux Plugin Manager
-  git:
+  ansible.builtin.git:
     dest: '~/.tmux/plugins/tpm'
     repo: 'https://github.com/tmux-plugins/tpm.git'
     depth: "1"

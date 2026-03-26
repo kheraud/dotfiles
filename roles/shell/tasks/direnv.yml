@@ -1,6 +1,6 @@
 ---
 - name: Install direnv package
-  apt:
+  ansible.builtin.apt:
     name: direnv
     state: present
   become: true
