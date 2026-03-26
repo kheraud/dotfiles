@@ -36,5 +36,5 @@
   tags: xfce_move_window_to_monitor
 
 - name: Install Rofi
-  import_tasks: rofi.yml
+  ansible.builtin.import_tasks: rofi.yml
   tags: rofi
