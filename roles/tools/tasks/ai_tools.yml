@@ -1,0 +1,31 @@
+---
+- name: "Retrieve npm installed packages"
+  ansible.builtin.command: asdf exec npm list -g -p
+  register: tools_npm_global_packages
+  changed_when: false
+  tags:
+    - ai_tools
+
+- name: "Install @anthropic-ai/claude-code npm package globally"
+  ansible.builtin.command: asdf exec npm install -g @anthropic-ai/claude-code
+  register: tools_claude_code_install
+  when: "'@anthropic-ai/claude-code' not in tools_npm_global_packages.stdout and tools_install_claude_code"
+  changed_when: tools_claude_code_install.changed
+  tags:
+    - ai_tools_claude_code
+
+- name: "Install @github/copilot npm package globally"
+  ansible.builtin.command: asdf exec npm install -g @github/copilot
+  register: tools_copilot_install
+  when: "'@github/copilot' not in tools_npm_global_packages.stdout and tools_install_copilot"
+  changed_when: tools_copilot_install.changed
+  tags:
+    - ai_tools_copilot
+
+- name: "Install opencode-ai npm package globally"
+  ansible.builtin.command: asdf exec npm install -g opencode-ai
+  register: tools_opencode_ai_install
+  when: "'opencode-ai' not in tools_npm_global_packages.stdout and tools_install_opencode_ai"
+  changed_when: tools_opencode_ai_install.changed
+  tags:
+    - ai_tools_opencode_ai

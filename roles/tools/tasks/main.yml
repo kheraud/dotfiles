@@ -48,3 +48,7 @@
 - name: "Install ngrok"
   ansible.builtin.import_tasks: ngrok.yml
   tags: ngrok
+
+- name: "Install ai tools"
+  ansible.builtin.import_tasks: ai_tools.yml
+  tags: ai_tools

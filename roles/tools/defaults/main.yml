@@ -1,0 +1,4 @@
+---
+tools_install_claude_code: true
+tools_install_copilot: true
+tools_install_opencode_ai: true

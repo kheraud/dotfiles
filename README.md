@@ -59,6 +59,10 @@ The global `site.yml` playbook plays the following roles :
   - [Sops](https://github.com/getsops/sops)
   - [FFmpeg](https://ffmpeg.org/ffmpeg.html)
   - [ngrok](https://ngrok.com)
+  - AI-related tools:
+    - github-copilot
+    - claude-code
+    - opencode
 
 - `docker`
   - [Docker CE](https://docs.docker.com/engine/) (docker-ce, docker-ce-cli, containerd.io, buildx, compose v2)
