@@ -12,10 +12,16 @@
   changed_when: '"already added" not in programming_added_plugin.stderr'
   failed_when: programming_added_plugin.rc != 0 and '"already added" not in programming_added_plugin.stderr'
 
+- name: "Update plugin {{ plugin_name }}"
+  ansible.builtin.command: "asdf plugin update {{ plugin_name }}" # noqa: no-handler
+  when: programming_added_plugin.changed
+  changed_when: false
+
 - name: "Get installed versions of {{ plugin_name }}"
   ansible.builtin.command: "asdf list {{ plugin_name }}"
   register: programming_raw_installed_version
   changed_when: false
+  failed_when: programming_raw_installed_version.rc > 1
 
 - name: "Format installed versions of {{ plugin_name }}"
   ansible.builtin.set_fact:
@@ -37,7 +43,7 @@
       }}
   when: plugin_versions | length > 0
   block:
-    - name: "Install asdf version {{ plugin_version }}"
+    - name: "Install asdf version"
       ansible.builtin.command: "asdf install {{ plugin_name }} {{ plugin_version }}"
       when: plugin_version not in programming_installed_version
       changed_when: true
