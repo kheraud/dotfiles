@@ -1,139 +1,26 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ],
-  "enabledManagers": [
-    "ansible",
-    "ansible-galaxy",
-    "asdf",
-    "pep621"
-  ],
-  "ansible": {
-    "managerFilePatterns": [
-      "/(^|/)site\\.yml$/",
-      "/(^|/)roles/.+\\.ya?ml$/"
-    ]
-  },
-  "ansible-galaxy": {
-    "managerFilePatterns": [
-      "/(^|/)requirements\\.ya?ml$/",
-      "/(^|/)roles/.+/meta/main\\.ya?ml$/"
-    ]
-  },
-  "pep621": {
-    "managerFilePatterns": [
-      "/(^|/)pyproject\\.toml$/"
-    ]
-  },
-  "addLabels": [
-    "renovate"
-  ],
-  "prBodyColumns": [
-    "Package",
-    "Update",
-    "Change",
-    "Age",
-    "Adoption",
-    "Confidence"
-  ],
-  "prConcurrentLimit": 3,
-  "branchConcurrentLimit": 3,
-  "prHourlyLimit": 1,
+  "extends": ["config:recommended"],
+  "enabledManagers": ["ansible", "ansible-galaxy", "asdf", "pep621"],
+  "addLabels": ["renovate", "{{manager}}", "{{updateType}}"],
+  "prBodyColumns": ["Package", "Update", "Change"],
+  "platformAutomerge": false,
   "packageRules": [
     {
-      "description": "Wait 1 day before proposing patch updates",
-      "matchUpdateTypes": [
-        "patch"
-      ],
-      "minimumReleaseAge": "1 day",
-      "internalChecksFilter": "strict"
-    },
-    {
-      "description": "Automerge patch updates",
-      "matchUpdateTypes": [
-        "patch"
-      ],
+      "matchUpdateTypes": ["patch"],
+      "matchManagers": [".*"],
       "automerge": true,
-      "automergeType": "pr"
+      "minimumReleaseAge": "3 days"
     },
     {
-      "description": "Wait 7 days before proposing minor updates",
-      "matchUpdateTypes": [
-        "minor"
-      ],
-      "minimumReleaseAge": "7 days",
-      "internalChecksFilter": "strict"
+      "matchUpdateTypes": ["minor"],
+      "matchManagers": [".*"],
+      "automerge": true,
+      "minimumReleaseAge": "7 days"
     },
     {
-      "description": "Wait 30 days before proposing major updates",
-      "matchUpdateTypes": [
-        "major"
-      ],
-      "minimumReleaseAge": "30 days",
-      "internalChecksFilter": "strict"
-    },
-    {
-      "description": "Label Ansible updates",
-      "matchManagers": [
-        "ansible"
-      ],
-      "addLabels": [
-        "manager::ansible"
-      ]
-    },
-    {
-      "description": "Label Ansible Galaxy updates",
-      "matchManagers": [
-        "ansible-galaxy"
-      ],
-      "addLabels": [
-        "manager::ansible-galaxy"
-      ]
-    },
-    {
-      "description": "Label asdf updates",
-      "matchManagers": [
-        "asdf"
-      ],
-      "addLabels": [
-        "manager::asdf"
-      ]
-    },
-    {
-      "description": "Label PEP 621 updates",
-      "matchManagers": [
-        "pep621"
-      ],
-      "addLabels": [
-        "manager::pep621"
-      ]
-    },
-    {
-      "description": "Group Python and Ansible patch/minor updates together",
-      "matchManagers": [
-        "pep621",
-        "ansible",
-        "ansible-galaxy"
-      ],
-      "matchUpdateTypes": [
-        "patch",
-        "minor"
-      ],
-      "groupName": "python and ansible dependencies",
-      "groupSlug": "python-ansible-dependencies"
-    },
-    {
-      "description": "Group tooling dependency patch/minor updates together",
-      "matchManagers": [
-        "asdf"
-      ],
-      "matchUpdateTypes": [
-        "patch",
-        "minor"
-      ],
-      "groupName": "tooling dependencies",
-      "groupSlug": "tooling-dependencies"
+      "matchUpdateTypes": ["major"],
+      "automerge": false
     }
   ]
 }
