@@ -14,5 +14,5 @@
     marker: "# {mark} ANSIBLE MANAGED ASDF BLOCK -->"
     block: |
       export ASDF_DATA_DIR="$HOME/.asdf"
-      export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+      export PATH="$ASDF_DATA_DIR/shims:$PATH"
     mode: 'u=rw,g=r'

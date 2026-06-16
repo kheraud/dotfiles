@@ -30,17 +30,20 @@
     dest: ~/.zshrc
     mode: 'u=rw,g=r'
 
-- name: Import lambda-gister theme
-  ansible.builtin.get_url:
-    url: 'https://raw.githubusercontent.com/ergenekonyigit/lambda-gitster/main/lambda-gitster.zsh-theme'
-    dest: ~/.oh-my-zsh/themes/lambda-gitster.zsh-theme
+- name: Deploy clean-nouser theme
+  ansible.builtin.copy:
+    src: clean-nouser.zsh-theme
+    dest: ~/.oh-my-custom/themes/clean-nouser.zsh-theme
     mode: 'u=rw,g=r'
 
-- name: Create custom plugin directory
+- name: Create custom directories
   ansible.builtin.file:
-    path: ~/.oh-my-custom/plugins
+    path: "~/.oh-my-custom/{{ item }}"
     state: directory
     mode: 'u=rwx,g=rx'
+  loop:
+    - plugins
+    - themes
 
 - name: Add extra plugins
   ansible.builtin.git:

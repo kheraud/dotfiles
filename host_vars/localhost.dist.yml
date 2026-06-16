@@ -32,7 +32,7 @@ shell_oh_my_zsh_plugins:
   - zsh-autosuggestions
   - fzf
   - zsh-eza
-  - tmux
+  # - tmux
   - autojump
   - asdf
   - direnv
@@ -99,7 +99,11 @@ programming_asdf_plugins:
     versions:
       - "latest"
     extra_zsh_post_conf: |
-      source <(kubectl completion zsh)
+      kubectl() {
+        unset -f kubectl
+        source <(kubectl completion zsh)
+        command kubectl "$@"
+      }
   kubecolor:
     versions:
       - "latest"
