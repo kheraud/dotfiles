@@ -8,13 +8,11 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["patch"],
-      "matchManagers": [".*"],
       "automerge": true,
       "minimumReleaseAge": "3 days"
     },
     {
       "matchUpdateTypes": ["minor"],
-      "matchManagers": [".*"],
       "automerge": true,
       "minimumReleaseAge": "7 days"
     },
